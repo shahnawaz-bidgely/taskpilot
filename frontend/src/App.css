@@ -1,6 +1,44 @@
 .App {
-  text-align: center;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
 }
+
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 60px);  /* Adjust height to account for the header */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: white;
+  color: white;
+  padding-top: 20px;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow-y: auto;
+}
+
+.content-area h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content-area p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #7f8c8d;
+}
+
+
+
+
 
 .App-logo {
   height: 40vmin;

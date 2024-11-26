@@ -1,0 +1,25 @@
+/* Styling for the Download Button */
+.download-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .download-btn i {
+    font-size: 18px;
+  }
+  
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  
