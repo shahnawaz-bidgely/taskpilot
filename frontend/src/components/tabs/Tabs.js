@@ -5,6 +5,7 @@ function Tabs({ activeTab, setActiveTab }) {
   const tabs = ['Report Analysis', 'Revoke Email', 'TOD Analysis'];
 
   return (
+    <div>
     <div className="tabs">
       {tabs.map(tab => (
         <div
@@ -15,6 +16,7 @@ function Tabs({ activeTab, setActiveTab }) {
           {tab}
         </div>
       ))}
+    </div>
     </div>
   );
 }
