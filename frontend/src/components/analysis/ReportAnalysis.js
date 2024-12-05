@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Switch from 'react-switch'; 
 import './ReportAnalysis.css';
 import DownloadCSV from '../download/DownloadCSV';
-import FileUpload from '../common/FileUpload';
+import { FileContext } from '../context/FileContext';
+
 
 function ReportAnalysis() {
   const [selection, setSelection] = useState({
@@ -16,15 +17,19 @@ function ReportAnalysis() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [uploadedFile, setUploadedFile] = useState(null);
-  const [fileContent, setFileContent] = useState(null);
   const [userDetails, setUserDetails] = useState([]);
   const [toggleValue, setToggleValue] = useState('API'); // default to API
 
+  const { uploadedFile, fileContent } = useContext(FileContext);
+
   useEffect(() => {
     console.log('userDetails state has been updated:', userDetails);
-  }, [userDetails]);
+    console.log('File Content in ReportAnalysis Updated:', fileContent);
+    console.log('Uploaded File in ReportAnalysis Updated:', uploadedFile);
+  }, [fileContent, uploadedFile,userDetails]);
 
+
+  
   const handleSelectionChange = (event) => {
     const { name, checked } = event.target;
     setSelection((prevState) => ({
@@ -32,24 +37,10 @@ function ReportAnalysis() {
       [name]: checked,
     }));
   };
-
-  const handleFileData = (file, content) => {
-    if (file && content) {
-      setUploadedFile(file);
-      setFileContent(content);
-      setError(''); // Clear any previous error
-    } else {
-      setUploadedFile(null);
-      setFileContent(null);
-      setError('The uploaded file is empty or invalid.');
-    }
-  };
-
   // Toggle between API and Redshift
   const handleToggleChange = (checked) => {
     const newValue = checked ? 'Redshift' : 'API';
     setToggleValue(newValue);
-    alert(`Selected: ${newValue}`); // Display selected value
   };
 
   // API-related functions
@@ -133,6 +124,7 @@ function ReportAnalysis() {
       setLoading(false);
       return;
     }
+    console.log("File content",fileContent)
 
     if (!fileContent) {
       setError('Please upload a non-empty .csv or .txt file.');
@@ -226,7 +218,6 @@ function ReportAnalysis() {
             </div>
           ))}
         </div>
-        <FileUpload onFileUpload={handleFileData} error={error} />
         <button className="do-analysis-btn" onClick={handleAnalysisClick} disabled={loading}>
           {loading ? 'Analyzing...' : 'DO Analysis'}
         </button>

@@ -31,4 +31,26 @@
   .tab.active:hover {
     background-color: blue;  /* Prevent color change on hover for active tab */
   }
+
+
+
+
+  
+
+  .file-upload-section {
+    margin-top: 20px;
+  }
+  
+  .file-upload-section input {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .file-upload-section pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  
   
