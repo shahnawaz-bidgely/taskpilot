@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify, request, send_file
+import redshift_connector
 import os
 import pandas as pd
 import requests
@@ -123,3 +124,56 @@ def analyse_user():
     except Exception as e:
         print(f"Error processing file: {e}")
         return jsonify({'message': 'Error processing file', 'error': str(e)}), 500
+
+
+
+@bp.route('/analyze-users-redshift', methods=['GET'])
+def analyse_user_from_redshift():
+    conn_rs = connect_to_redshift()
+
+    if not conn_rs:
+        # If connection failed, return an error response
+        return jsonify({'message': 'Failed to connect to Redshift', 'error': 'Connection error'}), 500
+
+    try:
+        # Create a cursor and execute the query
+        cursor = conn_rs.cursor()
+        query = "SELECT * from public.users limit 3"  # Example query, modify as needed
+
+        # Fetch results
+        cursor.execute(query)
+
+        # Check if results were returned
+        rows = cursor.fetchall()
+        if not rows:
+            return jsonify({'message': 'No data found in Redshift for the given query'}), 404
+
+        # Process the results
+        columns = [desc[0] for desc in cursor.description]  # Get column names
+        result = [dict(zip(columns, row)) for row in rows]
+
+        # Close the cursor and connection
+        cursor.close()
+        conn_rs.close()
+
+        # Return the result as JSON
+        return jsonify(result)
+    except Exception as e:
+        # Handle errors during query execution or result processing
+        return jsonify({'message': 'Error fetching data from Redshift', 'error': str(e)}), 500
+
+
+
+def connect_to_redshift():
+    try:
+        conn_rs = redshift_connector.connect(
+            host='na-rs1.ctxwwf9dwnm1.us-east-1.redshift.amazonaws.com',
+            database='bdw',
+            port=5439,
+            user='lookerdev',
+            password='68grA5eJtGvr23LE'
+        )
+        return conn_rs
+    except Exception as e:
+        print(f"Connection failed: {e}")
+        return None

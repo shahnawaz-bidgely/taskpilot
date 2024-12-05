@@ -33,24 +33,73 @@
   }
 
 
-
-
-  
-
   .file-upload-section {
-    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
   }
   
-  .file-upload-section input {
-    display: block;
-    margin: 10px 0;
+  .file-upload-section h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
   }
   
-  .file-upload-section pre {
-    background-color: #f4f4f4;
-    padding: 10px;
+  .file-upload-button {
+    display: inline-block;
+    background-color: #007bff; /* Blue color for the button */
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
     border-radius: 4px;
-    overflow-x: auto;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
   }
   
+  .file-upload-button:hover {
+    background-color: #0056b3; /* Darker blue when hovering */
+  }
+  
+  .file-upload-section input[type="file"] {
+    display: none; /* Hide the default file input */
+  }
+  
+  .file-details {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .file-details p {
+    margin: 8px 0;
+  }
+  
+  .file-name {
+    color: #007bff; /* Blue color for file name */
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .file-name strong {
+    color: #007bff;
+  }
+  
+  .no-file {
+    color: #888; /* Grey color for no file chosen text */
+    font-size: 14px;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
   

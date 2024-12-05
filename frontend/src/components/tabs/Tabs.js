@@ -56,17 +56,32 @@ function Tabs({ activeTab, setActiveTab }) {
         ))}
       </div>
       <div className="file-upload-section">
-        <h4>Upload a File (.csv or .txt)</h4>
-        <input type="file" accept=".csv,.txt" onChange={handleFileChange} />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {file && (
-          <div>
-            <p><strong>File Name:</strong> {file.name}</p>
-            <p><strong>File Size:</strong> {(file.size / 1024).toFixed(2)} KB</p>
-            <p><strong>File Type:</strong> {file.type}</p>
-          </div>
-        )}
-      </div>
+  <h4>Upload a File</h4>
+  {/* File input with custom button */}
+  <label htmlFor="file-upload" className="file-upload-button">
+    Choose File
+  </label>
+  <input
+    type="file"
+    id="file-upload"
+    accept=".csv,.txt"
+    onChange={handleFileChange}
+    style={{ display: 'none' }} // Hide the default file input
+  />
+  
+  {/* Display file details when file is selected */}
+  {file ? (
+    <div className="file-details">
+      <p className="file-name"><strong>File Name:</strong> {file.name}</p>
+      <p><strong>File Size:</strong> {(file.size / 1024).toFixed(2)} KB</p>
+      <p><strong>File Type:</strong> {file.type}</p>
+    </div>
+  ) : (
+    <p className="no-file">No file chosen</p> // Message when no file is selected
+  )}
+
+  {error && <p className="error-text">{error}</p>}
+</div>
     </div>
   );
 }
