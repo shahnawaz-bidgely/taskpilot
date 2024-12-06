@@ -18,30 +18,11 @@ ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
 
 OUTPUT_FOLDER = 'outputs'
 
-@bp.route('/hello', methods=['GET'])
-def hello_world():
-    return jsonify({"message": "Hello, World!2"})
-
-# Helper function to extract user list from file
-def get_users_from_file(file):
-    users = []
-    try:
-        file_path = os.path.join(UPLOAD_FOLDER, file.filename)
-        file.save(file_path)
-
-        if file.filename.endswith('.csv'):
-            # If the file is a CSV, use pandas to read it
-            df = pd.read_csv(file_path)
-            users = df.to_dict(orient='records')  # Convert rows to a list of dictionaries
-        else:
-            # For text files, read line by line
-            with open(file_path, 'r') as f:
-                users = [line.strip() for line in f.readlines()]
-
-        return users
-    except Exception as e:
-        print(f"Error processing file: {e}")
-        return None
+# @bp.route('/hello', methods=['GET'])
+# def hello_world():
+#     return jsonify({"message": "Hello, World!2"})
+#
+#
 
 @bp.route('/analyze-users', methods=['POST'])
 def analyse_user():
@@ -178,6 +159,100 @@ def analyse_user_from_redshift():
         return jsonify({'message': 'Error fetching data from Redshift', 'error': str(e)}), 500
 
 
+@bp.route('/analyze-cluster-redshift', methods=['POST'])
+def analyse_cluster_from_redshift():
+    file = request.files.get('file')
+    if not file:
+        return jsonify({'message': 'No file part'}), 400
+    if file.filename == '':
+        return jsonify({'message': 'No selected file'}), 400
+
+    users_list = get_users_from_file(file)
+    print("user list redshift- ", users_list);
+    #users_list = ['5c8f9778-5a6c-4cea-9a7f-7f16e2f83725', 'c5c993d2-d016-4cfa-88fe-554f95419aae']
+    conn_rs = connect_to_redshift()
+
+    if not conn_rs:
+        return jsonify({'message': 'Failed to connect to Redshift', 'error': 'Connection error'}), 500
+
+    try:
+        # Fetch the user list from Redshift
+        cursor = conn_rs.cursor()
+
+        formatted_user_list = ", ".join([f"'{user_id}'" for user_id in users_list])
+
+        # Basic query
+        query = f"SELECT * FROM public.cluster_user_info WHERE user_id IN ({formatted_user_list}) ORDER BY user_id;"
+
+        #query = "select * from public.user_meta_data  limit 3"  # Example query, modify as needed
+        print("final query - ",query)
+        cursor.execute(query)
+
+        rows = cursor.fetchall()
+        if not rows:
+            return jsonify({'message': 'No data found in Redshift for the given query'}), 404
+
+        columns = [desc[0] for desc in cursor.description]  # Get column names
+        query_result = [dict(zip(columns, row)) for row in rows]
+        cursor.close()
+        conn_rs.close()
+
+        result = []
+        for data in query_result:
+            print("data- ",data['user_id'],data['cluster_id'],data['pilot_id'],data['update_type'],data['last_updated_timestamp'])
+            result.append({
+                'user_id': data['user_id'],
+                'cluster_id': data['cluster_id'],
+                'pilot_id': data['pilot_id'],
+                'update_type': data['update_type'],
+                'last_updated_timestamp': data['last_updated_timestamp']
+            })
+
+
+        print("final data processed - ", result)
+       # return jsonify(query_result)
+        output = io.StringIO()
+        fieldnames = ['user_id','cluster_id', 'pilot_id', 'update_type','last_updated_timestamp']
+
+        writer = csv.DictWriter(output, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(result)
+        output.seek(0)
+
+        # Send CSV as response
+        return send_file(
+            io.BytesIO(output.getvalue().encode('utf-8')),
+            mimetype='text/csv',
+            as_attachment=True,
+            download_name='cluster_analysis_redshift.csv'
+        )
+
+
+    except Exception as e:
+        return jsonify({'message': 'Error fetching data from Redshift', 'error': str(e)}), 500
+
+
+
+# Helper function to extract user list from file
+def get_users_from_file(file):
+    users = []
+    try:
+        file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+        file.save(file_path)
+
+        if file.filename.endswith('.csv'):
+            # If the file is a CSV, use pandas to read it
+            df = pd.read_csv(file_path)
+            users = df.to_dict(orient='records')  # Convert rows to a list of dictionaries
+        else:
+            # For text files, read line by line
+            with open(file_path, 'r') as f:
+                users = [line.strip() for line in f.readlines()]
+
+        return users
+    except Exception as e:
+        print(f"Error processing file: {e}")
+        return None
 
 def connect_to_redshift():
     try:

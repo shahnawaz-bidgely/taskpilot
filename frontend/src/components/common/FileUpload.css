@@ -1,0 +1,22 @@
+.upload-section {
+    margin: 20px 0;
+  }
+  
+  .upload-section label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .upload-section input[type="file"] {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  

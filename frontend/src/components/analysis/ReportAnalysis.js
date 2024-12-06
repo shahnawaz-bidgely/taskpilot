@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Switch from 'react-switch'; 
 import './ReportAnalysis.css';
 import DownloadCSV from '../download/DownloadCSV';
+import { downloadAll } from '../common/DownloadAll';
 import { FileContext } from '../context/FileContext';
 
 
@@ -18,6 +19,7 @@ function ReportAnalysis() {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [userDetails, setUserDetails] = useState([]);
+  const [clusterDetails, seClusterDetails] = useState([]);
   const [toggleValue, setToggleValue] = useState('API'); // default to API
 
   const { uploadedFile, fileContent } = useContext(FileContext);
@@ -43,7 +45,7 @@ function ReportAnalysis() {
     setToggleValue(newValue);
   };
 
-  // API-related functions
+  // API-Calss related functions
   const callRecommendationApi = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -116,53 +118,6 @@ function ReportAnalysis() {
     });
   };
 
-  const handleRedshiftAnalysis = async () => {
-    setLoading(true);
-    setMessage('');
-    setError('');
-  
-    try {
-        const formData = new FormData();
-        formData.append('file', uploadedFile);
-        formData.append('content', fileContent);
-        const response = await fetch('http://127.0.0.1:5000/analyze-users-redshift', {
-        method: 'POST',
-        body: formData,
-
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch data from Redshift');
-      }
-
-      console.log("resposen",response);
-
-  
-        const fileBlob = await response.blob();
-        const text = await fileBlob.text();
-        const rows = text.split('\n').map((row) => row.split(','));
-        const newUserDetails = rows.slice(1).map((row) => ({
-
-            uuid : row[0],
-            partner_user_id : row[1],
-            solar : row[2],
-            pilot_id : row[3],
-            notification_user_type : row[4],
-            user_status : row[5],
-        }));
-        //console.log("fetched data ",newUserDetails);
-        setUserDetails(newUserDetails);
-      setMessage('Redshift analysis complete.');
-      console.log('Query results:', newUserDetails);  // Log the data or use it as required
-    } catch (err) {
-      setError('Error connecting to Redshift or executing query: ' + err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-
-  // Handle the analysis for API
   const handleApiAnalysis = async () => {
     const isApiSelected = Object.values(selection).some((value) => value);
     if (!isApiSelected) {
@@ -195,9 +150,118 @@ function ReportAnalysis() {
     }
   };
 
-  // Handle the analysis for Redshift
+
+
+
+
+
+  // Redhsift Related API calls
+
+  const callUserDetailsRedshift = async (uploadedFile, fileContent) => {
+    try {
+      const formData = new FormData();
+      formData.append('file', uploadedFile);
+      formData.append('content', fileContent);
   
+      const response = await fetch('http://127.0.0.1:5000/analyze-users-redshift', {
+        method: 'POST',
+        body: formData,
+      });
   
+      if (!response.ok) {
+        throw new Error('Failed to fetch data from Redshift');
+      }
+  
+      const fileBlob = await response.blob();
+      const text = await fileBlob.text();
+      const rows = text.split('\n').map((row) => row.split(','));
+      const newUserDetails = rows.slice(1).map((row) => ({
+        uuid: row[0],
+        partner_user_id: row[1],
+        is_solar_user: row[2],
+        pilot_id: row[3],
+        notification_user_type: row[4],
+        user_status: row[5],
+      }));
+  
+      setUserDetails(newUserDetails);
+      setMessage('Redshift analysis complete.');
+      console.log('Query results:', newUserDetails);
+    } catch (err) {
+      setError('Error connecting to Redshift or executing query: ' + err.message);
+      throw err; // Re-throw the error to allow it to be caught in Promise.all
+    }
+  };
+  
+
+  const callClusterDetailsRedshift = async (uploadedFile, fileContent) => {
+    try {
+      const formData = new FormData();
+      formData.append('file', uploadedFile);
+      formData.append('content', fileContent);
+  
+      const response = await fetch('http://127.0.0.1:5000/analyze-cluster-redshift', {
+        method: 'POST',
+        body: formData,
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch data from Redshift');
+      }
+  
+      const fileBlob = await response.blob();
+      const text = await fileBlob.text();
+      const rows = text.split('\n').map((row) => row.split(','));
+      const clusterDetails = rows.slice(1).map((row) => ({
+        uuid: row[0],
+        cluster_id: row[1],
+        pilot_id: row[2],
+        update_type: row[3],
+        last_updated_timestamp: row[4],
+      }));
+  
+      seClusterDetails(clusterDetails);
+      setMessage('Redshift analysis complete.');
+      console.log('Query results:', clusterDetails);
+    } catch (err) {
+      setError('Error connecting to Redshift or executing query: ' + err.message);
+      throw err; // Re-throw the error to allow it to be caught in Promise.all
+    }
+  };
+  
+
+  const handleRedshiftAnalysis = async () => {
+    setLoading(true);
+    setMessage('');
+    setError('');
+
+    const apiCallsRedshift = []
+    if (selection.userDetails) {
+        apiCallsRedshift.push(callUserDetailsRedshift(uploadedFile, fileContent));
+    }
+
+    if (selection.clusterDetails) {
+        apiCallsRedshift.push(callClusterDetailsRedshift(uploadedFile, fileContent));
+    }
+
+      
+
+    Promise.all(apiCallsRedshift)
+        .then(() => {
+          console.log('All API calls completed successfully.');
+          setLoading(false)
+        })
+        .catch((error) => {
+          console.error('One or more API calls failed:', error);
+        });
+  };
+
+
+
+ 
+
+
+
 
   const handleAnalysisClick = async () => {
     setLoading(true);
@@ -252,28 +316,99 @@ function ReportAnalysis() {
         {error && <div className="analysis-message error">{error}</div>}
       </div>
 
-      <div className="card">
-        <h3>Analysis Results</h3>
-        {userDetails.length > 0 && <DownloadCSV userDetails={userDetails} />}
-        {userDetails.length > 0 ? (
-          <table className="user-details-table">
-            <thead>
-              <tr>{Object.keys(userDetails[0]).map((key, idx) => <th key={idx}>{key}</th>)}</tr>
-            </thead>
-            <tbody>
-              {userDetails.map((row, idx) => (
-                <tr key={idx}>
-                  {Object.values(row).map((value, valIdx) => (
-                    <td key={valIdx}>{value}</td>
-                  ))}
-                </tr>
+   
+
+
+    <div className="card">
+  <h3>Analysis Results</h3>
+
+  {/* Download Buttons */}
+  <div className="download-buttons">
+    <button onClick={() => downloadAll(userDetails, clusterDetails)} className="download-btn">
+      <i className="fas fa-download"></i> Download All
+    </button>
+    {userDetails.length > 0 && (
+       <DownloadCSV data={userDetails} filename="user_details.csv" label="Download User Details" />
+   )}
+   {clusterDetails.length > 0 && (
+       <DownloadCSV data={clusterDetails} filename="cluster_details.csv" label="Download Cluster Details" />
+    )}
+
+  </div>
+
+  {/* User Details Section */}
+  {userDetails.length > 0 && (
+    <div className="user-details-section">
+      <h2>User Details Data</h2>
+      <table className="user-details-table">
+        <thead>
+          <tr>{Object.keys(userDetails[0]).map((key, idx) => <th key={idx}>{key}</th>)}</tr>
+        </thead>
+        <tbody>
+          {userDetails.map((row, idx) => (
+            <tr key={idx}>
+              {Object.values(row).map((value, valIdx) => (
+                <td key={valIdx}>{value}</td>
               ))}
-            </tbody>
-          </table>
-        ) : (
-          <p>No Details to display.</p>
-        )}
-      </div>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  {/* Cluster Details Section */}
+  {clusterDetails.length > 0 && (
+    <div className="cluster-details-section">
+      <h2>Cluster Details Data</h2>
+      <table className="cluster-details-table">
+        <thead>
+          <tr>{Object.keys(clusterDetails[0]).map((key, idx) => <th key={idx}>{key}</th>)}</tr>
+        </thead>
+        <tbody>
+          {clusterDetails.map((row, idx) => (
+            <tr key={idx}>
+              {Object.values(row).map((value, valIdx) => (
+                <td key={valIdx}>{value}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   );
 }
