@@ -258,11 +258,6 @@ function ReportAnalysis() {
 
 
 
- 
-
-
-
-
   const handleAnalysisClick = async () => {
     setLoading(true);
     setMessage('');
@@ -315,9 +310,6 @@ function ReportAnalysis() {
         {message && <div className="analysis-message success">{message}</div>}
         {error && <div className="analysis-message error">{error}</div>}
       </div>
-
-   
-
 
     <div className="card">
   <h3>Analysis Results</h3>
@@ -378,36 +370,6 @@ function ReportAnalysis() {
     </div>
   )}
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
   );
