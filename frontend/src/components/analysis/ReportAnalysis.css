@@ -245,3 +245,38 @@
   margin: 0 10px;
   display: inline-block;
 }
+
+
+
+
+
+
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #f9f9f9;
+}
+
+.user-details-section, .cluster-details-section {
+  margin-bottom: 24px;
+}
+
+.user-details-table, .cluster-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.user-details-table th, .cluster-details-table th,
+.user-details-table td, .cluster-details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.user-details-table th, .cluster-details-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
