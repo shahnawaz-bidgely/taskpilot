@@ -116,6 +116,52 @@ function ReportAnalysis() {
     });
   };
 
+  const handleRedshiftAnalysis = async () => {
+    setLoading(true);
+    setMessage('');
+    setError('');
+  
+    try {
+        const formData = new FormData();
+        formData.append('file', uploadedFile);
+        formData.append('content', fileContent);
+        const response = await fetch('http://127.0.0.1:5000/analyze-users-redshift', {
+        method: 'POST',
+        body: formData,
+
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch data from Redshift');
+      }
+
+      console.log("resposen",response);
+
+  
+        const fileBlob = await response.blob();
+        const text = await fileBlob.text();
+        const rows = text.split('\n').map((row) => row.split(','));
+        const newUserDetails = rows.slice(1).map((row) => ({
+
+            uuid : row[0],
+            partner_user_id : row[1],
+            solar : row[2],
+            pilot_id : row[3],
+            notification_user_type : row[4],
+            user_status : row[5],
+        }));
+        //console.log("fetched data ",newUserDetails);
+        setUserDetails(newUserDetails);
+      setMessage('Redshift analysis complete.');
+      console.log('Query results:', newUserDetails);  // Log the data or use it as required
+    } catch (err) {
+      setError('Error connecting to Redshift or executing query: ' + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   // Handle the analysis for API
   const handleApiAnalysis = async () => {
     const isApiSelected = Object.values(selection).some((value) => value);
@@ -150,26 +196,7 @@ function ReportAnalysis() {
   };
 
   // Handle the analysis for Redshift
-  const handleRedshiftAnalysis = async () => {
-    setLoading(true);
-    setMessage('');
-    setError('');
   
-    try {
-      const response = await fetch('http://127.0.0.1:5000/execute-redshift-query'); // Backend API call
-      if (!response.ok) {
-        throw new Error('Failed to fetch data from Redshift');
-      }
-  
-      const data = await response.json();  // The query result from the backend
-      setMessage('Redshift analysis complete.');
-      console.log('Query results:', data);  // Log the data or use it as required
-    } catch (err) {
-      setError('Error connecting to Redshift or executing query: ' + err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
   
 
   const handleAnalysisClick = async () => {
