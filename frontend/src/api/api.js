@@ -18,7 +18,7 @@ function ReportAnalysis() {
     evDetails: false,
     clusterDetails: false,
   });
-
+  
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');

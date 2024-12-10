@@ -316,9 +316,11 @@ function ReportAnalysis() {
 
   {/* Download Buttons */}
   <div className="download-buttons">
-    <button onClick={() => downloadAll(userDetails, clusterDetails)} className="download-btn">
-      <i className="fas fa-download"></i> Download All
-    </button>
+     {userDetails.length > 0 && clusterDetails.length > 0 && (
+        <button onClick={() => downloadAll(userDetails, clusterDetails)} className="download-btn">
+        <i className="fas fa-download"></i> Download All
+      </button>
+     )}
     {userDetails.length > 0 && (
        <DownloadCSV data={userDetails} filename="user_details.csv" label="Download User Details" />
    )}
