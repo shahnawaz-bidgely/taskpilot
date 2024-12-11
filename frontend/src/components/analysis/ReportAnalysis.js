@@ -28,7 +28,7 @@ function ReportAnalysis() {
     console.log('userDetails state has been updated:', userDetails);
     console.log('File Content in ReportAnalysis Updated:', fileContent);
     console.log('Uploaded File in ReportAnalysis Updated:', uploadedFile);
-  }, [fileContent, uploadedFile,userDetails]);
+  }, [fileContent, uploadedFile,userDetails,clusterDetails]);
 
 
   

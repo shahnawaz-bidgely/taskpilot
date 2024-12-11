@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request, send_file
 import redshift_connector
+from datetime import datetime, timedelta
 import os
 import pandas as pd
 import requests
@@ -267,3 +268,122 @@ def connect_to_redshift():
     except Exception as e:
         print(f"Connection failed: {e}")
         return None
+
+########### Email Module Analysis ########################
+
+from flask import Blueprint, request, jsonify, send_file
+import requests
+import csv
+import io
+from datetime import datetime
+
+bp = Blueprint('analysis', __name__)
+
+@bp.route('/analyze-email-preview', methods=['POST'])
+def analyse_email_preview():
+    file = request.files.get('file')
+    if not file:
+        return jsonify({'message': 'No file part'}), 400
+    if file.filename == '':
+        return jsonify({'message': 'No selected file'}), 400
+
+    file_content = request.form.get('fileContent')
+    trigger_time = request.form.get('triggerTime')
+    event_name = request.form.get('eventName')
+    endpoint = request.form.get('endpoint')
+
+    # Logging or validating other inputs (optional)
+    print(f"File content: {file_content}")
+    print(f"Trigger time: {trigger_time}")
+    print(f"Event name: {event_name}")
+    print(f"Endpoint: {endpoint}")
+
+    # Use the helper function to get users from the file
+    users = get_users_from_file(file)
+    print("user list API -", users)
+
+    if not users:
+        return jsonify({'message': 'Error processing file'}), 500
+
+    results = []
+    ACCESS_TOKEN2 = "20de04fb-c274-4777-97bf-30288c360dbd"
+    headers = {
+        'Authorization': f'Bearer {ACCESS_TOKEN2}',
+        'Content-Type': 'application/json'
+    }
+
+    try:
+        for uuid in users:
+            home_api = f"{endpoint}/meta/users/{uuid}/homes/1"
+            notification_api = f"{endpoint}/2.1/utility_notifications/users/{uuid}"
+
+            print(f'complete url {home_api} notification {notification_api} and  header {headers}')
+
+            # Make API calls for home and notifications
+            home_response = requests.get(home_api, headers=headers)
+            notification_response = requests.get(notification_api, headers=headers)
+
+            # Check if both responses are successful
+            if home_response.status_code == 200 and notification_response.status_code == 200:
+                response_JSON_home = home_response.json()
+                ratePlanid = response_JSON_home.get("ratePlanId", "N/A")
+                response_JSON_notification = notification_response.json()
+
+                # Iterate through notifications and filter based on event name and trigger time
+                for notification in response_JSON_notification.get("payload", {}).get("notificationsList", []):
+                    if (notification.get("notificationType") == event_name and
+                        notification.get("generationTimestamp") > int(trigger_time)):
+
+                        # Extract relevant notification data
+                        User_id = notification.get("userId")
+                        NotificationID = notification.get("notificationId")
+                        NotificationType = notification.get("notificationType")
+                        deliveryDestination = notification.get("deliveryDestination")
+                        GenerationTimestamp = notification.get("generationTimestamp")
+                        status = notification.get("status")
+
+                        # Convert timestamp to datetime
+                        ConvertTimeGenerated = str(GenerationTimestamp)[:-3]  # Remove last 3 digits for seconds
+                        datetime_object = datetime.fromtimestamp(int(ConvertTimeGenerated))
+                        DateStartTimestamp = str(datetime_object).split(" ")[0]
+
+                        # Append the extracted data to results
+                        results.append({
+                            "uuid": uuid,
+                            "ratePlanid": ratePlanid,
+                            "NotificationID": NotificationID,
+                            "NotificationType": NotificationType,
+                            "Email": deliveryDestination,
+                            "GenerationTimestamp": GenerationTimestamp,
+                            "DateStartTimestamp": DateStartTimestamp,
+                            "status": status
+                        })
+
+            else:
+                print(f"API call failed for UUID: {uuid}, Status Codes: {home_response.status_code}, {notification_response.status_code}")
+
+        # After processing all users, generate and return the CSV
+        if results:
+            print("final result", results)
+            output = io.StringIO()
+            fieldnames = ["uuid", "ratePlanid", "NotificationID", "NotificationType", "Email", "GenerationTimestamp", "DateStartTimestamp", "status"]
+            writer = csv.DictWriter(output, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(results)
+            output.seek(0)
+
+            # Send the generated CSV as a response
+            return send_file(
+                io.BytesIO(output.getvalue().encode('utf-8')),
+                mimetype='text/csv',
+                as_attachment=True,
+                download_name='user_email_preview.csv'
+            )
+        else:
+            return jsonify({'message': 'No matching notifications found.'}), 404
+
+    except Exception as e:
+        # Catch any other unexpected errors
+        return jsonify({'message': 'Error processing file', 'error': str(e)}), 500
+
+
