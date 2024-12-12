@@ -99,7 +99,11 @@ function ReportAnalysis() {
         const fileBlob = await response.blob();
         const text = await fileBlob.text();
         const rows = text.split('\n').map((row) => row.split(','));
-        const newUserDetails = rows.slice(1).map((row) => ({
+        const newUserDetails = rows.slice(1).filter((row) => {
+          // Check if all columns are empty
+          return row.some((cell) => cell !== null && cell !== undefined && cell !== '');
+        })
+        .map((row) => ({
           uuid: row[0],
           accountId: row[1],
           firstName: row[2],
@@ -175,7 +179,11 @@ function ReportAnalysis() {
       const fileBlob = await response.blob();
       const text = await fileBlob.text();
       const rows = text.split('\n').map((row) => row.split(','));
-      const newUserDetails = rows.slice(1).map((row) => ({
+      const newUserDetails = rows.slice(1).filter((row) => {
+        // Check if all columns are empty
+        return row.some((cell) => cell !== null && cell !== undefined && cell !== '');
+      })
+      .map((row) => ({
         uuid: row[0],
         partner_user_id: row[1],
         is_solar_user: row[2],
@@ -212,7 +220,11 @@ function ReportAnalysis() {
       const fileBlob = await response.blob();
       const text = await fileBlob.text();
       const rows = text.split('\n').map((row) => row.split(','));
-      const clusterDetails = rows.slice(1).map((row) => ({
+      const clusterDetails = rows.slice(1).filter((row) => {
+        // Check if all columns are empty
+        return row.some((cell) => cell !== null && cell !== undefined && cell !== '');
+      })
+      .map((row) => ({
         uuid: row[0],
         cluster_id: row[1],
         pilot_id: row[2],

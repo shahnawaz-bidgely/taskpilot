@@ -1,11 +1,10 @@
 from flask import Blueprint, jsonify, request, send_file
 import redshift_connector
-from datetime import datetime, timedelta
 import os
 import pandas as pd
-import requests
-import csv
-import io
+from flask import Response
+
+from requests.auth import HTTPBasicAuth
 
 # Create a blueprint for hello world endpoint
 bp = Blueprint('hello', __name__)
@@ -234,40 +233,7 @@ def analyse_cluster_from_redshift():
 
 
 
-# Helper function to extract user list from file
-def get_users_from_file(file):
-    users = []
-    try:
-        file_path = os.path.join(UPLOAD_FOLDER, file.filename)
-        file.save(file_path)
 
-        if file.filename.endswith('.csv'):
-            # If the file is a CSV, use pandas to read it
-            df = pd.read_csv(file_path)
-            users = df.to_dict(orient='records')  # Convert rows to a list of dictionaries
-        else:
-            # For text files, read line by line
-            with open(file_path, 'r') as f:
-                users = [line.strip() for line in f.readlines()]
-
-        return users
-    except Exception as e:
-        print(f"Error processing file: {e}")
-        return None
-
-def connect_to_redshift():
-    try:
-        conn_rs = redshift_connector.connect(
-            host='na-rs1.ctxwwf9dwnm1.us-east-1.redshift.amazonaws.com',
-            database='bdw',
-            port=5439,
-            user='lookerdev',
-            password='68grA5eJtGvr23LE'
-        )
-        return conn_rs
-    except Exception as e:
-        print(f"Connection failed: {e}")
-        return None
 
 ########### Email Module Analysis ########################
 
@@ -293,22 +259,22 @@ def analyse_email_preview():
     endpoint = request.form.get('endpoint')
 
     # Logging or validating other inputs (optional)
-    print(f"File content: {file_content}")
-    print(f"Trigger time: {trigger_time}")
-    print(f"Event name: {event_name}")
-    print(f"Endpoint: {endpoint}")
+    # print(f"File content: {file_content}")
+    # print(f"Trigger time: {trigger_time}")
+    # print(f"Event name: {event_name}")
+    # print(f"Endpoint: {endpoint}")
 
     # Use the helper function to get users from the file
     users = get_users_from_file(file)
-    print("user list API -", users)
+    # print("user list API -", users)
 
     if not users:
         return jsonify({'message': 'Error processing file'}), 500
 
     results = []
-    ACCESS_TOKEN2 = "20de04fb-c274-4777-97bf-30288c360dbd"
+    ACCESS_TOKEN = get_access_token(endpoint)
     headers = {
-        'Authorization': f'Bearer {ACCESS_TOKEN2}',
+        'Authorization': f'Bearer {ACCESS_TOKEN}',
         'Content-Type': 'application/json'
     }
 
@@ -387,3 +353,104 @@ def analyse_email_preview():
         return jsonify({'message': 'Error processing file', 'error': str(e)}), 500
 
 
+
+@bp.route('/generate-email-view', methods=['GET'])
+def generate_html():
+    # Extract parameters from the query string
+    endpoint = request.args.get('endpoint')
+    NotificationID = request.args.get('NotificationID')
+
+    if not endpoint or not NotificationID:
+        return jsonify({"error": "Missing required parameters: 'endpoint' and 'NotificationID'"}), 400
+
+    # Fetch the access token (assumes `get_access_token` is implemented elsewhere)
+    ACCESS_TOKEN = get_access_token(endpoint)
+    headers = {
+        'Authorization': f'Bearer {ACCESS_TOKEN}',
+        'Content-Type': 'application/json'
+    }
+
+    # Fetch the notification body from the API
+    Notif_html_api = f"{endpoint}/v3.0/internal/notifications/{NotificationID}/body"
+    Notif_html_response = requests.get(Notif_html_api, headers=headers)
+
+    if Notif_html_response.status_code != 200:
+        return jsonify({"error": "Failed to fetch notification body"}), Notif_html_response.status_code
+
+    try:
+        Notif_html_json = Notif_html_response.json()
+        notifBody = Notif_html_json["payload"]["notificationData"]["notificationBody"].strip()
+        # Clean up the HTML content
+        notifBody = notifBody.replace("\n", " ").replace("\t", " ").replace("'", " ").replace(",", " ")
+    except (KeyError, ValueError):
+        return jsonify({"error": "Invalid response format from the notification API"}), 500
+
+    # Return the HTML content directly
+    return Response(notifBody, mimetype='text/html')
+
+
+
+
+# Helper function to extract user list from file
+def get_users_from_file(file):
+    users = []
+    try:
+        file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+        file.save(file_path)
+
+        if file.filename.endswith('.csv'):
+            # If the file is a CSV, use pandas to read it
+            df = pd.read_csv(file_path)
+            users = df.to_dict(orient='records')  # Convert rows to a list of dictionaries
+        else:
+            # For text files, read line by line
+            with open(file_path, 'r') as f:
+                users = [line.strip() for line in f.readlines()]
+
+        return users
+    except Exception as e:
+        print(f"Error processing file: {e}")
+        return None
+
+def connect_to_redshift():
+    try:
+        conn_rs = redshift_connector.connect(
+            host='na-rs1.ctxwwf9dwnm1.us-east-1.redshift.amazonaws.com',
+            database='bdw',
+            port=5439,
+            user='lookerdev',
+            password='68grA5eJtGvr23LE'
+        )
+        return conn_rs
+    except Exception as e:
+        print(f"Connection failed: {e}")
+        return None
+
+def get_access_token(endpoint):
+    try:
+        # Replace these with your actual username and password
+        USERNAME = "shahnawaz@bidgely.com"
+        PASSWORD = "PyAmsFJe"
+
+        # Replace this with your actual token URL
+        TOKEN_URL = f"{endpoint}/oauth/token"
+
+        payload = {
+            "grant_type": "client_credentials",
+            "scope": "all"
+        }
+
+        # Make the POST request with basic authentication
+        response = requests.post(TOKEN_URL, data=payload, auth=HTTPBasicAuth(USERNAME, PASSWORD))
+
+        # Raise an exception if the response status code is not 200
+        response.raise_for_status()
+
+        # Parse the JSON response
+        token_data = response.json()
+
+        # Return the access token and other details
+        return token_data['access_token']
+
+    except requests.exceptions.RequestException as e:
+        return {"error": str(e)}

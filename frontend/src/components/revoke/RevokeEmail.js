@@ -30,6 +30,12 @@ function RevokeEmail() {
     });
   };
 
+  const handlePreview = (row) => {
+  console.log("Preview data:", row);
+  // Add logic to display preview (e.g., open modal or navigate to preview page)
+};
+
+
   /*  API Related Code */
 
   const emailPreviewAPI = (uploadedFile, fileContent) => {
@@ -56,7 +62,10 @@ function RevokeEmail() {
         const fileBlob = await response.blob();
         const text = await fileBlob.text();
         const rows = text.split('\n').map((row) => row.split(','));
-        const emailDetails = rows.slice(1).map((row) => ({
+        const emailDetails = rows.slice(1).filter((row) => {
+          // Check if all columns are empty
+          return row.some((cell) => cell !== null && cell !== undefined && cell !== '');
+        }).map((row) => ({
           uuid: row[0],
           ratePlanid: row[1],
           NotificationID: row[2],
@@ -66,8 +75,10 @@ function RevokeEmail() {
           DateStartTimestamp: row[6],
           status: row[7],
         }));
+        
 
         setEmailDetails(emailDetails);
+        console.log("email preveiw data - ",emailDetails)
         resolve('Email Preview called successful.');
       } catch (err) {
         reject(`Error during User Details API call: ${err.message}`);
@@ -150,40 +161,61 @@ function RevokeEmail() {
       </div>
 
       <div className="card">
-        <h3>Analysis Results</h3>
-        {/* Display loader when data is being fetched */}
-        {loading && <div className="loader">Loading...</div>}
+  <h3>Analysis Results</h3>
+  {/* Display loader when data is being fetched */}
+  {loading && <div className="loader">Loading...</div>}
 
-        {/* Display success or error message */}
-        {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
-        {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
+  {/* Display success or error message */}
+  {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
+  {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
 
-        <div className="download-buttons">
-          {userEmailDetails.length > 0 && (
-            <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
-          )}
-        </div>
+  <div className="download-buttons">
+    {userEmailDetails.length > 0 && (
+      <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
+    )}
+  </div>
 
-        {userEmailDetails.length > 0 && (
-          <div className="user-details-section">
-            <h2>User Details Data</h2>
-            <table className="user-details-table">
-              <thead>
-                <tr>{Object.keys(userEmailDetails[0]).map((key, idx) => <th key={idx}>{key}</th>)}</tr>
-              </thead>
-              <tbody>
-                {userEmailDetails.map((row, idx) => (
-                  <tr key={idx}>
-                    {Object.values(row).map((value, valIdx) => (
-                      <td key={valIdx}>{value}</td>
-                    ))}
-                  </tr>
+  {userEmailDetails.length > 0 && (
+    <div className="user-details-section">
+      <h2>User Details Data</h2>
+      <table className="user-details-table">
+        <thead>
+          <tr>
+            {Object.keys(userEmailDetails[0]).map((key, idx) => (
+              <th key={idx}>{key}</th>
+            ))}
+          </tr>
+        </thead>
+
+        <tbody>
+          {userEmailDetails
+            .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
+            .map((row, idx) => (
+              <tr key={idx}>
+                {Object.values(row).map((value, valIdx) => (
+                  <td key={valIdx}>{value}</td>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </div>
+                <td>
+                  <button
+                    className="preview-button"
+                    onClick={() => {
+                      // Ensure `yourEndpoint` is available in your component
+                      const url = `http://127.0.0.1:5000/generate-email-view?endpoint=${encodeURIComponent(formData.endpointUrl)}&NotificationID=${row.NotificationID}`;
+                      window.open(url, '_blank'); // Open URL in new tab
+                    }}
+                    title="Preview"
+                  >
+                    <i className="icon-preview" /> View
+                  </button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</div>
+
     </div>
   );
 }

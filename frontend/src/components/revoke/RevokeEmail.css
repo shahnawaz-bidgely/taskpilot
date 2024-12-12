@@ -77,3 +77,26 @@
     font-size: 20px; 
     color: #888; 
   }
+
+
+
+
+  .preview-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .preview-button .icon-preview {
+    margin-right: 5px;
+  }
+  
+  .preview-button:hover {
+    background-color: #0056b3;
+  }
+  
