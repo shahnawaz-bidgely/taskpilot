@@ -1,5 +1,4 @@
 .App {
-  font-family: 'Arial', sans-serif;
   min-height: 100vh;
 }
 
@@ -11,9 +10,14 @@
 
 .sidebar {
   width: 250px;
-  background-color: white;
   color: white;
-  padding-top: 20px;
+  background: rgba( 155, 155, 155, 0.1 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 11px );
+  -webkit-backdrop-filter: blur( 11px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 
 .content-area {

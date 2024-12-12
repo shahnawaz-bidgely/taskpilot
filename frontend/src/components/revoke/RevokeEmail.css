@@ -1,7 +1,4 @@
-.revoke-email {
-    padding: 20px;
-  }
-  
+
   .card {
     background-color: #ffffff;
     border-radius: 8px;
@@ -12,11 +9,94 @@
   
   .card h3 {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .card p {
     font-size: 16px;
     color: #7f8c8d;
+  }
+
+
+  
+
+  .revoke-email {
+    padding: 20px;
+  }
+  
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 50%;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    text-align: center;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  ::placeholder {
+    font-size: 20px; 
+    color: #888; 
+  }
+  
+
+  select {
+    font-size: 20px; 
+    color: #888; 
+  }
+
+
+
+
+  .preview-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .preview-button .icon-preview {
+    margin-right: 5px;
+  }
+  
+  .preview-button:hover {
+    background-color: #0056b3;
   }
   
