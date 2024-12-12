@@ -11,7 +11,6 @@ function RevokeEmail() {
   const [error, setError] = useState('');
   const [userEmailDetails, setEmailDetails] = useState([]);
 
-
   useEffect(() => {
     console.log('File Content in Revoke Updated:', fileContent);
     console.log('Uploaded File in Revoke Updated:', uploadedFile);
@@ -31,21 +30,18 @@ function RevokeEmail() {
     });
   };
 
-
-
   /*  API Related Code */
 
   const emailPreviewAPI = (uploadedFile, fileContent) => {
     return new Promise(async (resolve, reject) => {
       try {
-       
         const combinedData = new FormData();
         combinedData.append('file', uploadedFile);
         combinedData.append('fileContent', fileContent);
         combinedData.append('triggerTime', formData.triggerTime);
         combinedData.append('eventName', formData.eventName);
         combinedData.append('endpoint', formData.endpointUrl);
-      
+
         const response = await fetch('http://127.0.0.1:5000/analyze-email-preview', {
           method: 'POST',
           body: combinedData,
@@ -61,42 +57,43 @@ function RevokeEmail() {
         const text = await fileBlob.text();
         const rows = text.split('\n').map((row) => row.split(','));
         const emailDetails = rows.slice(1).map((row) => ({
-          uuid : row[0],
-          ratePlanid: row[1] ,
-          NotificationID : row[2],
-          NotificationType : row[3],
-          deliveryDestination : row[4],
-          GenerationTimestamp : row[5],
-          DateStartTimestamp : row[6],
-          status : row[7],
+          uuid: row[0],
+          ratePlanid: row[1],
+          NotificationID: row[2],
+          NotificationType: row[3],
+          deliveryDestination: row[4],
+          GenerationTimestamp: row[5],
+          DateStartTimestamp: row[6],
+          status: row[7],
         }));
 
         setEmailDetails(emailDetails);
-        resolve('Email Preveiw called successful.');
+        resolve('Email Preview called successful.');
       } catch (err) {
         reject(`Error during User Details API call: ${err.message}`);
       }
     });
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setMessage('');
     setError('');
-  
+
     try {
       const results = await Promise.all([emailPreviewAPI(uploadedFile, fileContent)]);
-      // Assuming results is an array, and you want to join them into a string
-      setMessage('Analysis complete: ' + results.join(', ')); 
+      setMessage('Analysis complete: ' + results.join(', '));
+      setMessageStyle('success'); // Green message for success
     } catch (err) {
       setError('Error occurred during analysis: ' + err.message);
+      setMessageStyle('error'); // Red message for error
     } finally {
       setLoading(false);
     }
   };
-  
+
+  const [messageStyle, setMessageStyle] = useState(''); // Used for handling success or error messages
 
   return (
     <div className="revoke-email">
@@ -134,7 +131,7 @@ function RevokeEmail() {
 
           {/* Environment Dropdown */}
           <div className="form-group">
-          <label htmlFor="endpointUrl">Endpoint Url</label>
+            <label htmlFor="endpointUrl">Endpoint Url</label>
             <input
               type="text"
               id="endpointUrl"
@@ -147,40 +144,47 @@ function RevokeEmail() {
 
           {/* Submit Button */}
           <button onClick={handleSubmit} className="submit-button">
-            Submit
+            {loading ? 'Analyzing...' : 'Submit'}
           </button>
         </div>
       </div>
 
-  <div className="card">
-    <h3>Analysis Results</h3>
-    <div className="download-buttons">
-      {userEmailDetails.length > 0 && (
-        <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
-    )}
-    </div>
+      <div className="card">
+        <h3>Analysis Results</h3>
+        {/* Display loader when data is being fetched */}
+        {loading && <div className="loader">Loading...</div>}
 
-    {userEmailDetails.length > 0 && (
-      <div className="user-details-section">
-        <h2>User Details Data</h2>
-        <table className="user-details-table">
-          <thead>
-            <tr>{Object.keys(userEmailDetails[0]).map((key, idx) => <th key={idx}>{key}</th>)}</tr>
-          </thead>
-          <tbody>
-            {userEmailDetails.map((row, idx) => (
-              <tr key={idx}>
-                {Object.values(row).map((value, valIdx) => (
-                  <td key={valIdx}>{value}</td>
+        {/* Display success or error message */}
+        {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
+        {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
+
+        <div className="download-buttons">
+          {userEmailDetails.length > 0 && (
+            <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
+          )}
+        </div>
+
+        {userEmailDetails.length > 0 && (
+          <div className="user-details-section">
+            <h2>User Details Data</h2>
+            <table className="user-details-table">
+              <thead>
+                <tr>{Object.keys(userEmailDetails[0]).map((key, idx) => <th key={idx}>{key}</th>)}</tr>
+              </thead>
+              <tbody>
+                {userEmailDetails.map((row, idx) => (
+                  <tr key={idx}>
+                    {Object.values(row).map((value, valIdx) => (
+                      <td key={valIdx}>{value}</td>
+                    ))}
+                  </tr>
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
-    )}
-  </div>
-  </div>
+    </div>
   );
 }
 
