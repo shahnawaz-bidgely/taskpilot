@@ -152,6 +152,11 @@ function RevokeEmail() {
               placeholder="Enter Trigger Time"
             />
           </div>
+            {loading && <div className="loader">Loading...</div>}
+
+            {/* Display success or error message */}
+            {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
+            {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
 
           {/* Submit Button */}
           <button onClick={handleSubmit} className="submit-button">
@@ -162,13 +167,6 @@ function RevokeEmail() {
 
       <div className="card">
   <h3>Analysis Results</h3>
-  {/* Display loader when data is being fetched */}
-  {loading && <div className="loader">Loading...</div>}
-
-  {/* Display success or error message */}
-  {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
-  {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
-
   <div className="download-buttons">
     {userEmailDetails.length > 0 && (
       <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
