@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import './RevokeEmail.css';
 import { FileContext } from '../context/FileContext';
 import DownloadCSV from '../download/DownloadCSV';
+import ChatMate from '../chatmate/ChatMate'
 
 function RevokeEmail() {
   const { uploadedFile, fileContent } = useContext(FileContext);
@@ -108,111 +109,118 @@ function RevokeEmail() {
 
   return (
     <div className="revoke-email">
-      <div className="card">
-        <h3>Email Analysis</h3>
-        <div className="form-container">
-          {/* Trigger Time Input */}
-          <div className="form-group">
-            <label htmlFor="triggerTime">Trigger Time</label>
-            <input
-              type="text"
-              id="triggerTime"
-              name="triggerTime"
-              value={formData.triggerTime}
-              onChange={handleChange}
-              placeholder="Enter Trigger Time"
-            />
+      <div className='input-section'>
+        <div className="card">
+          <h3>Email Analysis</h3>
+          <div className="form-container">
+            {/* Trigger Time Input */}
+            <div className="form-group">
+              <label htmlFor="triggerTime">Trigger Time</label>
+              <input
+                type="text"
+                id="triggerTime"
+                name="triggerTime"
+                value={formData.triggerTime}
+                onChange={handleChange}
+                placeholder="Enter Trigger Time"
+              />
+            </div>
+
+            {/* Event Name Dropdown */}
+            <div className="form-group">
+              <label htmlFor="eventName">Event Name</label>
+              <select
+                id="eventName"
+                name="eventName"
+                value={formData.eventName}
+                onChange={handleChange}
+              >
+                <option value="">Select Event Name</option>
+                <option value="NEIGHBOURHOOD_COMPARISON">NEIGHBOURHOOD_COMPARISON</option>
+                <option value="BILL_PROJECTION">BILL_PROJECTION</option>
+                <option value="USER_WELCOME">USER_WELCOME</option>
+              </select>
+            </div>
+
+            {/* Environment Dropdown */}
+            <div className="form-group">
+              <label htmlFor="endpointUrl">Endpoint Url</label>
+              <input
+                type="text"
+                id="endpointUrl"
+                name="endpointUrl"
+                value={formData.endpointUrl}
+                onChange={handleChange}
+                placeholder="Enter Trigger Time"
+              />
+            </div>
+              {loading && <div className="loader">Loading...</div>}
+
+              {/* Display success or error message */}
+              {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
+              {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
+
+            {/* Submit Button */}
+            <button onClick={handleSubmit} className="submit-button">
+              {loading ? 'Analyzing...' : 'Submit'}
+            </button>
           </div>
-
-          {/* Event Name Dropdown */}
-          <div className="form-group">
-            <label htmlFor="eventName">Event Name</label>
-            <select
-              id="eventName"
-              name="eventName"
-              value={formData.eventName}
-              onChange={handleChange}
-            >
-              <option value="">Select Event Name</option>
-              <option value="NEIGHBOURHOOD_COMPARISON">NEIGHBOURHOOD_COMPARISON</option>
-              <option value="BILL_PROJECTION">BILL_PROJECTION</option>
-              <option value="USER_WELCOME">USER_WELCOME</option>
-            </select>
-          </div>
-
-          {/* Environment Dropdown */}
-          <div className="form-group">
-            <label htmlFor="endpointUrl">Endpoint Url</label>
-            <input
-              type="text"
-              id="endpointUrl"
-              name="endpointUrl"
-              value={formData.endpointUrl}
-              onChange={handleChange}
-              placeholder="Enter Trigger Time"
-            />
-          </div>
-            {loading && <div className="loader">Loading...</div>}
-
-            {/* Display success or error message */}
-            {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
-            {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
-
-          {/* Submit Button */}
-          <button onClick={handleSubmit} className="submit-button">
-            {loading ? 'Analyzing...' : 'Submit'}
-          </button>
         </div>
+        <div className="chatmate-container">
+           <ChatMate />
+         </div>
+      </div>
+      
+      <div className='output-section'>
+      <div className="card">
+      <h3>Analysis Results</h3>
+      <div className="download-buttons">
+        {userEmailDetails.length > 0 && (
+          <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
+        )}
       </div>
 
-      <div className="card">
-  <h3>Analysis Results</h3>
-  <div className="download-buttons">
-    {userEmailDetails.length > 0 && (
-      <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
-    )}
-  </div>
-
-  {userEmailDetails.length > 0 && (
-    <div className="user-details-section">
-      <h2>User Details Data</h2>
-      <table className="user-details-table">
-        <thead>
-          <tr>
-            {Object.keys(userEmailDetails[0]).map((key, idx) => (
-              <th key={idx}>{key}</th>
-            ))}
-          </tr>
-        </thead>
-
-        <tbody>
-          {userEmailDetails
-            .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
-            .map((row, idx) => (
-              <tr key={idx}>
-                {Object.values(row).map((value, valIdx) => (
-                  <td key={valIdx}>{value}</td>
+      {userEmailDetails.length > 0 && (
+        <div className="user-details-section">
+          <h2>User Details Data</h2>
+          <table className="user-details-table">
+            <thead>
+              <tr>
+                {Object.keys(userEmailDetails[0]).map((key, idx) => (
+                  <th key={idx}>{key}</th>
                 ))}
-                <td>
-                  <button
-                    className="preview-button"
-                    onClick={() => {
-                      // Ensure `yourEndpoint` is available in your component
-                      const url = `http://127.0.0.1:5000/generate-email-view?endpoint=${encodeURIComponent(formData.endpointUrl)}&NotificationID=${row.NotificationID}`;
-                      window.open(url, '_blank'); // Open URL in new tab
-                    }}
-                    title="Preview"
-                  >
-                    <i className="icon-preview" /> View
-                  </button>
-                </td>
               </tr>
-            ))}
-        </tbody>
-      </table>
-    </div>
-  )}
-</div>
+            </thead>
+
+            <tbody>
+              {userEmailDetails
+                .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
+                .map((row, idx) => (
+                  <tr key={idx}>
+                    {Object.values(row).map((value, valIdx) => (
+                      <td key={valIdx}>{value}</td>
+                    ))}
+                    <td>
+                      <button
+                        className="preview-button"
+                        onClick={() => {
+                          // Ensure `yourEndpoint` is available in your component
+                          const url = `http://127.0.0.1:5000/generate-email-view?endpoint=${encodeURIComponent(formData.endpointUrl)}&NotificationID=${row.NotificationID}`;
+                          window.open(url, '_blank'); // Open URL in new tab
+                        }}
+                        title="Preview"
+                      >
+                        <i className="icon-preview" /> View
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+       </div>
+      </div>
 
     </div>
   );
