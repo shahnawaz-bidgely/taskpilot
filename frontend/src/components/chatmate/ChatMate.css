@@ -1,0 +1,91 @@
+.chatmate {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .chatmate-header {
+    padding: 15px;
+    background: #0078d7;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .chatmate-messages {
+    flex: 1;
+    padding: 15px;
+    background: #f9f9f9;
+    overflow-y: auto;
+  }
+  
+  .chatmate-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 70%;
+  }
+  
+  .chatmate-message.user {
+    background: #0078d7;
+    color: #ffffff;
+    align-self: flex-end;
+  }
+  
+  .chatmate-message.bot {
+    background: #e6e6e6;
+    color: #333333;
+    align-self: flex-start;
+  }
+  
+  .chatmate-input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #e6e6e6;
+    background: #ffffff;
+  }
+  
+  .chatmate-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .chatmate-input:focus {
+    outline: none;
+    border-color: #0078d7;
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.5);
+  }
+  
+  .chatmate-send-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background: #0078d7;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .chatmate-send-button:hover {
+    background: #005bb5;
+  }
+  
+  .chatmate-send-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  
