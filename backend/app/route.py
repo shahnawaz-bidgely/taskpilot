@@ -3,8 +3,14 @@ import redshift_connector
 import os
 import pandas as pd
 from flask import Response
-
 from requests.auth import HTTPBasicAuth
+import requests
+import csv
+import io
+from datetime import datetime
+
+# bp = Blueprint('analysis', __name__)
+
 
 # Create a blueprint for hello world endpoint
 bp = Blueprint('hello', __name__)
@@ -18,14 +24,16 @@ ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
 
 OUTPUT_FOLDER = 'outputs'
 
-# @bp.route('/hello', methods=['GET'])
-# def hello_world():
-#     return jsonify({"message": "Hello, World!2"})
-#
-#
+@bp.route('/hello', methods=['GET'])
+def hello_world():
+    print("hello called")
+    return jsonify({"message": "Hello, World!2"})
+
+
 
 @bp.route('/analyze-users', methods=['POST'])
 def analyse_user():
+    print("API called")
     file = request.files.get('file')
     if not file:
         return jsonify({'message': 'No file part'}), 400
@@ -236,14 +244,6 @@ def analyse_cluster_from_redshift():
 
 
 ########### Email Module Analysis ########################
-
-from flask import Blueprint, request, jsonify, send_file
-import requests
-import csv
-import io
-from datetime import datetime
-
-bp = Blueprint('analysis', __name__)
 
 @bp.route('/analyze-email-preview', methods=['POST'])
 def analyse_email_preview():
