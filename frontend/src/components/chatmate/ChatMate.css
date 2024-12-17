@@ -12,7 +12,7 @@
   
   .chatmate-header {
     padding: 15px;
-    background: #0078d7;
+    background: rgb(72, 164, 197);
     color: #ffffff;
     font-size: 18px;
     font-weight: bold;
@@ -36,7 +36,7 @@
   }
   
   .chatmate-message.user {
-    background: #0078d7;
+    background: rgb(72, 164, 197);
     color: #ffffff;
     align-self: flex-end;
   }
@@ -71,7 +71,7 @@
   .chatmate-send-button {
     margin-left: 10px;
     padding: 10px 20px;
-    background: #0078d7;
+    background:rgb(72, 164, 197);
     color: #ffffff;
     border: none;
     border-radius: 8px;

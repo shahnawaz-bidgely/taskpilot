@@ -14,7 +14,8 @@ function RevokeEmail() {
 
   const [showFilter, setShowFilter] = useState(false); // Controls filter popup visibility
   const [filterColumn, setFilterColumn] = useState(''); // The column being filtered
-  const [filterValue, setFilterValue] = useState(''); // The input value for filtering
+  const [filters, setFilters] = useState({}); // Holds all applied filters
+
 
 
   useEffect(() => {
@@ -36,10 +37,10 @@ function RevokeEmail() {
     });
   };
 
-  const handlePreview = (row) => {
-  console.log("Preview data:", row);
-  // Add logic to display preview (e.g., open modal or navigate to preview page)
-};
+//   const handlePreview = (row) => {
+//   console.log("Preview data:", row);
+//   // Add logic to display preview (e.g., open modal or navigate to preview page)
+// };
 
 
   /*  API Related Code */
@@ -203,7 +204,7 @@ function RevokeEmail() {
             <th
               key={idx}
               onClick={() => {
-                setFilterColumn(key); // Set the column name being filtered
+                setFilterColumn(key); // Set the current column
                 setShowFilter(true); // Show the filter popup
               }}
               style={{ cursor: 'pointer' }}
@@ -218,10 +219,10 @@ function RevokeEmail() {
       <tbody>
         {userEmailDetails
           .filter((row) => {
-            if (!filterValue || !filterColumn) return true; // No filter applied
-            return String(row[filterColumn])
-              .toLowerCase()
-              .includes(filterValue.toLowerCase()); // Simple substring match
+            // Apply multiple filters
+            return Object.entries(filters).every(([column, value]) =>
+              String(row[column]).toLowerCase().includes(value.toLowerCase())
+            );
           })
           .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
           .map((row, idx) => (
@@ -231,9 +232,8 @@ function RevokeEmail() {
                   key={valIdx}
                   style={{
                     backgroundColor:
-                      filterColumn === key &&
-                      filterValue &&
-                      String(value).toLowerCase().includes(filterValue.toLowerCase())
+                      filters[key] &&
+                      String(value).toLowerCase().includes(filters[key].toLowerCase())
                         ? '#ffdddd' // Highlight filtered cells
                         : 'transparent',
                   }}
@@ -264,20 +264,36 @@ function RevokeEmail() {
     {showFilter && (
       <div className="filter-popup">
         <div className="filter-popup-content">
-          <h4>Filter by "{filterColumn}"</h4>
+          <h3>Apply Filter</h3>
+          <p className="filter-column-name">Filtering on: <strong>{filterColumn}</strong></p>
           <input
             type="text"
-            placeholder={`Enter ${filterColumn} value`}
-            value={filterValue}
-            onChange={(e) => setFilterValue(e.target.value)}
+            placeholder={`Enter value for ${filterColumn}`}
+            value={filters[filterColumn] || ''}
+            onChange={(e) =>
+              setFilters({ ...filters, [filterColumn]: e.target.value })
+            }
             className="filter-input"
           />
-          <button
-            onClick={() => setShowFilter(false)}
-            className="apply-filter-button"
-          >
-            Apply
-          </button>
+          <div className="filter-popup-buttons">
+            <button
+              onClick={() => setShowFilter(false)}
+              className="apply-filter-button"
+            >
+              Apply
+            </button>
+            <button
+              onClick={() => {
+                const updatedFilters = { ...filters };
+                delete updatedFilters[filterColumn]; // Remove the current filter
+                setFilters(updatedFilters);
+                setShowFilter(false);
+              }}
+              className="clear-filter-button"
+            >
+              Clear Filter
+            </button>
+          </div>
         </div>
       </div>
     )}
