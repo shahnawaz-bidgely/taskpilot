@@ -12,6 +12,11 @@ function RevokeEmail() {
   const [error, setError] = useState('');
   const [userEmailDetails, setEmailDetails] = useState([]);
 
+  const [showFilter, setShowFilter] = useState(false); // Controls filter popup visibility
+  const [filterColumn, setFilterColumn] = useState(''); // The column being filtered
+  const [filterValue, setFilterValue] = useState(''); // The input value for filtering
+
+
   useEffect(() => {
     console.log('File Content in Revoke Updated:', fileContent);
     console.log('Uploaded File in Revoke Updated:', uploadedFile);
@@ -190,43 +195,97 @@ function RevokeEmail() {
       </div>
 
       {userEmailDetails.length > 0 && (
-        <div className="user-details-section">
-          <table className="user-details-table">
-            <thead>
-              <tr>
-                {Object.keys(userEmailDetails[0]).map((key, idx) => (
-                  <th key={idx}>{key}</th>
-                ))}
-              </tr>
-            </thead>
+  <div className="user-details-section">
+    <table className="user-details-table">
+      <thead>
+        <tr>
+          {Object.keys(userEmailDetails[0]).map((key, idx) => (
+            <th
+              key={idx}
+              onClick={() => {
+                setFilterColumn(key); // Set the column name being filtered
+                setShowFilter(true); // Show the filter popup
+              }}
+              style={{ cursor: 'pointer' }}
+              title="Click to filter this column"
+            >
+              {key}
+            </th>
+          ))}
+        </tr>
+      </thead>
 
-            <tbody>
-              {userEmailDetails
-                .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
-                .map((row, idx) => (
-                  <tr key={idx}>
-                    {Object.values(row).map((value, valIdx) => (
-                      <td key={valIdx}>{value}</td>
-                    ))}
-                    <td>
-                      <button
-                        className="preview-button"
-                        onClick={() => {
-                          // Ensure `yourEndpoint` is available in your component
-                          const url = `http://127.0.0.1:5000/generate-email-view?endpoint=${encodeURIComponent(formData.endpointUrl)}&NotificationID=${row.NotificationID}`;
-                          window.open(url, '_blank'); // Open URL in new tab
-                        }}
-                        title="Preview"
-                      >
-                        <i className="icon-preview" /> View
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+      <tbody>
+        {userEmailDetails
+          .filter((row) => {
+            if (!filterValue || !filterColumn) return true; // No filter applied
+            return String(row[filterColumn])
+              .toLowerCase()
+              .includes(filterValue.toLowerCase()); // Simple substring match
+          })
+          .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
+          .map((row, idx) => (
+            <tr key={idx}>
+              {Object.entries(row).map(([key, value], valIdx) => (
+                <td
+                  key={valIdx}
+                  style={{
+                    backgroundColor:
+                      filterColumn === key &&
+                      filterValue &&
+                      String(value).toLowerCase().includes(filterValue.toLowerCase())
+                        ? '#ffdddd' // Highlight filtered cells
+                        : 'transparent',
+                  }}
+                >
+                  {value}
+                </td>
+              ))}
+              <td>
+                <button
+                  className="preview-button"
+                  onClick={() => {
+                    const url = `http://127.0.0.1:5000/generate-email-view?endpoint=${encodeURIComponent(
+                      formData.endpointUrl
+                    )}&NotificationID=${row.NotificationID}`;
+                    window.open(url, '_blank');
+                  }}
+                  title="Preview"
+                >
+                  <i className="icon-preview" /> View
+                </button>
+              </td>
+            </tr>
+          ))}
+      </tbody>
+    </table>
+
+    {/* Filter Popup */}
+    {showFilter && (
+      <div className="filter-popup">
+        <div className="filter-popup-content">
+          <h4>Filter by "{filterColumn}"</h4>
+          <input
+            type="text"
+            placeholder={`Enter ${filterColumn} value`}
+            value={filterValue}
+            onChange={(e) => setFilterValue(e.target.value)}
+            className="filter-input"
+          />
+          <button
+            onClick={() => setShowFilter(false)}
+            className="apply-filter-button"
+          >
+            Apply
+          </button>
         </div>
-      )}
+      </div>
+    )}
+  </div>
+)}
+
+
+
        </div>
       </div>
 
