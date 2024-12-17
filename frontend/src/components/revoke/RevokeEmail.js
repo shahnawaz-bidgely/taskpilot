@@ -111,78 +111,86 @@ function RevokeEmail() {
     <div className="revoke-email">
       <div className='input-section'>
         <div className="card">
-          <h3>Email Analysis</h3>
-          <div className="form-container">
-            {/* Trigger Time Input */}
-            <div className="form-group">
-              <label htmlFor="triggerTime">Trigger Time</label>
-              <input
-                type="text"
-                id="triggerTime"
-                name="triggerTime"
-                value={formData.triggerTime}
-                onChange={handleChange}
-                placeholder="Enter Trigger Time"
-              />
-            </div>
+          <h1>Email Analysis</h1>
+          
+        
 
-            {/* Event Name Dropdown */}
-            <div className="form-group">
-              <label htmlFor="eventName">Event Name</label>
-              <select
-                id="eventName"
-                name="eventName"
-                value={formData.eventName}
-                onChange={handleChange}
-              >
-                <option value="">Select Event Name</option>
-                <option value="NEIGHBOURHOOD_COMPARISON">NEIGHBOURHOOD_COMPARISON</option>
-                <option value="BILL_PROJECTION">BILL_PROJECTION</option>
-                <option value="USER_WELCOME">USER_WELCOME</option>
-              </select>
-            </div>
 
-            {/* Environment Dropdown */}
-            <div className="form-group">
-              <label htmlFor="endpointUrl">Endpoint Url</label>
-              <input
-                type="text"
-                id="endpointUrl"
-                name="endpointUrl"
-                value={formData.endpointUrl}
-                onChange={handleChange}
-                placeholder="Enter Trigger Time"
-              />
-            </div>
-              {loading && <div className="loader">Loading...</div>}
+    <div className="form-container">
+  {/* Trigger Time Input */}
+  <div className="form-group">
+    <input
+      type="text"
+      id="triggerTime"
+      name="triggerTime"
+      value={formData.triggerTime}
+      onChange={handleChange}
+      placeholder=" "
+      className="form-input"
+    />
+    <label htmlFor="triggerTime">Trigger Time *</label>
+  </div>
 
-              {/* Display success or error message */}
-              {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
-              {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
+  {/* Event Name Dropdown */}
+  <div className="form-group">
+    <select
+      id="eventName"
+      name="eventName"
+      value={formData.eventName}
+      onChange={handleChange}
+      className="form-select"
+    >
+      <option value="" disabled>Select Event Name</option>
+      <option value="NEIGHBOURHOOD_COMPARISON">NEIGHBOURHOOD_COMPARISON</option>
+      <option value="BILL_PROJECTION">BILL_PROJECTION</option>
+      <option value="USER_WELCOME">USER_WELCOME</option>
+    </select>
+    <label htmlFor="eventName">Event Name *</label>
+  </div>
 
-            {/* Submit Button */}
-            <button onClick={handleSubmit} className="submit-button">
-              {loading ? 'Analyzing...' : 'Submit'}
-            </button>
-          </div>
+  {/* Endpoint URL Input */}
+  <div className="form-group">
+    <input
+      type="text"
+      id="endpointUrl"
+      name="endpointUrl"
+      value={formData.endpointUrl}
+      onChange={handleChange}
+      placeholder=" "
+      className="form-input"
+    />
+    <label htmlFor="endpointUrl">Endpoint URL *</label>
+  </div>
+
+  {/* Loader */}
+  {loading && <div className="loader">Loading...</div>}
+
+  {/* Display success or error message */}
+  {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
+  {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
+
+  {/* Submit Button */}
+  <button onClick={handleSubmit} className="submit-button">
+    {loading ? 'Analyzing...' : 'Submit'}
+  </button>
+</div>
         </div>
         <div className="chatmate-container">
            <ChatMate />
-         </div>
+        </div>
       </div>
       
       <div className='output-section'>
       <div className="card">
-      <h3>Analysis Results</h3>
+      <h2>Analysis Results</h2>
       <div className="download-buttons">
         {userEmailDetails.length > 0 && (
-          <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
+          <DownloadCSV data={userEmailDetails} filename="email_prev_details.csv" label="Download Email Preview Details" />
         )}
       </div>
 
       {userEmailDetails.length > 0 && (
         <div className="user-details-section">
-          <h2>User Details Data</h2>
           <table className="user-details-table">
             <thead>
               <tr>

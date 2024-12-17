@@ -1,0 +1,21 @@
+.data-validation-container {
+    text-align: center;
+  }
+  
+  
+  .table-container {
+    margin: 0 auto;
+    width: 95%;
+  }
+  
+  .valid {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .invalid {
+    color: red;
+    font-weight: bold;
+    background-color: #ffdada;
+  }
+  

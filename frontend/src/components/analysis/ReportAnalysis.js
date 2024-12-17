@@ -284,7 +284,7 @@ function ReportAnalysis() {
 
   return (
     <div className="report-analysis">
-      <h2>Report Analysis</h2>
+      <h1>Report Analysis</h1>
 
       {/* Toggle Section */}
       <div className="toggle-container">
@@ -324,7 +324,7 @@ function ReportAnalysis() {
       </div>
 
     <div className="card">
-  <h3>Analysis Results</h3>
+  <h2>Analysis Results</h2>
 
   {/* Download Buttons */}
   <div className="download-buttons">
