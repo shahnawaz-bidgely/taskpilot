@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ReportAnalysis.css';
+import '../components/analysis/ReportAnalysis.css';
 
 // Import API calls
 import { 

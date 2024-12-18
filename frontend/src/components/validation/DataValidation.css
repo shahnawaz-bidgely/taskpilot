@@ -1,0 +1,65 @@
+.data-validation-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .section-tabs {
+    margin-bottom: 20px;
+  }
+  
+  .section-tabs button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgb(118, 118, 118);
+    cursor: pointer;
+    font-size: 16px;
+    color: #ecf0f1;
+  }
+  
+  .section-tabs button.active {
+    background-color:rgb(72, 164, 197);
+    color:#ecf0f1;
+    font-weight: bold;
+  }
+  
+  .section-tabs button:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .table-container {
+    margin: 0 auto;
+    width: 95%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  } */
+  
+  .valid {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .invalid {
+    color: red;
+    font-weight: bold;
+    background-color: #ffdada;
+  }
+  

@@ -12,6 +12,12 @@ function RevokeEmail() {
   const [error, setError] = useState('');
   const [userEmailDetails, setEmailDetails] = useState([]);
 
+  const [showFilter, setShowFilter] = useState(false); // Controls filter popup visibility
+  const [filterColumn, setFilterColumn] = useState(''); // The column being filtered
+  const [filters, setFilters] = useState({}); // Holds all applied filters
+
+
+
   useEffect(() => {
     console.log('File Content in Revoke Updated:', fileContent);
     console.log('Uploaded File in Revoke Updated:', uploadedFile);
@@ -31,10 +37,10 @@ function RevokeEmail() {
     });
   };
 
-  const handlePreview = (row) => {
-  console.log("Preview data:", row);
-  // Add logic to display preview (e.g., open modal or navigate to preview page)
-};
+//   const handlePreview = (row) => {
+//   console.log("Preview data:", row);
+//   // Add logic to display preview (e.g., open modal or navigate to preview page)
+// };
 
 
   /*  API Related Code */
@@ -111,114 +117,191 @@ function RevokeEmail() {
     <div className="revoke-email">
       <div className='input-section'>
         <div className="card">
-          <h3>Email Analysis</h3>
-          <div className="form-container">
-            {/* Trigger Time Input */}
-            <div className="form-group">
-              <label htmlFor="triggerTime">Trigger Time</label>
-              <input
-                type="text"
-                id="triggerTime"
-                name="triggerTime"
-                value={formData.triggerTime}
-                onChange={handleChange}
-                placeholder="Enter Trigger Time"
-              />
-            </div>
+          <h1>Email Analysis</h1>
+          
+        
 
-            {/* Event Name Dropdown */}
-            <div className="form-group">
-              <label htmlFor="eventName">Event Name</label>
-              <select
-                id="eventName"
-                name="eventName"
-                value={formData.eventName}
-                onChange={handleChange}
-              >
-                <option value="">Select Event Name</option>
-                <option value="NEIGHBOURHOOD_COMPARISON">NEIGHBOURHOOD_COMPARISON</option>
-                <option value="BILL_PROJECTION">BILL_PROJECTION</option>
-                <option value="USER_WELCOME">USER_WELCOME</option>
-              </select>
-            </div>
 
-            {/* Environment Dropdown */}
-            <div className="form-group">
-              <label htmlFor="endpointUrl">Endpoint Url</label>
-              <input
-                type="text"
-                id="endpointUrl"
-                name="endpointUrl"
-                value={formData.endpointUrl}
-                onChange={handleChange}
-                placeholder="Enter Trigger Time"
-              />
-            </div>
-              {loading && <div className="loader">Loading...</div>}
+    <div className="form-container">
+  {/* Trigger Time Input */}
+  <div className="form-group">
+    <input
+      type="text"
+      id="triggerTime"
+      name="triggerTime"
+      value={formData.triggerTime}
+      onChange={handleChange}
+      placeholder=" "
+      className="form-input"
+    />
+    <label htmlFor="triggerTime">Trigger Time *</label>
+  </div>
 
-              {/* Display success or error message */}
-              {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
-              {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
+  {/* Event Name Dropdown */}
+  <div className="form-group">
+    <select
+      id="eventName"
+      name="eventName"
+      value={formData.eventName}
+      onChange={handleChange}
+      className="form-select"
+    >
+      <option value="" disabled>Select Event Name</option>
+      <option value="NEIGHBOURHOOD_COMPARISON">NEIGHBOURHOOD_COMPARISON</option>
+      <option value="BILL_PROJECTION">BILL_PROJECTION</option>
+      <option value="USER_WELCOME">USER_WELCOME</option>
+    </select>
+    <label htmlFor="eventName">Event Name *</label>
+  </div>
 
-            {/* Submit Button */}
-            <button onClick={handleSubmit} className="submit-button">
-              {loading ? 'Analyzing...' : 'Submit'}
-            </button>
-          </div>
+  {/* Endpoint URL Input */}
+  <div className="form-group">
+    <input
+      type="text"
+      id="endpointUrl"
+      name="endpointUrl"
+      value={formData.endpointUrl}
+      onChange={handleChange}
+      placeholder=" "
+      className="form-input"
+    />
+    <label htmlFor="endpointUrl">Endpoint URL *</label>
+  </div>
+
+  {/* Loader */}
+  {loading && <div className="loader">Loading...</div>}
+
+  {/* Display success or error message */}
+  {message && <div className={`analysis-message ${messageStyle}`}>{message}</div>}
+  {error && <div className={`analysis-message ${messageStyle}`}>{error}</div>}
+
+  {/* Submit Button */}
+  <button onClick={handleSubmit} className="submit-button">
+    {loading ? 'Analyzing...' : 'Submit'}
+  </button>
+</div>
         </div>
         <div className="chatmate-container">
            <ChatMate />
-         </div>
+        </div>
       </div>
       
       <div className='output-section'>
       <div className="card">
-      <h3>Analysis Results</h3>
+      <h2>Analysis Results</h2>
       <div className="download-buttons">
         {userEmailDetails.length > 0 && (
-          <DownloadCSV data={userEmailDetails} filename="user_details.csv" label="Download Email Preview Details" />
+          <DownloadCSV data={userEmailDetails} filename="email_prev_details.csv" label="Download Email Preview Details" />
         )}
       </div>
 
       {userEmailDetails.length > 0 && (
-        <div className="user-details-section">
-          <h2>User Details Data</h2>
-          <table className="user-details-table">
-            <thead>
-              <tr>
-                {Object.keys(userEmailDetails[0]).map((key, idx) => (
-                  <th key={idx}>{key}</th>
-                ))}
-              </tr>
-            </thead>
+  <div className="user-details-section">
+    <table className="user-details-table">
+      <thead>
+        <tr>
+          {Object.keys(userEmailDetails[0]).map((key, idx) => (
+            <th
+              key={idx}
+              onClick={() => {
+                setFilterColumn(key); // Set the current column
+                setShowFilter(true); // Show the filter popup
+              }}
+              style={{ cursor: 'pointer' }}
+              title="Click to filter this column"
+            >
+              {key}
+            </th>
+          ))}
+        </tr>
+      </thead>
 
-            <tbody>
-              {userEmailDetails
-                .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
-                .map((row, idx) => (
-                  <tr key={idx}>
-                    {Object.values(row).map((value, valIdx) => (
-                      <td key={valIdx}>{value}</td>
-                    ))}
-                    <td>
-                      <button
-                        className="preview-button"
-                        onClick={() => {
-                          // Ensure `yourEndpoint` is available in your component
-                          const url = `http://127.0.0.1:5000/generate-email-view?endpoint=${encodeURIComponent(formData.endpointUrl)}&NotificationID=${row.NotificationID}`;
-                          window.open(url, '_blank'); // Open URL in new tab
-                        }}
-                        title="Preview"
-                      >
-                        <i className="icon-preview" /> View
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+      <tbody>
+        {userEmailDetails
+          .filter((row) => {
+            // Apply multiple filters
+            return Object.entries(filters).every(([column, value]) =>
+              String(row[column]).toLowerCase().includes(value.toLowerCase())
+            );
+          })
+          .filter((row) => row && Object.keys(row).length > 0) // Exclude empty rows
+          .map((row, idx) => (
+            <tr key={idx}>
+              {Object.entries(row).map(([key, value], valIdx) => (
+                <td
+                  key={valIdx}
+                  style={{
+                    backgroundColor:
+                      filters[key] &&
+                      String(value).toLowerCase().includes(filters[key].toLowerCase())
+                        ? '#ffdddd' // Highlight filtered cells
+                        : 'transparent',
+                  }}
+                >
+                  {value}
+                </td>
+              ))}
+              <td>
+                <button
+                  className="preview-button"
+                  onClick={() => {
+                    const url = `http://127.0.0.1:5000/generate-email-view?endpoint=${encodeURIComponent(
+                      formData.endpointUrl
+                    )}&NotificationID=${row.NotificationID}`;
+                    window.open(url, '_blank');
+                  }}
+                  title="Preview"
+                >
+                  <i className="icon-preview" /> View
+                </button>
+              </td>
+            </tr>
+          ))}
+      </tbody>
+    </table>
+
+    {/* Filter Popup */}
+    {showFilter && (
+      <div className="filter-popup">
+        <div className="filter-popup-content">
+          <h3>Apply Filter</h3>
+          <p className="filter-column-name">Filtering on: <strong>{filterColumn}</strong></p>
+          <input
+            type="text"
+            placeholder={`Enter value for ${filterColumn}`}
+            value={filters[filterColumn] || ''}
+            onChange={(e) =>
+              setFilters({ ...filters, [filterColumn]: e.target.value })
+            }
+            className="filter-input"
+          />
+          <div className="filter-popup-buttons">
+            <button
+              onClick={() => setShowFilter(false)}
+              className="apply-filter-button"
+            >
+              Apply
+            </button>
+            <button
+              onClick={() => {
+                const updatedFilters = { ...filters };
+                delete updatedFilters[filterColumn]; // Remove the current filter
+                setFilters(updatedFilters);
+                setShowFilter(false);
+              }}
+              className="clear-filter-button"
+            >
+              Clear Filter
+            </button>
+          </div>
         </div>
-      )}
+      </div>
+    )}
+  </div>
+)}
+
+
+
        </div>
       </div>
 

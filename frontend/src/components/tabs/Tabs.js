@@ -4,7 +4,7 @@ import { FileContext } from '../context/FileContext';
 
 function Tabs({ activeTab, setActiveTab }) {
   const { setUploadedFile, setFileContent } = useContext(FileContext); // Access FileContext methods
-  const tabs = ['Report Analysis', 'Revoke Email', 'TOD Analysis'];
+  const tabs = ['Report Analysis', 'Email Analysis', 'Data Validation'];
   const [file, setFile] = useState(null);
   const [error, setError] = useState('');
 

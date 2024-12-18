@@ -9,13 +9,9 @@ import csv
 import io
 from datetime import datetime
 
-# bp = Blueprint('analysis', __name__)
 
-
-# Create a blueprint for hello world endpoint
 bp = Blueprint('hello', __name__)
 
-# Define a route for the Hello World API
 
 UPLOAD_FOLDER = 'uploads'
 if not os.path.exists(UPLOAD_FOLDER):
@@ -238,8 +234,6 @@ def analyse_cluster_from_redshift():
 
     except Exception as e:
         return jsonify({'message': 'Error fetching data from Redshift', 'error': str(e)}), 500
-
-
 
 
 

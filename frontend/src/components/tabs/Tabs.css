@@ -3,8 +3,9 @@
   flex-direction: column;
   padding: 20px;
   height: 100%;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* border-radius: 10px; */
+  /* border: 0px solid rgba(255, 255, 255, 0.18); */
+  margin-top: 50px;
   }
   
   .tab {
@@ -13,24 +14,25 @@
     cursor: pointer;
     font-size: 18px;
     color: #ecf0f1;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(118, 118, 118);
+    box-shadow: 0 8px 20px 0 rgba(42, 42, 42, 0.37);
     border-radius: 100px;
     transition: all 0.3s ease;
     text-align: center;
   }
   
   .tab:hover {
-    background-color: blue;  /* Hover effect */
+    background-color: rgb(72, 164, 197);  /* Hover effect */
     transform: scale(1.05);  /* Slight scaling effect on hover */
   }
   
   .tab.active {
-    background-color: blue;  /* Highlight active tab with different color */
+    background-color: rgb(72, 164, 197);  /* Highlight active tab with different color */
     font-weight: bold;
   }
   
   .tab.active:hover {
-    background-color: blue;  /* Prevent color change on hover for active tab */
+    background-color: rgb(72, 164, 197);  /* Prevent color change on hover for active tab */
   }
 
 
@@ -51,7 +53,7 @@
   
   .file-upload-button {
     display: inline-block;
-    background-color: #007bff; /* Blue color for the button */
+    background-color: rgb(72, 164, 197); /* Blue color for the button */
     color: #fff;
     font-size: 16px;
     padding: 10px 20px;

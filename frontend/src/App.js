@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Tabs from './components/tabs/Tabs';
 import ReportAnalysis from './components/analysis/ReportAnalysis';
 import RevokeEmail from './components/revoke/RevokeEmail';
+import DataValidation from './components/validation/DataValidation';
 import Header from './components/header/Header';
 import { FileProvider } from './components/context/FileContext';
 import './App.css';
@@ -13,8 +14,11 @@ function App() {
     switch (activeTab) {
       case 'ReportAnalysis':
         return <ReportAnalysis />;
-      case 'Revoke Email':
+      case 'Email Analysis':
         return <RevokeEmail />;
+      
+      case 'Data Validation':
+          return <DataValidation/>;
       default:
         return <ReportAnalysis />;
     }
