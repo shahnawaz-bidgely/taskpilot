@@ -8,14 +8,16 @@ import requests
 import csv
 import io
 from datetime import datetime
+from tempfile import NamedTemporaryFile
 
 
-bp = Blueprint('hello', __name__)
+bp = Blueprint('analysis_email', __name__)
 
 
 UPLOAD_FOLDER = 'uploads'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
+
 ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
 
 OUTPUT_FOLDER = 'outputs'
@@ -23,7 +25,7 @@ OUTPUT_FOLDER = 'outputs'
 @bp.route('/hello', methods=['GET'])
 def hello_world():
     print("hello called")
-    return jsonify({"message": "Hello, World!2"})
+    return jsonify({"message": "Hello, World!"})
 
 
 
@@ -384,9 +386,8 @@ def generate_html():
 
 
 
-
 # Helper function to extract user list from file
-def get_users_from_file(file):
+def get_users_from_file_old(file):
     users = []
     try:
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
@@ -400,6 +401,32 @@ def get_users_from_file(file):
             # For text files, read line by line
             with open(file_path, 'r') as f:
                 users = [line.strip() for line in f.readlines()]
+
+        return users
+    except Exception as e:
+        print(f"Error processing file: {e}")
+        return None
+
+
+def get_users_from_file(file):
+    users = []
+    try:
+        # Save the file to a temporary location
+        with NamedTemporaryFile(delete=False) as temp_file:
+            file.save(temp_file.name)
+            temp_file_path = temp_file.name
+
+        if file.filename.endswith('.csv'):
+            # Process CSV in chunks
+            for chunk in pd.read_csv(temp_file_path, chunksize=1000):
+                users.extend(chunk.to_dict(orient='records'))  # Append each chunk's records
+        else:
+            # Read text file line by line
+            with open(temp_file_path, 'r') as f:
+                users = [line.strip() for line in f]
+
+        # Clean up the temporary file
+        os.remove(temp_file_path)
 
         return users
     except Exception as e:
