@@ -38,14 +38,14 @@ def validate_header(uuid, headers, endpoint, fuelType, reportName):
     print(f"Making API call to: {header_api} with params: {params}")
 
     try:
-        # Make the GET request
+
         response = requests.get(header_api, headers=headers, params=params)
 
-        # Log the response
+
         print(f"Response Status Code: {response.status_code}")
         print(f"Response Data: {response.text}")
 
-        # Handle the response based on status code
+
         if response.status_code == 200:
             # Parse the JSON response if successful
             return ["User name missing"]
@@ -54,7 +54,7 @@ def validate_header(uuid, headers, endpoint, fuelType, reportName):
             return ["Utility address is missing"]
 
     except requests.exceptions.RequestException as e:
-        # Log and handle network-related errors
+
         print(f"API call failed: {e}")
         return {"error": str(e)}
 
