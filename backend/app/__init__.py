@@ -1,5 +1,6 @@
 from flask import Flask
 from .route import bp as route_bp  # Import the hello blueprint
+from .her_route import bp as her_route_bp
 import os
 from flask_cors import CORS
 
@@ -16,5 +17,6 @@ def create_app():
 
     # Register the blueprint
     app.register_blueprint(route_bp)
+    app.register_blueprint(her_route_bp)
 
     return app

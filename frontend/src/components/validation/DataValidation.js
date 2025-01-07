@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ValidationTOUData from "./ValidationTOUData";
 import ValidationEmail from "./ValidationEmail";
 import ValidationDashboard from "./ValidationDashboard";
-import ValidationPaper from "./ValidationPaper";
+import ValidationPaper from "./paper/ValidationPaper";
 import "./DataValidation.css";
 
 // Mock API Data

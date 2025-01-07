@@ -111,7 +111,7 @@ function RevokeEmail() {
     }
   };
 
-  const [messageStyle, setMessageStyle] = useState(''); // Used for handling success or error messages
+  const [messageStyle, setMessageStyle] = useState('');
 
   return (
     <div className="revoke-email">
