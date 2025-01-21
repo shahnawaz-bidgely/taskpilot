@@ -1,19 +1,42 @@
-import React, { useState } from 'react';
-import './ChatMate.css';
+import React, { useState } from "react";
+import "./ChatMate.css";
 
 const ChatMate = () => {
   const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (inputValue.trim()) {
-      setMessages([...messages, { type: 'user', text: inputValue }]);
-      // Simulate a bot response
-      setMessages((prev) => [
-        ...prev,
-        { type: 'bot', text: 'This is a sample bot response.' },
-      ]);
-      setInputValue('');
+      setMessages([...messages, { type: "user", text: inputValue }]);
+
+      try {
+        const response = await fetch("http://127.0.0.1:5000/chat-boat-promp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: inputValue }),
+        });
+
+        const data = await response.json();
+
+        setMessages((prev) => [
+          ...prev,
+          { type: "bot", text: data.reply || "No response from the bot." },
+        ]);
+      } catch (error) {
+        console.error("Error fetching bot response:", error);
+        setMessages((prev) => [
+          ...prev,
+          {
+            type: "bot",
+            text: "Oops! Something went wrong. Please try again later.",
+          },
+        ]);
+      }
+
+      // Clear the input field
+      setInputValue("");
     }
   };
 
@@ -25,7 +48,7 @@ const ChatMate = () => {
           <div
             key={index}
             className={`chatmate-message ${
-              message.type === 'user' ? 'user' : 'bot'
+              message.type === "user" ? "user" : "bot"
             }`}
           >
             {message.text}
@@ -39,7 +62,7 @@ const ChatMate = () => {
           placeholder="Type your message..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+          onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
         />
         <button className="chatmate-send-button" onClick={handleSendMessage}>
           Send

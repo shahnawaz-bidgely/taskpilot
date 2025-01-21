@@ -27,6 +27,18 @@ const ValidationPaper = () => {
     });
   };
 
+  const getInteractions = async () => {
+    alert("hello");
+    try {
+      // const response = await axios.post("/api/mock-interaction", {
+      //   users: selectedUsers,
+      // });
+      // console.log("API Response:", response.data);
+    } catch (error) {
+      console.error("Error making API call:", error);
+    }
+  };
+
   const handleValidate = async () => {
     try {
       const combinedData = new FormData();
@@ -50,7 +62,9 @@ const ValidationPaper = () => {
         throw new Error("Failed to fetch data of HER validation");
       }
     } catch (err) {
-      setError("Error connecting to Redshift or executing query: " + err.message);
+      setError(
+        "Error connecting to Redshift or executing query: " + err.message
+      );
       throw err;
     }
   };
@@ -60,27 +74,28 @@ const ValidationPaper = () => {
       username: "8ddb5a00-5ebf-42b1-89ad-b76ea731b7fc",
       sections: {
         HEADER: {
-          failure: ["Username does not exist",
-            "Utility address does not exist"]
-
+          failure: [
+            "Username does not exist",
+            "Utility address does not exist",
+          ],
         },
         SHC_GRAPH_AND_WIDGET: {
-          failure: []
+          failure: [],
         },
         ITEMIZATION_SHC: {
-          failure: []
+          failure: [],
         },
         ITEMIZATION: {
-          failure: []
+          failure: [],
         },
         PROGRAM_NBI: {
-          failure: []
+          failure: [],
         },
         EE_NBI: {
-          failure: []
+          failure: [],
         },
         QR_CODE: {
-          failure: []
+          failure: [],
         },
         FOOTER: {
           failure: [],
@@ -91,30 +106,30 @@ const ValidationPaper = () => {
       username: "caf51017-c6b9-4ab8-b218-291a2a923c05",
       sections: {
         HEADER: {
-          failure: []
+          failure: [],
         },
         SHC_GRAPH_AND_WIDGET: {
-          failure: []
+          failure: [],
         },
         ITEMIZATION_SHC: {
-          failure: []
+          failure: [],
         },
         ITEMIZATION: {
-          failure: []
+          failure: [],
         },
         PROGRAM_NBI: {
-          failure: []
+          failure: [],
         },
         EE_NBI: {
           failure: {
-            "failure1" : "test failure",
-            "failure2" : "test failure2"
-          }
+            failure1: "test failure",
+            failure2: "test failure2",
+          },
         },
         QR_CODE: {
           failure: {
-            "QR Code" : "QR code is missing"
-          }
+            "QR Code": "QR code is missing",
+          },
         },
         FOOTER: {
           failure: [],
@@ -125,25 +140,25 @@ const ValidationPaper = () => {
       username: "df79f2b6-3c1d-442e-b65c-1f526b40117d",
       sections: {
         HEADER: {
-          failure: []
+          failure: [],
         },
         SHC_GRAPH_AND_WIDGET: {
-          failure: []
+          failure: [],
         },
         ITEMIZATION_SHC: {
-          failure: []
+          failure: [],
         },
         ITEMIZATION: {
-          failure: []
+          failure: [],
         },
         PROGRAM_NBI: {
-          failure: []
+          failure: [],
         },
         EE_NBI: {
-          failure: []
+          failure: [],
         },
         QR_CODE: {
-          failure: []
+          failure: [],
         },
         FOOTER: {
           failure: [],
@@ -240,6 +255,7 @@ const ValidationPaper = () => {
               <th>Passed</th>
               <th>Failed</th>
               <th>Data Quality</th>
+              <th>Mock Interaction</th>
             </tr>
           </thead>
           <tbody>
@@ -262,6 +278,15 @@ const ValidationPaper = () => {
                       ) : (
                         <span className="data-quality failure">&#10008;</span>
                       )}
+                    </td>
+                    <td>
+                      <button
+                        className="preview-button"
+                        onClick={() => getInteractions()}
+                      >
+                        Mock the Interactions
+                        <i className="icon-preview" /> View
+                      </button>
                     </td>
                   </tr>
                   {isExpanded && (
