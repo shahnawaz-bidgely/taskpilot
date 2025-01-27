@@ -1,0 +1,3380 @@
+[
+    {
+      "id": "I_EV_08_T-E-EV-002",
+      "score": 0.236,
+      "rank": 1,
+      "hash": "16ff547682e7a0480caeb42d2c537f21279349c83d9ecbf32cf618d5400747a49cdf8f0ba6c1eb6ed0768e82bbc53da793fdd3182067a16fffb38555db685957",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "18",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_EV_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-EV-002",
+        "score": 0.44
+      }
+    },
+    {
+      "id": "I_AO_06_T-E-AO-030",
+      "score": 0.186,
+      "rank": 3,
+      "hash": "b04d1ef8a394b285ba3d63187e304939fce0cde6bc290a328090a4fb602a101b3ba84626665f1b975ebada0519a3af8fdd9a6978a83b8ca0a4d442f362ebde38",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "8",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AO_06",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AO-030",
+        "score": 0.315
+      }
+    },
+    {
+      "id": "I_LI_06_A_A_E_LT_001",
+      "score": 0.181,
+      "rank": 4,
+      "hash": "0e7ef40b40db53a0b9647f5cffdddb0f435b05875f8c719861ea1c89d3522388864ec35cc802f6fef706fd3471c3775963e70acc39cc3047096953fd2b327f9b",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_LI_06",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "A_A_E_LT_001",
+        "score": 0.4
+      }
+    },
+    {
+      "id": "I_AO_06_T-E-AO-031",
+      "score": 0.176,
+      "rank": 5,
+      "hash": "2ecd05cc665fe0f07f58685c2c54722f40cddf6736283c80c129f5075e0439f76398ea9fbfc9825096bba175e8c06391ab9da26771dbd3453c470e730f8f1732",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "8",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AO_06",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AO-031",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_AC_07_T-E-S-AC-011",
+      "score": 0.154,
+      "rank": 6,
+      "hash": "6fcdbcaa95151a9c002ba94c08e1607769d8c6ad1a0a09d681a849a86dc6126e9b2b4e82b56df732d9fef4d1c19ff2497244b518e36b4a79e9144c461928fd5c",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-011",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_AC_07_T-E-AC-021",
+      "score": 0.139,
+      "rank": 9,
+      "hash": "a709ab096e4119c8cb0f435f14aaa5847eb420f6645c0c755bec1d7847faca82d15a0961552660abe26aae6f2ebdd765a2f55609f6fae53f89b2032adf45e8ae",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-021",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_TO_110_T-E-TE-002",
+      "score": 0.129,
+      "rank": 11,
+      "hash": "28f348f9915c6034228d09b63134fbccdf6adbcdb92f8ec0597c49f19bbc1e796f75e6df9b03b85229807f68ee033327c744901f5569a3b93d4adf2ab2056d42",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_TO_110",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-TE-002",
+        "score": 0.325
+      }
+    },
+    {
+      "id": "I_AC_07_T-E-S-AC-012",
+      "score": 0.124,
+      "rank": 12,
+      "hash": "ed172ddbbe824297772f81ce8806d7ad4fac67666c4c76d86fa1362e6b99ba69eaf4dbc74413839deae1d22cfaa2ebe8d6fe37c06da6db779d2b6bae91b063d5",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-012",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_AO_06_T-E-AO-032",
+      "score": 0.099,
+      "rank": 17,
+      "hash": "6e98bd728851942c4f63045a85e9cf9050b6745ef0190f592ff4ae1a6771709b4a02c7a9f6ac0f72b48637a1f815d2bcbfdbf110096caa243e63f774d3f09c0a",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "8",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AO_06",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AO-032",
+        "score": 0.295
+      }
+    },
+    {
+      "id": "I_AC_07_T-E-AC-012",
+      "score": 0.094,
+      "rank": 18,
+      "hash": "7bdf780be058d0bda39297dcee6aba881d15e3c8cb0ba194953353fb0a1dc86a26e2a72e5ec2522bcb9050e32e68058486487f554d590bb8579bbee3ce705a9a",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-012",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_EV_08_T-E-EV-001",
+      "score": 0.089,
+      "rank": 19,
+      "hash": "3bab54f68437a6a59ece1611892e5f2caaece7644a01884439dce25e5302b2a32a94a3aa8e76f1d02d7d51d021fbc32c0418b708b53aeb783fec8f0206f793b9",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "18",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_EV_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-EV-001",
+        "score": 0.37
+      }
+    },
+    {
+      "id": "I_AC_07_T-E-AC-013",
+      "score": 0.084,
+      "rank": 20,
+      "hash": "63433c7ead5805678f5dd6fbc67e3c2bd13ae831e3e0418f4cbb4a58252e0befc7f9eda342b0464b7fb3184a4bd7dab07c08730baf1c3449a3418e13f88406fe",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-013",
+        "score": 0.314
+      }
+    },
+    {
+      "id": "I_EV_08_T-E-EV-003",
+      "score": 0.074,
+      "rank": 22,
+      "hash": "142402e9d4968f86a002a5f7945c786f3659c4c7c1c6a066c26fa1cb3fba3556fb8023961c6eaf107f240364f5033f003080d4603d12209a348a730bf36a0497",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "18",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_EV_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-EV-003",
+        "score": 0.37
+      }
+    },
+    {
+      "id": "I_AC_07_T-E-S-AC-013",
+      "score": 0.069,
+      "rank": 23,
+      "hash": "81d4a50c21c8b0610d74ef2827cfab8b34354a7fb2fe0d25fbb9242e90cbde0efcddf34fbb7c80da6a1dc8ba9c55ca4c0a044d47a2eaa0223729d07007e59012",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-013",
+        "score": 0.314
+      }
+    },
+    {
+      "id": "I_WH_23_T-E-WH-004",
+      "score": 0.064,
+      "rank": 24,
+      "hash": "cb6b920a881c25852940d6e0fe100332470a7d8fa541e40996f197702f898d6bab9cdfdb88514d8d7b0bbffd65665f5bab7b2586d1074f507e7adb64d744e04a",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_23",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-004",
+        "score": 0.255
+      }
+    },
+    {
+      "id": "I_WH_007_T-E-WH-007",
+      "score": 0.059,
+      "rank": 25,
+      "hash": "2b7a0825ccc95c875bd7783ed6456c60c4715c3d3d5ad73041d3c457777e73883bc62bc2278b4683fff1212f2850fafa87bb7d86e8259f71dc175086ad0749cb",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-007",
+        "score": 0.35
+      }
+    },
+    {
+      "id": "I_WH_230_T-E-WH-005",
+      "score": 0.049,
+      "rank": 27,
+      "hash": "a6477278ac2770f59e766577bb4b0dbdd41c3700020f6ff7fb10d48ab57bed43db336b66137aa8db6e02b1cc035bfda628f1c456ad6ef3c1f344f90e9997e87b",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_230",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-005",
+        "score": 0.22
+      }
+    },
+    {
+      "id": "I_WH_230_T-E-WH-001",
+      "score": 0.034,
+      "rank": 30,
+      "hash": "e6fe2e71a46f45f31f7fe85ffe2a8a8c7b9dd1e51cb2960b960ec67fcad809d2f66cddb59b1bef9c0635f99a4804aece3f7f43a2a11784278c98c02f49fba5ec",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_230",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-001",
+        "score": 0.18
+      }
+    },
+    {
+      "id": "I_SH_08_T-E-SH-050",
+      "score": 0.024,
+      "rank": 32,
+      "hash": "d320a2928a6279681cd26f1a12f3c93d11f7342b5852e82b9179eb7b97e6dcab529453bea37b6677618c20369f2a4fa654d470813039915f07f93ce29cb2f360",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-050",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_SH_08_T-E-S-SH-003",
+      "score": 0.01,
+      "rank": 35,
+      "hash": "97e0e1a789bfb6d53011d32ea7f7d4d6d2fd3721efbc65ea51301e9c358acc0e454f1a5fb97b809ea7e56e8ea531e6478df62c2f3bf38de2ec4b7afe3d2b68f5",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-003",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_EV_08_T-E-EV-004",
+      "score": 0.01,
+      "rank": 40,
+      "hash": "83b47b7d639604e6df7918359c1602bc16ed376de4b5a4b37f0acbd7307433f7b69625dc5ca3240c0fdb2a87db834e46309adf0638c50591fecd70074db9e890",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "18",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_EV_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-EV-004",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_TO_13_T-E-TE-004",
+      "score": 0.01,
+      "rank": 43,
+      "hash": "c18bc2a2bde80706c281cdcdfd0962c131fbd39135bb71999a0ae6486af99464c4201b088fcc3738e122df8f1f6100549739cedd04b6c1b5bb23b96e5b4c118c",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_TO_13",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-TE-004",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_08_T-E-SH-005",
+      "score": 0.01,
+      "rank": 44,
+      "hash": "3a3c298860c87f6823c3e327f0b54faecad8f5534e0783c7065d6707bfde9e95bef9fa6afe6c9fb6b4108c0bf0c201d53fe3af87206e2d90dc2df3d2c53d750c",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-005",
+        "score": 0.25
+      }
+    },
+    {
+      "id": "I_WH_007_T-E-WH-009",
+      "score": 0.01,
+      "rank": 46,
+      "hash": "540ace77e9b0935d4c83e9c98bb05b4dc296be47e07d1c59a1d3b5400556f97a980bc927b52323001b6ff5b119d54c32b52f20cb5f80860ca5c1a9aace92f9a1",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-009",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_WH_007_T-E-WH-006",
+      "score": 0.01,
+      "rank": 49,
+      "hash": "a090ee40ec67d61d7d1111e0586addea64f99afd475f36eb4ac76474a2c3973624dba7238cb7c198713529f1d9af0929a38e826dca95765d10f711ceb8d35b99",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-006",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_TO_07_T-E-TE-003",
+      "score": 0.01,
+      "rank": 50,
+      "hash": "2d8ba4ee087e302532cc2c8cf40f9c578c4513aa3adf755ac58fbca03474ca8a916aa80da455ba859c20cd2e77119ab5d8204b0d04f675336e5c6d3f5a8fdfda",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_TO_07",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-TE-003",
+        "score": 0.245
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-001",
+      "score": 0.01,
+      "rank": 51,
+      "hash": "74995e077c624a6264a13b92a3f281a013aa7ec8dad0cb8c7621335f183a5cf8344becae00c9fd6a3212633db48f7ab522433231d0e429969557314ce0f22db4",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-001",
+        "score": 0.129
+      }
+    },
+    {
+      "id": "I_REF_04_T-E-RF-009",
+      "score": 0.01,
+      "rank": 52,
+      "hash": "133f2d475a6276f5f0516b0d684c484b1b1c582d5cd8fa09f7eb16fef85028d124f0eabe0a8ab03178a9a2cc32b69ed1e9958cfd853497639bbd1b4f45a1370e",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "9",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_REF_04",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-RF-009",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-001",
+      "score": 0.01,
+      "rank": 54,
+      "hash": "f537e73d595e43df0933e988a22634a743d7f488be65b63753318fe513b35c19512d23e6b0e65a5c4a3d098c9595ba17b0f0386ae18d670578ccd80093181aa1",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-001",
+        "score": 0.129
+      }
+    },
+    {
+      "id": "I_CK_10_T-E-CK-020",
+      "score": 0.01,
+      "rank": 59,
+      "hash": "7abd0d701f8e1a0223e0302a83032183e28ea84b64aa50499955c90b6c8b837c9a81f079f394d34e82a3b5ed5bcbd69f5be21ebf535a6c04f93a91ed2842bcda",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "5",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_CK_10",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-CK-020",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_EV_08_T-E-EV-010",
+      "score": 0.01,
+      "rank": 61,
+      "hash": "2b71f93ed12f45872d1b4741be46c0c945534e619a9f44896fd9702e81e1baa94e5a97db48905e13faaf49277afe946ea1a94d209b846581d219e6414297cef0",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "18",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_EV_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-EV-010",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-009",
+      "score": 0.01,
+      "rank": 63,
+      "hash": "4eb24e5515c0da7403294064ebb0c01d6fd9be0fd4b2bb8d4c42b3a6f8bd4058c91c625c56c0c441e781f1670e006022fc69b3fb88a9996106af67742b35142c",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-009",
+        "score": 0.121
+      }
+    },
+    {
+      "id": "I_LI_06_T-E-LT-007",
+      "score": 0.01,
+      "rank": 67,
+      "hash": "495b95955e872a0d812f47839c7625e2ff7f5718382223f624e25dc604fafd035a96c7a61bdaf3158248e9c3c60be0bbdcd8cd2b4e4f5c80754a087d8a77bf73",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_LI_06",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-LT-007",
+        "score": 0.33
+      }
+    },
+    {
+      "id": "I_WH_007_T-E-WH-003",
+      "score": 0.01,
+      "rank": 82,
+      "hash": "d1cf3d5f4470ce12269d5e113f1b9aa1b2000e0d87fe55d5e3440213a74881e76abe2a2737cf7437e7b2d82bd1dfcdbfcf9b352bcb6145ff46dab70e53b563b4",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-003",
+        "score": 0.315
+      }
+    },
+    {
+      "id": "I_CK_10_T-E-CK-001",
+      "score": 0.01,
+      "rank": 83,
+      "hash": "b65be68b5eab67b9aec479ae5f5a3a7bff21433c5b72838964e3a74725f089d01ae606cffd0beeee42b7454b6be0ddb27fffeef55d1f01f1ac7725d852495911",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "5",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_CK_10",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-CK-001",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_EV_08_T-E-EV-011",
+      "score": 0.01,
+      "rank": 85,
+      "hash": "1070abf6ef61a381de4dcc1bc54de3df0fe9afd37537ca01a5a38df3e3d3d53a1abf8c10597286d8d8685da53510f45c6618d165359b725291030affd21795e1",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "18",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_EV_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-EV-011",
+        "score": 0.315
+      }
+    },
+    {
+      "id": "I_SH_70_T-E-SH-010",
+      "score": 0.01,
+      "rank": 88,
+      "hash": "574490fefcb313877914e2fd15d06aa842507ef627cd96e851608a8914460ce8e3fcb3da93b76b5566253cf4ce7f14745a460cd6dba5170ad5854f400e2d5ebc",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_70",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-010",
+        "score": 0.314
+      }
+    },
+    {
+      "id": "I_SH_70_T-E-S-SH-009",
+      "score": 0.01,
+      "rank": 94,
+      "hash": "456379467e00c34f4057e2e520e87b6b9b7e8e44980948424a25f60b959e60a383b357d2e90f3d0b4aca05cec548e4c72a675b6fe9b36518258e0a39c5057129",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_70",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-009",
+        "score": 0.314
+      }
+    },
+    {
+      "id": "I_WH_230_T-E-WH-008",
+      "score": 0.01,
+      "rank": 106,
+      "hash": "6bb85c19983c8adf0fee685cbb550df714d361ea479ada89fd63d22c89d308a33823946c3cb879260fff447711f78b7199ab589b1adca1149edec77ea7cfcc87",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_230",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-008",
+        "score": 0.295
+      }
+    },
+    {
+      "id": "I_SH_08_T-E-SH-012",
+      "score": 0.01,
+      "rank": 110,
+      "hash": "00fe5e32d4df461a06fbc8523b14a4911bf1b007eadb118ce400da6e65da2da8f917251162fbab869e488d7b0340b8e4dcddf06a6689acc2e2a99be2e0b97e0e",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-012",
+        "score": 0.182
+      }
+    },
+    {
+      "id": "I_SH_08_T-E-S-SH-011",
+      "score": 0.01,
+      "rank": 114,
+      "hash": "8c77c37de24055b3df20429bb092d1d73940871e1cd896704bcb37aad1dc8e17088e76c6f063b0b0ee005f412399c809aa8d181f561cd4c8c911e79e9fbd51d6",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-011",
+        "score": 0.182
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-002",
+      "score": 0.01,
+      "rank": 115,
+      "hash": "251e1fc0825e2650d5415513c1983cc06ea21d13853562948907b0847fb5960f8ca1325a6e8cf4e0044badb2db66ffe29a75c8de867f8534ff0983d5096aa872",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-002",
+        "score": 0.286
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-002",
+      "score": 0.01,
+      "rank": 117,
+      "hash": "8c7f639b101aeb5200e4efe7c339f7cdd8bb177404e30a0c88a9a88a0a955b1b0aa420873e8385acb2e728b57d804517c085ea91467d36bb94352beb2f406a10",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-002",
+        "score": 0.286
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-008",
+      "score": 0.01,
+      "rank": 118,
+      "hash": "d44d8e915ee177faf5cc936b45bb4fafcccb2a3e7a45948c66540c4334616ba4e7a09e45df4bca216cce1194978d80ec846ff3f1bb02179ec6e79fc2f077d36f",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-008",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-003",
+      "score": 0.01,
+      "rank": 119,
+      "hash": "6d5ea57d74b40abc50ed9c85b606a414b99bf0a74953addc48fcf0496ed52e35a6bd8918cfa575d0245e7ca3dfa579ef30d4a9813e4fab50b15850c2e79c95bd",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-003",
+        "score": 0.286
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-020",
+      "score": 0.01,
+      "rank": 121,
+      "hash": "2522db644ca007de37f1664fe01d149d36092d5be8b96fa9a5b7884630f4a7e9c505a9e80a58e0a2f8ce71f27a671636e35e8f0b41ce2ece6dbf2c6fe775d9a6",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-020",
+        "score": 0.286
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-008",
+      "score": 0.01,
+      "rank": 126,
+      "hash": "732e338aa7bd2cbe4e315c637f7dad31622668b08e45b5fd04da9631d789f47e1b289540c6db65a9198b957d0d87eab8e7fba80306e01ce93ad4c340ff483ace",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-008",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-006",
+      "score": 0.01,
+      "rank": 130,
+      "hash": "1f84628792576f340d96960f42fbe1fef4b4784f902ea139cb76f3c74cf301d7145ac22b771c14bc52f23c7245cf146ad65333fd200612bea412c392bc77e2ad",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-006",
+        "score": 0.25
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-009",
+      "score": 0.01,
+      "rank": 151,
+      "hash": "3614051e9a3f4cba759009b2945454adb329e0eaeb1fd6f7bb703ae63c90300833bde2bf0e5213741f41a7556073eb99505066df2851d0cf31f0cb5e9f90f53c",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-009",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-009",
+      "score": 0.01,
+      "rank": 153,
+      "hash": "de062835cb7d689cf4a833bab78a8edc7bd02fb6ccc0c5536b5d34cf01729273e40356fc63c57afe443ebb445acd72f9dc1600619c58cd529a40b551c61b2be2",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-009",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-005",
+      "score": 0.01,
+      "rank": 156,
+      "hash": "cb7b0b27ef8576db97f39fe0372f7e8c8800d5ae7a24a0cb62a40c45bb73a7bde044ed6f8d95b658bce9bfe3ebe23ea3750fe700313bbf3813801bc46d145b06",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-005",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-004",
+      "score": 0.01,
+      "rank": 158,
+      "hash": "56c914801e655ab2a6a06f0f941cad1c49e318ac9dbca567435d80f66d1133940ec6b5b63403ed0bc2c76bb6e08e352d70cbc61704378e500ac591b380b2b919",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-004",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-001",
+      "score": 0.01,
+      "rank": 161,
+      "hash": "c6c7bd2d91c6fc7e4d7b1891428c1650144dfc8bebe126a12d3360d2767c0d8c624f9e659e0141211f101a512db81d487d720d47eb277bd7b8fd7c17e78a07ae",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-001",
+        "score": 0.25
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-011",
+      "score": 0.01,
+      "rank": 164,
+      "hash": "b93d69e101248bf9f9cf80f1afd2e46c5b5220e8fb89a10d88e24ebe16bace62c91217a0c661875e0672de4b1a0a895b05b6ed0889e22d3a98e42c787aed9d82",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-011",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-010",
+      "score": 0.01,
+      "rank": 166,
+      "hash": "f1cc423e1ac2b7b706ac40eaf0bc9de61a436540b843f7e99dd33e7a9fb3491ca27cfe938dd0255781b88ba1aeb3fbf5836ddf5697f0211b667fa33543dc6405",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-010",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-001",
+      "score": 0.01,
+      "rank": 167,
+      "hash": "f5f6a0b6c5133c57bb5c33543ab01682c7e8399ba0b6e3c5537ef4297cec72413a50e15be7280fe75c0df72bef4c23837ddd66ec079cfe03bc96064e3d57d066",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-001",
+        "score": 0.25
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-007",
+      "score": 0.01,
+      "rank": 170,
+      "hash": "3fea8a40dddcf3d720c434541284b3ac42bf56920d38600eb1ce4b00c3419f86864ae384b2c5d096c81bd1c330a4ea55b51483a09f4e71e7c5276328d57716cb",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-007",
+        "score": 0.211
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-007",
+      "score": 0.01,
+      "rank": 178,
+      "hash": "9bc1a694ff26ddb8d7d50161a46de4ab39fa81cd7407f6097f6d0ad23fe118fa170165b780969975d5480fc7001aeeef0efd7f03de3fe75dec314fab2cffad5a",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-007",
+        "score": 0.211
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-004",
+      "score": 0.01,
+      "rank": 186,
+      "hash": "6165dfa1addac349cacfdd8560b2c5655936bfe601513b7d64560f178a4b96c99a03826e3dc7053f3300397b4e5ae36528aa24fd00d2387966025055e26c2052",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-004",
+        "score": 0.175
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-007",
+      "score": 0.01,
+      "rank": 187,
+      "hash": "04ed2b37034664f42df0bbf2eec34a2160197d229f36ec245b55c93abe8abcb8887df9ee51bff84fabfd0a22da19f1c06c663fece08c25bcd3bfb2438c792bb6",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-007",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-003",
+      "score": 0.01,
+      "rank": 188,
+      "hash": "c9eefd51c9fd6210b026148214997752b6d9d4e08089f03403499870c2076ca24a75390605ee458750dcf3da042b49eb447647bebe791798d518ba1350ad8161",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-003",
+        "score": 0.175
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-SH-002",
+      "score": 0.01,
+      "rank": 192,
+      "hash": "8be2c57cda1772e84482352a16be5ffb39ce929455e922c4afbea82b0c507ac9a94fe994802f2f4ec7041f45222c471ba788ed39e6b6153ce7db7cf5ce94c970",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-SH-002",
+        "score": 0.171
+      }
+    },
+    {
+      "id": "I_SH_240_T-E-S-SH-002",
+      "score": 0.01,
+      "rank": 194,
+      "hash": "df42a70423e102bb1ef5af355e11e53dd97e5c6dd2b21cf0bb81da048b4f3023ce9f4b9b11da1c6de1d4d8289d80f32c6378717bed650dafc04b2074b978ba55",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-SH-002",
+        "score": 0.171
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-007",
+      "score": 0.01,
+      "rank": 198,
+      "hash": "32d50d6d42121d1426ed90f79058d1dbc3196dc496ab50d5f244a377afbe593fe60e32bc7cd1edbbb6caec2bcf1edd2491f1b78c1b5cb9d2fe5a678914c163ae",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-007",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-150",
+      "score": 0.01,
+      "rank": 200,
+      "hash": "f517977beac059fd30fd6f694287509307003bef9ce21268efbca027ab8ed6d4a0f89b98385e4ca3706c84de00508d3fcd9f3c1328152358ef930dfc873484f7",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-150",
+        "score": 0.236
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-014",
+      "score": 0.01,
+      "rank": 201,
+      "hash": "ffb2a7ae836dd15197836ff0f93aec246d834b4ae001713f4b2d27133d3d88bafa08e68140348a70280ac087ee883849fb74c210123061b517a5180d664bff6c",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-014",
+        "score": 0.236
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-005",
+      "score": 0.01,
+      "rank": 203,
+      "hash": "e4626035e7739c3322614f0dac0d1911268359109306e1347584334f37a7c7dee6fab415b42bcbe1a038924f1a7a9da16fc57e356b747b6d2f9b22a1133c10c2",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-005",
+        "score": 0.232
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-004",
+      "score": 0.01,
+      "rank": 204,
+      "hash": "751cedf42798d443bc95cec44884a4ec9dcd8bf3ada69389f92c769adac60d34bb0bee3b8d78173c1a5e2f0e5d92a8d3636fc25ac7724bdfaac324a8682298e8",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-004",
+        "score": 0.232
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-008",
+      "score": 0.01,
+      "rank": 207,
+      "hash": "71689aa448a8c5936884c064ac98cb72204f7646d0dc60a4942091a53a4b033dfc1d697dbbaa87ad73e36b4b23e9f5da4ad8645797af21ff341beb26e4012a64",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-008",
+        "score": 0.229
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-008",
+      "score": 0.01,
+      "rank": 208,
+      "hash": "f1cddb5678cf608386c942d1462c6c2a6a547f8945bbad5c512451628543c317a375a62c23c1eb528292a27c0eff5546ce711cd626f28b87604ac4f1e0d1f769",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-008",
+        "score": 0.229
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-010",
+      "score": 0.01,
+      "rank": 210,
+      "hash": "643d574be5a661beadc07266122070793c992c29584cea65481cb18c2196ae0ae2c75df57c946b4872f81b1bef43c0a46eff6dd3ac02134e58be0bf97ed5e44d",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-010",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-010",
+      "score": 0.01,
+      "rank": 214,
+      "hash": "2fae08418f3292e93fda255ac5a0adc92c1ab2db9408dccc1788ba70ea654f6e7e9c3b614109f631686c39d4ebe500863110cd5f321c4a22fbebf6228a1f27ec",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-010",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_LI_06_T-E-LT-005",
+      "score": 0.01,
+      "rank": 223,
+      "hash": "5cdef1446e9c9cf4c79ca17f5024c80104564ec0bbc0f582c8a83cd04fa5cc3a1871b7a148fe3b3a138ae4f968954640fd421b69221f517c5e292c5b3f913b7b",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_LI_06",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-LT-005",
+        "score": 0.211
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-004",
+      "score": 0.01,
+      "rank": 234,
+      "hash": "87a6a4c12da88dbaeed1cd148f1660f7be6c50c43e751c6c162e8f8bf1f8caabfe0266a8de7c3fa44ffc8b305931d55c97a4fff8b2d52b495aa2cb7cf1046ce3",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-004",
+        "score": 0.18
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-003",
+      "score": 0.01,
+      "rank": 235,
+      "hash": "bb42b302e333cefe6032d747b5f50bba12d420b48aedaffc6471b07b72b1a4751dbae70179e6fae237fbdbd54aab41c86b578e4ff7d9662dedf24dda94421160",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-003",
+        "score": 0.18
+      }
+    },
+    {
+      "id": "I_WH_07_T-E-WH-002",
+      "score": 0.01,
+      "rank": 242,
+      "hash": "09015d064228b2a19a99620e53a71dbccb762792d18f9d396bbe69830d6a384774cbbe29e157ba95b162d100564ccd613f232ed689d3802e749297ed13beb634",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_WH_07",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-WH-002",
+        "score": 0.17
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-AC-005",
+      "score": 0.01,
+      "rank": 245,
+      "hash": "d50832602717c3c70e37c080fe00832c92ea4b9f33cc622dfbd1917057d4eadc767dd8c918ee3e572651f2f9f090ea795ef4f9fa4660cfc760a1821bb62487fc",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-AC-005",
+        "score": 0.169
+      }
+    },
+    {
+      "id": "I_AC_25_T-E-S-AC-006",
+      "score": 0.01,
+      "rank": 246,
+      "hash": "3f3bc8417d73419bab7628f7e641e0de754063db8ac11fc093a48b82be79ed72142e64a32bffb251e50bd3a2b349a11de7d9c94884c825c7ae856cd245aef24e",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-E-S-AC-006",
+        "score": 0.169
+      }
+    },
+    {
+      "id": "I_TO_110_T-G-TE-002",
+      "score": 0.144,
+      "rank": 8,
+      "hash": "06f2b22edc98fb8b1780c2be34121d14266dde6683459bd475abdc652eb200ce51b1897c92bdfd13b62c14ea1b112ed40dfdb58ffb2de5b3b6a998286dc200ee",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_TO_110",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-TE-002",
+        "score": 0.325
+      }
+    },
+    {
+      "id": "I_AC_07_T-G-S-AC-011",
+      "score": 0.109,
+      "rank": 15,
+      "hash": "760633f7f4d652684973e5a8628412c440467b2acd40318f293805ba01789d746f856c380c1fcc68e7885b0f4af6644894bba720a3666ec28cb88c4bec2f9e2e",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-011",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_AC_07_T-G-S-AC-012",
+      "score": 0.079,
+      "rank": 21,
+      "hash": "ba79d9644ac30251feff5fe082895bc27e2c82c262dea67f65306ce5b7059f2a229863ceca41a7c9ab51e840f65f9e5431a647fa7d18b05cbc031930c2011ccb",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-012",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_AC_07_T-G-S-AC-013",
+      "score": 0.054,
+      "rank": 26,
+      "hash": "d002386f9ac86c16437619b12c2bcd335b9efe83addebe138dc254d9b3741f420fa0236b9e8f9ce657db7b803e3f5bb15ae235e2533aab36737578c9c31b809f",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_07",
+        "score": 0.08,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-013",
+        "score": 0.314
+      }
+    },
+    {
+      "id": "I_WH_007_T-G-WH-008",
+      "score": 0.044,
+      "rank": 28,
+      "hash": "58692e4225b248991c7a449c3aa516b18a3652c2670267cfa031db1957d1302b830bc1dc7dba30e2d02b640c79d9747b076eac27cca42bfe6cc8b69a5424cd35",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-008",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_08_T-G-S-AC-017",
+      "score": 0.039,
+      "rank": 29,
+      "hash": "1e1ddf01347498f8d22638423ba26e40ab37b53143de4c5561887095a11ebfe401778ff812b757ec246f8720c228d86df0fe2705b446c98c8cec1f8051b4e41b",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-017",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_WH_007_T-G-WH-002",
+      "score": 0.029,
+      "rank": 31,
+      "hash": "fbe5d79a5e6e369596c2d6ffdfd6bab7ba3b69a6b5cbff7c9007adc1eedcb08d9b614fbeccba33b129c5cc56fb1b07f1af477d39ec9db93b7b9cbc0f75e6fbbd",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-002",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_WH_230_T-G-WH-009",
+      "score": 0.019,
+      "rank": 33,
+      "hash": "5f19e1a49913a74629b9f40d949de063b385e41ad17033e9501a2cdacc818830d5258bf79081a497643582644f3e0fca273435a5ff69e723056c5cc3b24a5ba7",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_230",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-009",
+        "score": 0.18
+      }
+    },
+    {
+      "id": "I_WH_007_T-G-WH-012",
+      "score": 0.014,
+      "rank": 34,
+      "hash": "c1c9b6d3f9a692c7589a99b34ce1f8f567bed1f48f514310c06bbff137d611f2751d15832c3af0d6a83d1617669349571bd82a48d0b2b180ea7d34d58c409314",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-012",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_240_iddd",
+      "score": 0.01,
+      "rank": 36,
+      "hash": "7f6d850233f87af2cc100695d77ad5dd2127aee22ea1711812d40c9e9cd6147a89bcd9db78c4bf9cd9146e63e55f0150b9ff30e1820e3f658749f8e8a385e3af",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "ee",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "iddd",
+        "score": 0.165
+      }
+    },
+    {
+      "id": "I_WH_007_T-G-WH-006",
+      "score": 0.01,
+      "rank": 37,
+      "hash": "90ca2e5786618ad273241a0ab44469fe4b361b777f5c81f9ae0802bafd44b0f0989873a3eb19ef9689c6d1fe4770d7bbe8d65deafb730eeee94a16add1d0c17b",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-006",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_08_T-G-SH-051",
+      "score": 0.01,
+      "rank": 38,
+      "hash": "716ff066d898ba45cf267c952502c5f82923b3f430b2124893918cfa3434c28a24388c18cd693222eb7bddcbc16e4b146ef7152efc3a6ffe0963cb5fda39c6db",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-051",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-030",
+      "score": 0.01,
+      "rank": 39,
+      "hash": "27ea2bd48d8226fe6c4219c3f381769aff34b1f7ca64e19e746ad4dfd0546f07d58a3df6b47abbfcf1c6f85ac0fbed47d56865b37ea5c1e484eac1e1c41a9960",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-030",
+        "score": 0.157
+      }
+    },
+    {
+      "id": "I_CK_10_T-G-CK-012",
+      "score": 0.01,
+      "rank": 42,
+      "hash": "6d10a8306c2ebd70fa6d2f2e7d582d9c5149483f9a070533d8b283864646afe1443e22e3d2ba1142ed9dee597a08eb515bfdf7a695982c4c2c8f989433f1fb62",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "5",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_CK_10",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-CK-012",
+        "score": 0.145
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-015",
+      "score": 0.01,
+      "rank": 45,
+      "hash": "345adc517df1e829ee606d5774aeb271cef0539690a3c6ce5629c2d31e79669eed41cabdca1a30030ca66a7d57da0c138eabf599b4e97325ee1de98cacd82dd8",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-015",
+        "score": 0.129
+      }
+    },
+    {
+      "id": "I_TO_07_T-G-TE-003",
+      "score": 0.01,
+      "rank": 47,
+      "hash": "ffea77535284f9c08ce54d2e337ba796958c909d209562ff21b9d0984dd53735911a8dff37c18d19443d0aa8a1f78dcb2f176228235768be5cb7fff379e30b48",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_TO_07",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-TE-003",
+        "score": 0.245
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-014",
+      "score": 0.01,
+      "rank": 48,
+      "hash": "089bc2ef4764f6782f28e5d47a0ea9735026741604d97df4c86a7cbdf6c43a390e95f87b736611b598d7080acc6222bb1e0df85e956d1007370cab9a14defdc4",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-014",
+        "score": 0.129
+      }
+    },
+    {
+      "id": "I_WH_007_T-G-WH-007",
+      "score": 0.01,
+      "rank": 55,
+      "hash": "5f5a674dd79a5fcb5f353d580dd4294820126ba33bdcb93a486b04705d7b3d1e2255177a4aacd6e1ac68c819c69a61c79acdfca10992e772beecf0648c013187",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_007",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-007",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_WH_230_T-G-WH-004",
+      "score": 0.01,
+      "rank": 56,
+      "hash": "ec2db1858f5da32c21cbaa4e24127638253da0480ca5bb46ac3c8428c2926b0c0629e71970645446dde479022d47cd4d03d3f9bd1b203777cc547416a25605a0",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_230",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-004",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-020",
+      "score": 0.01,
+      "rank": 57,
+      "hash": "26ec90cd1f7e961482f90ca70989200d1c1d97e625c16cfab0947abc7003845c1c82a3b503dc4b918595d01746742c0818e1743f1bbc5886618228ffb319b47d",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-020",
+        "score": 0.129
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-013",
+      "score": 0.01,
+      "rank": 60,
+      "hash": "9b90238446b99bbfe146656522d900af3b432de2dc90b6bd9f2c4b0da86c443391edd6777841f48a85e4caf125b05be7fcfc8e9efc26a021e2794e086caa5a5f",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-013",
+        "score": 0.129
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-027",
+      "score": 0.01,
+      "rank": 66,
+      "hash": "f082c31070b4537f826cd978b36286f7e0ba67402c9bc64527794e0a20eb8f3a1f782141fde0e2925397c6e34dba1277f87928a467073dd8584608be16f24025",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-027",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-009",
+      "score": 0.01,
+      "rank": 69,
+      "hash": "988e9521771a158f61c9c586cc85f237083e5ded7d43cfa13cd03aa2c18f5a1b284815daf13325cfa8d14d07673cbd2c349bf37b1f842fd07e2ab88f4cf7bf59",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-009",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-025",
+      "score": 0.01,
+      "rank": 72,
+      "hash": "0517ee7a0b364ea4d2f216c8fe9ff3aa56ccae238a216c452698a2dfdd669f067b070932f29f6f50741786157ed7f0fc61eeb92b214988ab2d3b8513cc58541c",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-025",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-004",
+      "score": 0.01,
+      "rank": 75,
+      "hash": "0284d463a54ef37361c99a262a8aef7aa625afea08628980cb6b93565b6245940a736af69b22723b40584a4577ee24bd9626c88a364ae26787fc4212a7daf258",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-004",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_CK_10_T-G-CK-002",
+      "score": 0.01,
+      "rank": 77,
+      "hash": "e36cc316771ba1ebc1accf9d6e3d4414b92750e52e3572371e04adf9adaf0b0572eba59671f5de09c1aa5e40758e5b09f6b71485f64adfb7fdb3699b95657566",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "5",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_CK_10",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-CK-002",
+        "score": 0.335
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-038",
+      "score": 0.01,
+      "rank": 78,
+      "hash": "2d8957c55fa30665655a7bf31c4f671099d1340d2af25717c3ccade7fd09dd8e127f44624bd25d0aad0ac8f9fbe6095af5776fc4500f24a11bd9e502dd20956b",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-038",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-032",
+      "score": 0.01,
+      "rank": 81,
+      "hash": "fb42c4de2e0ce200d24df5f3978f31e307971fb6bd63c8ec5c0bbdc585771929080422be62d6dec5c75dbf9e6aad89ea713fddb55aa51734e96783a15046bcb9",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-032",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-037",
+      "score": 0.01,
+      "rank": 84,
+      "hash": "43799d9726d4ab6dfd8a3ddea6314836a577f9a7bcf7e98c615d041f7baa6621fb7066ba382687b4a5bedc6b9ea53b3c1aacabb51c1fee75e5a9bf257491bdcf",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-037",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-023",
+      "score": 0.01,
+      "rank": 87,
+      "hash": "88fa6f6449c77a3c305ccafd8fdc7b4635dab3540779585b079fd8f0cebb69e0d4dc7d64b38f47bd192c074e8928133b25cc89228f64187b9435e7a42114c3a8",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-023",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-024",
+      "score": 0.01,
+      "rank": 90,
+      "hash": "2f99ab37c624c85821a92ebdaf6f7cbf7e220fc6934fac40924da5534db3fef64d0e3add084f2c80ec453fc259964746afbb101a79c8c923e5f127d51ee9de1c",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-024",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-005",
+      "score": 0.01,
+      "rank": 93,
+      "hash": "5962d734d4937780094e5f778d543af6ed0b990b627f22f6cec8b5e9f4f451275405c747236f22945c8a04faaba3807d9da34768b536ad2dd866ece1bc131205",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-005",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-028",
+      "score": 0.01,
+      "rank": 96,
+      "hash": "3c5d26e9dd47439a986643573800ff63902a549f144cb13c7df3b26b2b45e279aa86c23efb3c5c9c8867f9679ba8bc26284269560abbcb6930bb56f39a81adad",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-028",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-001",
+      "score": 0.01,
+      "rank": 99,
+      "hash": "0f899eeedcb1f52b36cd14e2bd38c4886c4de76809716602e0f3641653eba402a4edff2b70017e4ae4fdfa46471fb314f80ea921d7f114953f3e5ae541c5d22d",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-001",
+        "score": 0.104
+      }
+    },
+    {
+      "id": "I_SH_70_T-G-S-AC-023",
+      "score": 0.01,
+      "rank": 100,
+      "hash": "72fe94af21b9f34ce63cad538a1c7d61a6c71751ad35a1bc70a0e0a00519b225ae8e1bf3741e8cc9950ef015802f4a9e1c75aff15340eaf9bf74e12c2ede1054",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_70",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-023",
+        "score": 0.314
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-022",
+      "score": 0.01,
+      "rank": 102,
+      "hash": "e008a483881a5b545fe6766d12915ee228112da77b09b1b285e854276ea509d057c83b737fc632fff3f319d6caffe4a661881fb5448a8fd2fba8e21157167664",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-022",
+        "score": 0.096
+      }
+    },
+    {
+      "id": "I_WH_230_T-G-WH-010",
+      "score": 0.01,
+      "rank": 104,
+      "hash": "a542633623ecc55a38f2320da5e793708589018880cedde59b3087d60a2f997c57146aa3df0294f6cb6046bd2337bc3e68dcd2c537960127a328249e56cc2b7d",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_230",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-010",
+        "score": 0.295
+      }
+    },
+    {
+      "id": "I_WH_06_T-G-WH-003",
+      "score": 0.01,
+      "rank": 105,
+      "hash": "85a62f9250c37c057378308cc86a8949ea77ebebf903da55911a81f19b6ccbdd59074a0afde66ef90b58b810c7ea90ef29f285d3503a931532fcedb12a7496ee",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "7",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_WH_06",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-WH-003",
+        "score": 0.295
+      }
+    },
+    {
+      "id": "I_SH_08_T-G-S-AC-025",
+      "score": 0.01,
+      "rank": 112,
+      "hash": "28673d5cb4f1fee9be97b87f97465a6970337e6e456ee365e9bb34c598da8939135765ddcfb614d8c1c2ffa139fc393400c778395934bc7858c605e04759bd35",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-025",
+        "score": 0.182
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-002",
+      "score": 0.01,
+      "rank": 113,
+      "hash": "d7142ce7b25fc74b456edb3ea7d89088688fe4e3430a05bb13c4e20efc8efa3295dc8d70e573deb7a46eb6c015d101a0bcbb5750f929a3e58853bf164ea50c64",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-002",
+        "score": 0.286
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-022",
+      "score": 0.01,
+      "rank": 116,
+      "hash": "325986f10468ed2fc34e1bbc232c5a39f902647112390697058a8a0b21aa3c7f93e0c38975795b79a735347aacdf9fe10236839b5a8a97d99fa8d10d64265657",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-022",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-003",
+      "score": 0.01,
+      "rank": 123,
+      "hash": "8cbe013d0c8b220c771e5655ea6635360da2c2b01438a4b19544dbb56e524ecbc0f3e88f7b17957b1d406c3762c81df548eb2079b009be96be9593aa43a3cf42",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-003",
+        "score": 0.286
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-009",
+      "score": 0.01,
+      "rank": 127,
+      "hash": "a4e026eb47bcdc1c073262799d593d8ba3b9b63e6f1c2cbd5fca4e243d8779bc5f8d7243d266cf7ef5bea699ef505ab8cfb2de08a36b57333c4242da894526e1",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-009",
+        "score": 0.264
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-020",
+      "score": 0.01,
+      "rank": 132,
+      "hash": "b1607cfe94b37f5e8ff22b5efc64af3bb97e77e5d4aaca47526c569de27898bbd8135910679f116902c4689b3194a4f8003ea2af88cbfd558e9e1604075fcb5f",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-020",
+        "score": 0.25
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-003",
+      "score": 0.01,
+      "rank": 140,
+      "hash": "257cb976f609e7692960c9b145b72eda267a71a93f1bcb605668e2fd2df8a26aea6895c44b0d6dd75c9416736f833bacc3e463340936059c1b9d03bf8c378340",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-003",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-033",
+      "score": 0.01,
+      "rank": 142,
+      "hash": "f8a7dead8f5ee31e01b51fd312b47549c7a143e24155347c8a9586577dc770f861897d3b1f0e631d832dd0b57fd92771ff3e788002ec57d5943c3fc5d42d8001",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-033",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-029",
+      "score": 0.01,
+      "rank": 144,
+      "hash": "42faf2978885bfabde515f86d21c465b9c6da48bd2154c3ebdd809e69cee6d5c8622107d86ce7f5f0520a2de572266fed72cd3754ceef17fee9f3260e9f4eda4",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-029",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-012",
+      "score": 0.01,
+      "rank": 146,
+      "hash": "9daa7a2e04794727b67b966447ec6ccca20c7aeb7344e2118af972b6f83668f5dd6083b027d339fdf07d5bc90fdeb5f90b26218f7f3bc714ff7dea931fb44f8d",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-012",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-002",
+      "score": 0.01,
+      "rank": 148,
+      "hash": "bfc63920f55effdac6ae93e5dd3323cfaee8af5ef653c42924c86053d3d4a0277edfd9b7aff827d0c511a642e9222127fa1b19580cfc94ab7ea6fc70cc9c05b6",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-002",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-031",
+      "score": 0.01,
+      "rank": 150,
+      "hash": "46dcfa890fddca13dc19051789dfa305c133403d04008d02096b1140bb4997348eb5ec5aa02176652c4ebdc0603e3f2402a6827f64eefa4ce67e842e5648a9c2",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-031",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-035",
+      "score": 0.01,
+      "rank": 152,
+      "hash": "27cdbe28eaf7a07da48f2c9df28e70f435d14512b09f3556e548a88cfd379e66dbdbc647479fc36f8ccb237072a129640c9c5296c5039de58039c65fa75496e1",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-035",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-010",
+      "score": 0.01,
+      "rank": 154,
+      "hash": "81eb779912de57d0a19cac497d83f2aea961bb08f0451f9e963acfbaa064c975ff3380c09e37b1af6b168717f624cf29a78590b2d7595d61cbc847924511dbc0",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-010",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-019",
+      "score": 0.01,
+      "rank": 160,
+      "hash": "ffcc47702e0d172c2885dde4b86e3e7a26e6f1b1cb82c14277ff893c6b0c5c3e895bef4314a3bc89ab8fae6dca5f3eb0409f480290987f747189023035f927e9",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-019",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-026",
+      "score": 0.01,
+      "rank": 162,
+      "hash": "f3823df2f5cf40eafb5f6e5fec934d9722edebda93b11b3e9899b71f5a87e45c93c85ceaee4c18b93560eb65d368840b15718cb5fec4318c4593f64a50247d13",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-026",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-024",
+      "score": 0.01,
+      "rank": 168,
+      "hash": "34af25afc2c33ff18c0ca83a489dad7fc37655b35c2575f5d2500a5b848662aa0ddad6e8548d2bf4c2f3cdb8fe203c6544fac9f342c7ddd5a5232735591f453f",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-024",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-001",
+      "score": 0.01,
+      "rank": 169,
+      "hash": "74f876260c51d916b2fee8ff79f5396653fc8fa42dceffae1e5855a3bdbd729e0b158e0a605e20c794ce87498ac2017d70341571196aa0cbe9776c0700eeacc8",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-001",
+        "score": 0.25
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-021",
+      "score": 0.01,
+      "rank": 172,
+      "hash": "eb113b6cb9a6f27d7e1e4fa5a7c95b85772e804f84f42e041d31aa4543dc082a4d0c449dfceb35756f52f13a33aca9f6e520642a9b96b9ab72b1c0c4b6d42370",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-021",
+        "score": 0.211
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-007",
+      "score": 0.01,
+      "rank": 174,
+      "hash": "2398e40f81a1e0f501e6018ad806e9506062e1faafc9089f597bb60a6023cb6065c20f2252040d4c8e416890f5e1b1e7dff64ec5a2ca690024fc5ed72ef32884",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-007",
+        "score": 0.211
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-SH-018",
+      "score": 0.01,
+      "rank": 176,
+      "hash": "0ca010b6a787870718535845f300d8b5c937080ac93be491a9586fac7474d5a1f4aae92ffb946c4c54d32fd3f39929fc8493362ffdcc1c21e437cbba0d51a731",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-SH-018",
+        "score": 0.211
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-018",
+      "score": 0.01,
+      "rank": 190,
+      "hash": "50cc5d6615e6e5f50ca7b4b9a1fb48cdf5902930c0b04cc7316526e08699dae1254b20932985bebdc86fa3846cd3de68aa5e794c6bdb62b399230fbb00d41057",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-018",
+        "score": 0.175
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-007",
+      "score": 0.01,
+      "rank": 193,
+      "hash": "edd4ca74b21e6b3ce9fd25d82602cf8149ba2ea4898097ec318502a453dd0d35d6b7d31bacafa408b8a33804f12f5cf16740640bff8007fbb230b98045de8c22",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-007",
+        "score": 0.239
+      }
+    },
+    {
+      "id": "I_SH_240_T-G-S-AC-016",
+      "score": 0.01,
+      "rank": 196,
+      "hash": "9f3a5e17518076d175d736f2ce4c8293ef1efaa21c931972cd23f2137100d16bca3aa7e3a0e54f1e39d5a54eb63834504d51b12368c2b320c55d4990fbfbafbf",
+      "nbiType": "WinterSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_240",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-016",
+        "score": 0.171
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-014",
+      "score": 0.01,
+      "rank": 202,
+      "hash": "2e9a848913723caded7981deac640c4cedf425b85d1a21ab273751a93c5ec614e2c9b9a4ad1eb396bd195acfc88753e25235321ee23717387b76358cf8b316d4",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-014",
+        "score": 0.236
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-005",
+      "score": 0.01,
+      "rank": 205,
+      "hash": "7c5a0055ccc7ff1a1602432723ca0330fd3f607179634eac9ad775e3cbbc0ce17f63e1845360d705816fe075d4af027e5aeb882fdc17218d08541f0f879ba53e",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-005",
+        "score": 0.232
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-008",
+      "score": 0.01,
+      "rank": 206,
+      "hash": "a604a0a642718edbb0284131a412661d8cfcce1599b4ac05f880510022ed7e7837afcccf05df0ee883628259a4c910106bce3ec79c76271f9e224fa8c8b35558",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-008",
+        "score": 0.229
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-010",
+      "score": 0.01,
+      "rank": 218,
+      "hash": "95d4d5b886086f7e2750aa072372dea3d1254b55d51066a5f3bd53836e492edea7fac04052d68e4ddd9b8a7d096404b0aef59ec90d357a53380dcc77cc50daf4",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-010",
+        "score": 0.225
+      }
+    },
+    {
+      "id": "I_TO_14_T-G-TE-004",
+      "score": 0.01,
+      "rank": 229,
+      "hash": "63474ab72da9cea91f645b6e6e1904b885076ac8c5c5680f7a8a05748b9a604864ef46dc59382dc8c35202ad9a0db7a83f17f7c80519e691c26941f6d71031d2",
+      "nbiType": "Actionable Reco tip",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_TO_14",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-TE-004",
+        "score": 0.18
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-004",
+      "score": 0.01,
+      "rank": 233,
+      "hash": "6b7ce8f4ad9ea947e200567142546637794c432b81ccb848412bd8940e4650f0ae008fb91a0258c852c92d44017d30c159efcb50e5b090db87d1c10c3f0ed52c",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-004",
+        "score": 0.18
+      }
+    },
+    {
+      "id": "I_AC_25_T-G-S-AC-006",
+      "score": 0.01,
+      "rank": 244,
+      "hash": "52f445d334bb7d9288c3db2157f4c74232a7edce74974a3ab111dec5dbe342030254be33ef04529272ee0979064d9a651bf32f5583766d23eac5b005f2d5a077",
+      "nbiType": "SummerSeasonal",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "T-G-S-AC-006",
+        "score": 0.169
+      }
+    }
+]

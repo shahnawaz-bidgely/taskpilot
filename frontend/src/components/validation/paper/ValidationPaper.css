@@ -65,7 +65,7 @@
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
 }
 
 .form-group {

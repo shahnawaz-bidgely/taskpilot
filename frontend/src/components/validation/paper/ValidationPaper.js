@@ -8,6 +8,7 @@ const ValidationPaper = () => {
   const [messageStyle, setMessageStyle] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [validations, setValidation] = useState([]);
   const [formData, setFormData] = useState({
     fuelType: "",
     reportName: "",
@@ -27,15 +28,53 @@ const ValidationPaper = () => {
     });
   };
 
-  const getInteractions = async () => {
-    alert("hello");
+  const getInteractions = async (user) => {
     try {
-      // const response = await axios.post("/api/mock-interaction", {
-      //   users: selectedUsers,
-      // });
-      // console.log("API Response:", response.data);
-    } catch (error) {
-      console.error("Error making API call:", error);
+      console.log("Row data:", user.username);
+      console.log("Form data:", formData.endpointUrl);
+
+      const combinedData = new FormData();
+
+      combinedData.append("fuelType", formData.fuelType);
+      combinedData.append("reportName", formData.reportName);
+      combinedData.append("endpoint", formData.endpointUrl);
+      combinedData.append("uuid", user.username);
+
+      // alert(user.username + " " + formData.reportName);
+
+      const response = await fetch("http://127.0.0.1:5000/prep-interactions", {
+        method: "POST",
+        body: combinedData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch data of HER validation");
+      }
+
+      const responseData = await response.json(); // Assuming the response is JSON
+      console.log("Response Data:", responseData);
+
+      // Create a Blob with the JSON data
+      const blob = new Blob([JSON.stringify(responseData, null, 2)], {
+        type: "application/json",
+      });
+
+      // Create a temporary link element
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "interaction.json";
+
+      // Append the link to the DOM and trigger the download
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up the DOM
+      document.body.removeChild(link);
+    } catch (err) {
+      setError(
+        "Error connecting to Redshift or executing query: " + err.message
+      );
+      throw err;
     }
   };
 
@@ -48,19 +87,119 @@ const ValidationPaper = () => {
       combinedData.append("reportName", formData.reportName);
       combinedData.append("endpoint", formData.endpointUrl);
 
-      const response = await fetch(
-        "http://127.0.0.1:5000/her-sections-validations",
+      const validations = [
         {
-          method: "POST",
-          body: combinedData,
-        }
-      );
+          username: "751e298e-7e54-4bb5-a4f2-17bfd0931e61",
+          sections: {
+            HEADER: {
+              failure: [
+                "Username does not exist",
+                "Utility address does not exist",
+              ],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "377da01e-86a5-487e-ac36-81e1a322f50b",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: {
+                failure1: "test failure",
+                failure2: "test failure2",
+              },
+            },
+            QR_CODE: {
+              failure: {
+                "QR Code": "QR code is missing",
+              },
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "df79f2b6-3c1d-442e-b65c-1f526b40117d",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+      ];
 
-      console.log(response);
+      setValidation(validations);
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch data of HER validation");
-      }
+      // const response = await fetch(
+      //   "http://127.0.0.1:5000/her-sections-validations",
+      //   {
+      //     method: "POST",
+      //     body: combinedData,
+      //   }
+      // );
+
+      // console.log(response);
+
+      // if (!response.ok) {
+      //   throw new Error("Failed to fetch data of HER validation");
+      // }
     } catch (err) {
       setError(
         "Error connecting to Redshift or executing query: " + err.message
@@ -68,104 +207,6 @@ const ValidationPaper = () => {
       throw err;
     }
   };
-
-  const validations = [
-    {
-      username: "8ddb5a00-5ebf-42b1-89ad-b76ea731b7fc",
-      sections: {
-        HEADER: {
-          failure: [
-            "Username does not exist",
-            "Utility address does not exist",
-          ],
-        },
-        SHC_GRAPH_AND_WIDGET: {
-          failure: [],
-        },
-        ITEMIZATION_SHC: {
-          failure: [],
-        },
-        ITEMIZATION: {
-          failure: [],
-        },
-        PROGRAM_NBI: {
-          failure: [],
-        },
-        EE_NBI: {
-          failure: [],
-        },
-        QR_CODE: {
-          failure: [],
-        },
-        FOOTER: {
-          failure: [],
-        },
-      },
-    },
-    {
-      username: "caf51017-c6b9-4ab8-b218-291a2a923c05",
-      sections: {
-        HEADER: {
-          failure: [],
-        },
-        SHC_GRAPH_AND_WIDGET: {
-          failure: [],
-        },
-        ITEMIZATION_SHC: {
-          failure: [],
-        },
-        ITEMIZATION: {
-          failure: [],
-        },
-        PROGRAM_NBI: {
-          failure: [],
-        },
-        EE_NBI: {
-          failure: {
-            failure1: "test failure",
-            failure2: "test failure2",
-          },
-        },
-        QR_CODE: {
-          failure: {
-            "QR Code": "QR code is missing",
-          },
-        },
-        FOOTER: {
-          failure: [],
-        },
-      },
-    },
-    {
-      username: "df79f2b6-3c1d-442e-b65c-1f526b40117d",
-      sections: {
-        HEADER: {
-          failure: [],
-        },
-        SHC_GRAPH_AND_WIDGET: {
-          failure: [],
-        },
-        ITEMIZATION_SHC: {
-          failure: [],
-        },
-        ITEMIZATION: {
-          failure: [],
-        },
-        PROGRAM_NBI: {
-          failure: [],
-        },
-        EE_NBI: {
-          failure: [],
-        },
-        QR_CODE: {
-          failure: [],
-        },
-        FOOTER: {
-          failure: [],
-        },
-      },
-    },
-  ];
 
   const [expandedUser, setExpandedUser] = useState(null);
 
@@ -189,7 +230,6 @@ const ValidationPaper = () => {
   return (
     <div className="validation-paper">
       <div className="form-container">
-        {/* Form Fields */}
         <div className="form-group">
           <select
             id="fuelType"
@@ -203,7 +243,7 @@ const ValidationPaper = () => {
             </option>
             <option value="ELECTRIC">ELECTRIC</option>
             <option value="GAS">GAS</option>
-            <option value="ELECTRIC, GAS">ELECTRIC, GAS (for DF HER)</option>
+            <option value="ELECTRIC,GAS">ELECTRIC, GAS (for DF HER)</option>
           </select>
           <label htmlFor="fuelType">Fuel Type*</label>
         </div>
@@ -282,7 +322,10 @@ const ValidationPaper = () => {
                     <td>
                       <button
                         className="preview-button"
-                        onClick={() => getInteractions()}
+                        onClick={(e) => {
+                          e.stopPropagation(); // Prevent row expansion
+                          getInteractions(user);
+                        }}
                       >
                         Mock the Interactions
                         <i className="icon-preview" /> View

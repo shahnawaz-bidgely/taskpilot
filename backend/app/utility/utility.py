@@ -37,3 +37,4 @@ def get_users_from_file(file):
     except Exception as e:
         print(f"Error processing file: {e}")
         return None
+
