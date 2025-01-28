@@ -4,6 +4,7 @@ import json
 import logging
 from collections import OrderedDict
 import requests
+from numpy.ma.core import append
 from requests.auth import HTTPBasicAuth
 
 from backend.app.route import ACCESS_TOKEN
@@ -16,6 +17,7 @@ MASTER_FILE_PATH_PROGRAM_NBI = "app/resources/master_program_nbi.json"
 MASTER_FILE_PATH_TEST = "app/resources/test.json"
 MASTER_FILE_PATH_EE_NBI = "app/resources/master_ee_nbi.json"
 RANK_COUNTER = 0
+
 
 
 
@@ -63,6 +65,9 @@ def update_interactions():
 
         endpoint_map = getEndPoint(uuid, endpoint_url, ACCESS_TOKEN, fuels)
 
+        unique_nbi_set = set()
+        unique_action_Set = set()
+
 
         for fuel in fuels:
             if fuel in endpoint_map:
@@ -72,8 +77,9 @@ def update_interactions():
                 print("fuel", fuel, endpoint_map.get(fuel), topAppliance)
 
                 #print("INTERACTION_FILE_FINAL ", INTERACTION_FILE_FINAL)
-                prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, int(topAppliance))
-                prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, int(topAppliance))
+                prepare_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set)
+                prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3)
+                prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3)
 
             else:
                 print("fuel", fuel.lower(), "not found")
@@ -84,6 +90,38 @@ def update_interactions():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+def prepare_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set):
+    with open(MASTER_FILE_PATH_EE_NBI, 'r') as f:
+        master_ee_nbi_data = json.load(f)
+
+    print("Processing EE NBI data")
+    print("current interaction = ", INTERACTION_FILE_FINAL)
+
+    # data = remove_duplicates_by_action_id(master_ee_nbi_data)
+    # print("data", data)
+
+    for interaction in master_ee_nbi_data:
+        print(interaction)
+
+        if interaction.get("id") in unique_nbi_set or interaction.get("action").get("id") in unique_action_Set:
+            print(f"Skipping interaction with id {interaction.get('id')} and action id {interaction.get('action').get('id')}")
+            continue
+
+        if ("Summer" in interaction.get("nbiType") or "Winter" in interaction.get("nbiType")) and (
+                interaction.get("fuelType") == fuelType):
+            #print("Found summer or Winter")
+            assign_rank(interaction, INTERACTION_FILE_FINAL)
+            unique_nbi_set.add(interaction.get("id"))
+            unique_action_Set.add(interaction.get("action").get("id"))
+
+        else:
+            if (int(interaction.get("applianceId")) in topAppliance and interaction.get("fuelType") == fuelType):
+                #print(f"Found Non summer or Winter with top appliance {topAppliance} and fuel {fuelType}")
+                assign_rank(interaction, INTERACTION_FILE_FINAL)
+                unique_nbi_set.add(interaction.get("id"))
+                unique_action_Set.add(interaction.get("action").get("id"))
+
 
 
 def prepare_eenbi_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, topAppliance):
@@ -163,12 +201,35 @@ def get_itemization_data(uuid, BaseURL, ACCESS_TOKEN, pilot_id, bc_start_prev, b
         # Parse the JSON response
         data = response.json()
         payload = data.get("payload", {})
-        itemization_details = payload.get("itemizationDetails", [])
+        itemization_details_list = payload.get("itemizationDetails", [])
 
-        measurement_data = itemization_details[0][measurementType][0]
-        app_id = measurement_data['id']
-        usage = measurement_data['usage']
-        return int(app_id)
+
+        if not itemization_details_list:
+            logger.error("No itemization details found in the response: %s", data)
+            return None
+
+
+        itemization_data_for_cycle = itemization_details_list[0]
+
+        if not itemization_data_for_cycle:
+            logger.error("No itemization data found in the response: %s", data)
+            return None
+        itemization_data_for_measurement = itemization_data_for_cycle[measurementType]
+
+        #print(f" size {len(itemization_data_for_measurement)} itemization detail for measurement {measurementType} {itemization_data_for_measurement}")
+
+        app_list = []
+        for i in range(len(itemization_data_for_measurement)):
+            #print(f"processing for {i} with data {itemization_data_for_measurement[i]}")
+
+            if itemization_data_for_measurement[i].get("id"):
+                #print("itemization_data_for_measurement[i].get('id')", itemization_data_for_measurement[i].get("id"))
+                app_list.append(int(itemization_data_for_measurement[i].get("id")))
+
+
+        result = app_list[0:2] if len(app_list)>2 else app_list
+        print("final applinace result ", result)
+        return result
 
     except requests.exceptions.RequestException as req_err:
         logger.error("API request failed: %s", req_err)
