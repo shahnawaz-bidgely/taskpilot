@@ -46,28 +46,6 @@
       }
     },
     {
-      "id": "I_LI_06_A_A_E_LT_001",
-      "score": 0.181,
-      "rank": 4,
-      "hash": "0e7ef40b40db53a0b9647f5cffdddb0f435b05875f8c719861ea1c89d3522388864ec35cc802f6fef706fd3471c3775963e70acc39cc3047096953fd2b327f9b",
-      "nbiType": "Actionable Reco tip",
-      "nbiFamily": "EE",
-      "fuelType": "ELECTRIC",
-      "insight": {
-        "id": "I_LI_06",
-        "score": 0.1,
-        "values": {
-          "Value": "",
-          "UoM": "",
-          "date": ""
-        }
-      },
-      "action": {
-        "id": "A_A_E_LT_001",
-        "score": 0.4
-      }
-    },
-    {
       "id": "I_AO_06_T-E-AO-031",
       "score": 0.176,
       "rank": 5,
@@ -732,28 +710,6 @@
       "action": {
         "id": "T-E-SH-009",
         "score": 0.121
-      }
-    },
-    {
-      "id": "I_LI_06_T-E-LT-007",
-      "score": 0.01,
-      "rank": 67,
-      "hash": "495b95955e872a0d812f47839c7625e2ff7f5718382223f624e25dc604fafd035a96c7a61bdaf3158248e9c3c60be0bbdcd8cd2b4e4f5c80754a087d8a77bf73",
-      "nbiType": "Actionable Reco tip",
-      "nbiFamily": "EE",
-      "fuelType": "ELECTRIC",
-      "insight": {
-        "id": "I_LI_06",
-        "score": 0.1,
-        "values": {
-          "Value": "",
-          "UoM": "",
-          "date": ""
-        }
-      },
-      "action": {
-        "id": "T-E-LT-007",
-        "score": 0.33
       }
     },
     {
@@ -1628,51 +1584,6 @@
       "action": {
         "id": "T-E-AC-010",
         "score": 0.225
-      }
-    },
-    {
-      "id": "I_AC_25_T-E-S-AC-010",
-      "score": 0.01,
-      "rank": 214,
-      "hash": "2fae08418f3292e93fda255ac5a0adc92c1ab2db9408dccc1788ba70ea654f6e7e9c3b614109f631686c39d4ebe500863110cd5f321c4a22fbebf6228a1f27ec",
-      "nbiType": "SummerSeasonal",
-      "nbiFamily": "EE",
-      "applianceId": "4",
-      "fuelType": "ELECTRIC",
-      "insight": {
-        "id": "I_AC_25",
-        "score": 0.1,
-        "values": {
-          "Value": "",
-          "UoM": "",
-          "date": ""
-        }
-      },
-      "action": {
-        "id": "T-E-S-AC-010",
-        "score": 0.225
-      }
-    },
-    {
-      "id": "I_LI_06_T-E-LT-005",
-      "score": 0.01,
-      "rank": 223,
-      "hash": "5cdef1446e9c9cf4c79ca17f5024c80104564ec0bbc0f582c8a83cd04fa5cc3a1871b7a148fe3b3a138ae4f968954640fd421b69221f517c5e292c5b3f913b7b",
-      "nbiType": "Actionable Reco tip",
-      "nbiFamily": "EE",
-      "fuelType": "ELECTRIC",
-      "insight": {
-        "id": "I_LI_06",
-        "score": 0.1,
-        "values": {
-          "Value": "",
-          "UoM": "",
-          "date": ""
-        }
-      },
-      "action": {
-        "id": "T-E-LT-005",
-        "score": 0.211
       }
     },
     {

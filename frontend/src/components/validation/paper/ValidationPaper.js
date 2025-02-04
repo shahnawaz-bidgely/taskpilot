@@ -155,7 +155,123 @@ const ValidationPaper = () => {
           },
         },
         {
-          username: "df79f2b6-3c1d-442e-b65c-1f526b40117d",
+          username: "e33c8eb6-ea4d-440c-8a75-09fc9c0b7526",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "bbcba563-3925-4793-b2c1-2f80cd5da4f1",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "6ae28ec3-3b8d-4355-9073-50a2e7e9c558",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "e39ed9c7-a0e0-4919-afaf-b614381a8b8e",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "64c5e694-05b6-4a87-a6a6-af3d646cfffd",
           sections: {
             HEADER: {
               failure: [],

@@ -1,0 +1,25 @@
+[
+  {
+      "id": "PSEG_NBI_EE_G_E_TE_020",
+      "score": 0.01,
+      "rank": 84,
+      "hash": "166cf3848028aa5b06798d0ca893c74047fb568d4bd217fa36b5313eb0a8f371fb9d2452d20273660839725af4148a38a676b3ba77bf1b006661c54204cb6d4a",
+      "nbiType": "Program",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_EDU_E_TE_005",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "PSEG_A_G_E_TE_008",
+        "score": 0.22
+      }
+    }
+]

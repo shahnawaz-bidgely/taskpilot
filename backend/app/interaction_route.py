@@ -20,7 +20,6 @@ RANK_COUNTER = 0
 
 
 
-
 @interaction_route.route('/prep-interactions', methods=['POST'])
 def update_interactions():
     fuels = request.form.get('fuelType')
@@ -32,12 +31,9 @@ def update_interactions():
     # uuid = "751e298e-7e54-4bb5-a4f2-17bfd0931e61"
     # endpoint_url = "https://avistauatapi.bidgely.com"
     ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
+    pilotId = 10046
 
-
-
-
-
-    print(f"User list - {fuels}, {type(fuels)},{uuid}, {endpoint_url}, {ACCESS_TOKEN}")
+    print(f"User Data - {fuels},{uuid}, {endpoint_url}, {ACCESS_TOKEN}")
 
     try:
 
@@ -65,21 +61,23 @@ def update_interactions():
 
         endpoint_map = getEndPoint(uuid, endpoint_url, ACCESS_TOKEN, fuels)
 
+
         unique_nbi_set = set()
         unique_action_Set = set()
 
 
         for fuel in fuels:
             if fuel in endpoint_map:
-                # measurementType = "electric" if fuel.lower() == "electricity" else "gas" if fuel.lower() == "gas" else None
 
-                topAppliance = get_itemization_data(uuid, endpoint_url, ACCESS_TOKEN,10046, 1730793600, 1733472000,  endpoint_map.get(fuel), fuel.lower())
+                bc_start_time, bc_end_time = get_latest_bill_cycle(uuid, endpoint_url, ACCESS_TOKEN, fuel)
+
+                topAppliance = get_itemization_data(uuid, endpoint_url, ACCESS_TOKEN,10046, bc_start_time, bc_end_time,  endpoint_map.get(fuel), fuel.lower())
                 print("fuel", fuel, endpoint_map.get(fuel), topAppliance)
 
-                #print("INTERACTION_FILE_FINAL ", INTERACTION_FILE_FINAL)
-                prepare_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set)
-                prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3)
-                prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3)
+                prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set)
+
+                #prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3, unique_nbi_set, unique_action_Set)
+                prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3,unique_nbi_set, unique_action_Set)
 
             else:
                 print("fuel", fuel.lower(), "not found")
@@ -91,18 +89,19 @@ def update_interactions():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-def prepare_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set):
+def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set):
     with open(MASTER_FILE_PATH_EE_NBI, 'r') as f:
         master_ee_nbi_data = json.load(f)
 
-    print("Processing EE NBI data")
-    print("current interaction = ", INTERACTION_FILE_FINAL)
+    print(f"Processing app based actionable Reco NBI data")
+    #print("current interaction = ", INTERACTION_FILE_FINAL)
 
     # data = remove_duplicates_by_action_id(master_ee_nbi_data)
     # print("data", data)
 
     for interaction in master_ee_nbi_data:
-        print(interaction)
+        print(f"processing for appliance {interaction.get("applianceId")}")
+        #print(interaction)
 
         if interaction.get("id") in unique_nbi_set or interaction.get("action").get("id") in unique_action_Set:
             print(f"Skipping interaction with id {interaction.get('id')} and action id {interaction.get('action').get('id')}")
@@ -122,9 +121,7 @@ def prepare_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel
                 unique_nbi_set.add(interaction.get("id"))
                 unique_action_Set.add(interaction.get("action").get("id"))
 
-
-
-def prepare_eenbi_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, topAppliance):
+def prepare_eenbi_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, topAppliance, unique_nbi_set, unique_action_Set):
     with open(MASTER_FILE_PATH, 'r') as f:
         master_ee_nbi_data = json.load(f)
 
@@ -147,27 +144,37 @@ def prepare_eenbi_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, topAp
                 break
 
 
-def prepare_program_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, topAppliance):
+def prepare_program_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, topAppliance, unique_nbi_set, unique_action_Set):
 
     with open(MASTER_FILE_PATH, 'r') as f:
         master_program_data = json.load(f, object_pairs_hook=OrderedDict)
 
-    # print("Master data:", master_program_data)
     print("Processing PROGRAM NBI data")
     print("current interaction = ", INTERACTION_FILE_FINAL)
 
+
+
     for interaction in master_program_data:
         print(interaction)
+        if interaction.get("id") in unique_nbi_set or interaction.get("action").get("id") in unique_action_Set:
+            print(
+                f"Skipping interaction with id {interaction.get('id')} and action id {interaction.get('action').get('id')}")
+            continue
+
         if ("Summer" in interaction.get("nbiType") or "Winter" in interaction.get("nbiType")) and (
                 interaction.get("fuelType") == fuelType):
-            print("Found summer or Winter")
+            #print("Found summer or Winter")
             assign_rank(interaction, INTERACTION_FILE_FINAL)
+            unique_nbi_set.add(interaction.get("id"))
+            unique_action_Set.add(interaction.get("action").get("id"))
 
         else:
-            if (interaction.get("applianceId") == str(topAppliance) and interaction.get("fuelType") == fuelType):
-                print(f"Found Non summer or Winter with top appliance {topAppliance} and fuel {fuelType}")
+            if (interaction.get("fuelType") == fuelType):
+                #print(f"Found Non summer or Winter with top appliance {topAppliance} and fuel {fuelType}")
                 assign_rank(interaction, INTERACTION_FILE_FINAL)
-                break
+                unique_nbi_set.add(interaction.get("id"))
+                unique_action_Set.add(interaction.get("action").get("id"))
+
 
 
 ################### Common ############################
@@ -176,6 +183,70 @@ import requests
 import logging
 
 logger = logging.getLogger(__name__)
+
+
+def get_latest_bill_cycle(uuid, BaseURL, ACCESS_TOKEN, measurementType):
+    # uuid = "751e298e-7e54-4bb5-a4f2-17bfd0931e61"
+    # BaseURL = "https://avistauatapi.bidgely.com"
+    # ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
+    # pilotId = 10046
+
+    logger.info("billing cycle process started for UUID: %s", uuid)
+    headers = {
+        'Authorization': f'Bearer {ACCESS_TOKEN}',
+        'Content-Type': 'application/json'
+    }
+
+    billing_cycle_api = (
+        f"{BaseURL}/billingdata/users/{uuid}/homes/1/utilitydata?t0=0&t1=1956177599&measurementType={measurementType}"
+    )
+
+    # "{{url}}/billingdata/users/{{uuid3}}/homes/{{hid}}/utilitydata?t0=0&t1=1956177599&measurementType=GAS"
+
+    logger.debug("Billing Cycle API URL: %s", billing_cycle_api)
+
+    try:
+        response = requests.get(billing_cycle_api, headers=headers)
+        response.raise_for_status()
+
+        response_JSON = response.json()
+
+        sorted_keys = sorted(response_JSON.keys(), reverse=True)
+
+        for key in sorted_keys:
+            billing_data = response_JSON[key]
+            if not billing_data.get("bidgelyGeneratedInvoice", True):  # Default to True if not present
+                bc_start_time = billing_data.get("billingStartTs")
+                bc_end_time = billing_data.get("billingEndTs")
+
+                if bc_start_time and bc_end_time:
+                    print(f"Latest billing cycle {bc_start_time} {bc_end_time}")
+                    return bc_start_time, bc_end_time
+
+        # if response_JSON:
+        #     bc_start_time = response_JSON[-2]["key"]
+        #     bc_end_time = response_JSON[-2]["value"]
+        #
+        # billing_list = []
+        # billing_list.append(bc_start_time)
+        # billing_list.append(bc_end_time)
+        #
+        # print(f"latest billing cycle {bc_start_time} {bc_end_time}")
+        #
+        # return bc_start_time,bc_end_time
+
+        # return jsonify(billing_list), 200
+
+    except requests.exceptions.RequestException as req_err:
+        logger.error("API request failed: %s", req_err)
+        return None
+    except (KeyError, TypeError, ValueError) as parse_err:
+        logger.error("Failed to parse Billing Cycle response: %s", parse_err)
+        return None
+    except Exception as general_err:
+        logger.error("Unexpected error during Billing Cycle: %s", general_err)
+        return None
+
 
 def get_itemization_data(uuid, BaseURL, ACCESS_TOKEN, pilot_id, bc_start_prev, bc_end_prev, endpoint, measurementType):
 
@@ -248,7 +319,7 @@ def assign_rank(interaction, INTERACTION_FILE_FINAL):
 
     interaction["rank"] = RANK_COUNTER
     INTERACTION_FILE_FINAL["interactions"].append(interaction)
-    print(f"Added interaction with fuel {interaction}")
+    print(f"Added interaction with app {interaction.get("applianceId")} in with fuel and {interaction.get("nbiType")}")
 
 
 def getEndPoint(uuid, BaseURL, ACCESS_TOKEN, fuels):
