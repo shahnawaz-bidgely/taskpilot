@@ -60,22 +60,19 @@ def update_interactions():
         }
 
         endpoint_map = getEndPoint(uuid, endpoint_url, ACCESS_TOKEN, fuels)
-
-
         unique_nbi_set = set()
         unique_action_Set = set()
 
-
         for fuel in fuels:
             if fuel in endpoint_map:
-
                 bc_start_time, bc_end_time = get_latest_bill_cycle(uuid, endpoint_url, ACCESS_TOKEN, fuel)
 
                 topAppliance = get_itemization_data(uuid, endpoint_url, ACCESS_TOKEN,10046, bc_start_time, bc_end_time,  endpoint_map.get(fuel), fuel.lower())
                 print("fuel", fuel, endpoint_map.get(fuel), topAppliance)
-
+                if topAppliance is None:
+                    print(f"Top appliance not found for fuel {fuel} with billing cycle {bc_start_time} {bc_end_time}")
+                    continue
                 prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set)
-
                 #prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3, unique_nbi_set, unique_action_Set)
                 prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3,unique_nbi_set, unique_action_Set)
 
@@ -83,7 +80,10 @@ def update_interactions():
                 print("fuel", fuel.lower(), "not found")
 
         print("final interaction", INTERACTION_FILE_FINAL)
-        return jsonify(INTERACTION_FILE_FINAL), 200
+        if not INTERACTION_FILE_FINAL["interactions"]:  # Check if interactions list is empty
+            return jsonify({"error": "No interactions found", "success": False}), 200  # Still returning 200
+
+        return jsonify({"data": INTERACTION_FILE_FINAL, "success": True}), 200  # Success response
 
 
     except Exception as e:
@@ -148,11 +148,7 @@ def prepare_program_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, top
 
     with open(MASTER_FILE_PATH, 'r') as f:
         master_program_data = json.load(f, object_pairs_hook=OrderedDict)
-
     print("Processing PROGRAM NBI data")
-    print("current interaction = ", INTERACTION_FILE_FINAL)
-
-
 
     for interaction in master_program_data:
         print(interaction)
@@ -163,14 +159,12 @@ def prepare_program_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, top
 
         if ("Summer" in interaction.get("nbiType") or "Winter" in interaction.get("nbiType")) and (
                 interaction.get("fuelType") == fuelType):
-            #print("Found summer or Winter")
             assign_rank(interaction, INTERACTION_FILE_FINAL)
             unique_nbi_set.add(interaction.get("id"))
             unique_action_Set.add(interaction.get("action").get("id"))
 
         else:
             if (interaction.get("fuelType") == fuelType):
-                #print(f"Found Non summer or Winter with top appliance {topAppliance} and fuel {fuelType}")
                 assign_rank(interaction, INTERACTION_FILE_FINAL)
                 unique_nbi_set.add(interaction.get("id"))
                 unique_action_Set.add(interaction.get("action").get("id"))
@@ -374,7 +368,7 @@ def getEndPoint(uuid, BaseURL, ACCESS_TOKEN, fuels):
                 except Exception as e:
                     print("Error processing entry:", data, "Error:", str(e))
 
-        print(endpoint_map)
+        print(f"endpoint details - {endpoint_map}")
         return endpoint_map
 
     except requests.exceptions.RequestException as e:

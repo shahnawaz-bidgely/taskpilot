@@ -355,7 +355,7 @@ def analyse_email_preview():
 @analysis_route.route('/generate-email-view', methods=['GET'])
 def generate_html():
     # Extract parameters from the query string
-    endpoint = "https://" + request.form.get('endpoint')
+    endpoint = "https://naapi.bidgely.com"
     NotificationID = request.args.get('NotificationID')
 
     if not endpoint or not NotificationID:

@@ -5,6 +5,10 @@ import "./ValidationPaper.css";
 const ValidationPaper = () => {
   const { uploadedFile, fileContent } = useContext(FileContext);
   const [error, setError] = useState("");
+  const [rowErrors, setRowErrors] = useState({}); // Store errors per row
+  const [rowSuccess, setRowSuccess] = useState({}); // Store success per row
+
+  const [success, setSuccess] = useState("");
   const [messageStyle, setMessageStyle] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -28,7 +32,7 @@ const ValidationPaper = () => {
     });
   };
 
-  const getInteractions = async (user) => {
+  const getInteractions = async (user, userIndex) => {
     try {
       console.log("Row data:", user.username);
       console.log("Form data:", formData.endpointUrl);
@@ -47,12 +51,23 @@ const ValidationPaper = () => {
         body: combinedData,
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch data of HER validation");
+      const responseData = await response.json();
+      console.log("Response Data:", responseData);
+
+      if (!responseData.success) {
+        setRowErrors((prev) => ({
+          ...prev,
+          [userIndex]: responseData.error || "No interactions available.",
+        }));
+        setRowSuccess((prev) => ({ ...prev, [userIndex]: "" })); // Clear success message
+        return;
       }
 
-      const responseData = await response.json(); // Assuming the response is JSON
-      console.log("Response Data:", responseData);
+      setRowSuccess((prev) => ({
+        ...prev,
+        [userIndex]: "Successfully fetched interactions!",
+      }));
+      setRowErrors((prev) => ({ ...prev, [userIndex]: "" })); // Clear error message
 
       // Create a Blob with the JSON data
       const blob = new Blob([JSON.stringify(responseData, null, 2)], {
@@ -62,7 +77,7 @@ const ValidationPaper = () => {
       // Create a temporary link element
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.download = "interaction.json";
+      link.download = user.username + "_interaction.json";
 
       // Append the link to the DOM and trigger the download
       document.body.appendChild(link);
@@ -71,9 +86,7 @@ const ValidationPaper = () => {
       // Clean up the DOM
       document.body.removeChild(link);
     } catch (err) {
-      setError(
-        "Error connecting to Redshift or executing query: " + err.message
-      );
+      setError("Error while fetching interaction " + err.message);
       throw err;
     }
   };
@@ -299,6 +312,95 @@ const ValidationPaper = () => {
             },
           },
         },
+        {
+          username: "6d0116bc-62ec-4176-9e54-cfd58beb8629",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+
+        {
+          username: "9f3f62b7-323e-47af-85de-d7a9b9623936",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+
+        {
+          username: "0cfc41d3-365c-4da9-ad7b-b29ce0f16261",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
       ];
 
       setValidation(validations);
@@ -440,12 +542,22 @@ const ValidationPaper = () => {
                         className="preview-button"
                         onClick={(e) => {
                           e.stopPropagation(); // Prevent row expansion
-                          getInteractions(user);
+                          getInteractions(user, userIndex); // Pass userIndex
                         }}
                       >
                         Mock the Interactions
                         <i className="icon-preview" /> View
                       </button>
+                      {rowErrors[userIndex] && (
+                        <p style={{ color: "red", marginLeft: "10px" }}>
+                          {rowErrors[userIndex]}
+                        </p>
+                      )}
+                      {rowSuccess[userIndex] && (
+                        <p style={{ color: "green", marginLeft: "10px" }}>
+                          {rowSuccess[userIndex]}
+                        </p>
+                      )}
                     </td>
                   </tr>
                   {isExpanded && (
