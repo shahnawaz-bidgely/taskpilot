@@ -3,11 +3,8 @@ import os
 import json
 import logging
 from collections import OrderedDict
-import requests
-from numpy.ma.core import append
+import pandas as pd
 from requests.auth import HTTPBasicAuth
-
-from backend.app.route import ACCESS_TOKEN
 
 interaction_route = Blueprint('interaction_route', __name__)
 logging.basicConfig(level=logging.INFO)
@@ -15,9 +12,12 @@ logger = logging.getLogger(__name__)
 
 MASTER_FILE_PATH_PROGRAM_NBI = "app/resources/master_program_nbi.json"
 MASTER_FILE_PATH_TEST = "app/resources/test.json"
-MASTER_FILE_PATH_EE_NBI = "app/resources/master_ee_nbi.json"
+MASTER_FILE_PATH_EE_NBI = "app/resources/master_nbi_data.json"
 RANK_COUNTER = 0
 
+EXCEL_FILE = "app/resources/nbi_content_sheet_filtered.xlsx"
+SQL_FILE = "app/resources/DB_final.sql"
+SH_FILE = "app/resources/String_final.sh"
 
 
 @interaction_route.route('/prep-interactions', methods=['POST'])
@@ -31,7 +31,7 @@ def update_interactions():
     # uuid = "751e298e-7e54-4bb5-a4f2-17bfd0931e61"
     # endpoint_url = "https://avistauatapi.bidgely.com"
     ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
-    pilotId = 10046
+    PILOT_ID = 10046
 
     print(f"User Data - {fuels},{uuid}, {endpoint_url}, {ACCESS_TOKEN}")
 
@@ -48,12 +48,12 @@ def update_interactions():
             "nbi_delivery_helper_dict": {
                 "billing_info": {
                     "last_electric_billing_cycle_info": {
-                        "last_billing_start": 1730793600,
-                        "last_billing_end": 1733472000
+                        "last_billing_start": -1,
+                        "last_billing_end": -1
                     },
                     "last_gas_billing_cycle_info": {
-                        "last_billing_start": 1730793600,
-                        "last_billing_end": 1733472000
+                        "last_billing_start": -1,
+                        "last_billing_end": -1
                     }
                 }
             }
@@ -72,9 +72,18 @@ def update_interactions():
                 if topAppliance is None:
                     print(f"Top appliance not found for fuel {fuel} with billing cycle {bc_start_time} {bc_end_time}")
                     continue
+                if fuel == "ELECTRIC":
+                    INTERACTION_FILE_FINAL["nbi_delivery_helper_dict"]["billing_info"]["last_electric_billing_cycle_info"]["last_billing_start"]= bc_start_time
+                    INTERACTION_FILE_FINAL["nbi_delivery_helper_dict"]["billing_info"]["last_electric_billing_cycle_info"]["last_billing_end"] = bc_end_time
+                else:
+                    INTERACTION_FILE_FINAL["nbi_delivery_helper_dict"]["billing_info"][
+                        "last_gas_billing_cycle_info"]["last_billing_start"] = bc_start_time
+                    INTERACTION_FILE_FINAL["nbi_delivery_helper_dict"]["billing_info"][
+                        "last_gas_billing_cycle_info"]["last_billing_end"] = bc_end_time
+
                 prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set)
                 #prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3, unique_nbi_set, unique_action_Set)
-                prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3,unique_nbi_set, unique_action_Set)
+                #prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3,unique_nbi_set, unique_action_Set)
 
             else:
                 print("fuel", fuel.lower(), "not found")
@@ -95,9 +104,7 @@ def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FIN
 
     print(f"Processing app based actionable Reco NBI data")
     #print("current interaction = ", INTERACTION_FILE_FINAL)
-
     # data = remove_duplicates_by_action_id(master_ee_nbi_data)
-    # print("data", data)
 
     for interaction in master_ee_nbi_data:
         print(f"processing for appliance {interaction.get("applianceId")}")
@@ -107,7 +114,7 @@ def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FIN
             print(f"Skipping interaction with id {interaction.get('id')} and action id {interaction.get('action').get('id')}")
             continue
 
-        if ("Summer" in interaction.get("nbiType") or "Winter" in interaction.get("nbiType")) and (
+        if ("Summer" in interaction.get("nbiType") or "Winter" in interaction.get("nbiType") or "Program" in interaction.get("nbiType")) and (
                 interaction.get("fuelType") == fuelType):
             #print("Found summer or Winter")
             assign_rank(interaction, INTERACTION_FILE_FINAL)
@@ -177,6 +184,99 @@ import requests
 import logging
 
 logger = logging.getLogger(__name__)
+
+
+def process_nbi_data(provided_nbi_ids, provided_insight_ids, provided_action_ids, PILOT_ID):
+    try:
+        if not os.path.exists(EXCEL_FILE):
+            print(f"Error: File '{EXCEL_FILE}' not found.")
+            return False
+
+        # Read Excel file safely
+        try:
+            df = pd.read_excel(EXCEL_FILE)
+        except Exception as e:
+            print(f"Error reading Excel file: {e}")
+            return False
+
+        # Check if required columns exist
+        required_columns = {"Interaction ID", "Insight ID", "Action ID",
+                            "Action Paper Title Text (en_US)", "Insight Paper Text (en_US)",
+                            "Action Paper Short Text (en_US)", "Action.res.image"}
+
+        processed_insight_ids = set()
+        if not required_columns.issubset(df.columns):
+            print("Error: Required columns are missing in the Excel file.")
+            return False
+
+        # Open output files in append mode
+        with open(SQL_FILE, "a") as sql_file, open(SH_FILE, "a") as sh_file:
+            processed = False  # Flag to track if any records are processed
+
+            for _, row in df.iterrows():
+                # Extract required columns
+                nbi_id = str(row["Interaction ID"]).strip()
+                insight_id = str(row["Insight ID"]).strip()
+                action_id = str(row["Action ID"]).strip()
+
+                # Check if all provided IDs match
+                if nbi_id in provided_nbi_ids and insight_id in provided_insight_ids and action_id in provided_action_ids:
+                    processed = True  # At least one record was processed
+
+                    nbi_title = str(row["Action Paper Title Text (en_US)"]).strip().replace("\n", " ").replace("'",
+                                                                                                               "\\u0027")
+                    insight_text = str(row["Insight Paper Text (en_US)"]).strip().replace("\n", " ").replace("'",
+                                                                                                             "\\u0027")
+                    nbi_long_text = str(row["Action Paper Short Text (en_US)"]).strip().replace("\n", " ").replace("'",
+                                                                                                                   "\\u0027")
+                    nbi_short_text = str(row["Action Paper Short Text (en_US)"]).strip().replace("\n", " ").replace("'",
+                                                                                                                    "\\u0027")
+                    circle_icon = str(row["Action.res.image"]).strip().replace("\n", " ").replace("'", "\\u0027")
+                    rectangle_icon = str(row["Action.res.image"]).strip().replace("\n", " ").replace("'", "\\u0027")
+
+                    # Generate SQL Insert statements
+                    sql_statements = [
+                        f'INSERT INTO nbi_asset_data (entity_id, asset_id, asset_key, asset_value, asset_value_type, asset_type) VALUES ("{PILOT_ID}", "{nbi_id}", "title", "com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.title", "STRING_RESOURCE","PAPER_NBI");',
+                        f'INSERT INTO nbi_asset_data (entity_id, asset_id, asset_key, asset_value, asset_value_type, asset_type) VALUES ("{PILOT_ID}", "{nbi_id}", "shortText", "com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.shortText", "STRING_RESOURCE","PAPER_NBI");',
+                        f'INSERT INTO nbi_asset_data (entity_id, asset_id, asset_key, asset_value, asset_value_type, asset_type) VALUES ("{PILOT_ID}", "{nbi_id}", "longText", "com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.longText", "STRING_RESOURCE","PAPER_NBI");',
+                        f'INSERT INTO nbi_asset_data (entity_id, asset_id, asset_key, asset_value, asset_value_type, asset_type) VALUES ("{PILOT_ID}", "{nbi_id}", "circleIcon", "{circle_icon}", "IMAGE","PAPER_NBI");',
+                        f'INSERT INTO nbi_asset_data (entity_id, asset_id, asset_key, asset_value, asset_value_type, asset_type) VALUES ("{PILOT_ID}", "{nbi_id}", "rectangleIcon", "{rectangle_icon}", "IMAGE","PAPER_NBI");'
+                    ]
+
+
+                    # Write to SQL file
+                    sql_file.write("\n".join(sql_statements) + "\n")
+                    if insight_id not in processed_insight_ids:
+                        sql_file.write(
+                            f'INSERT INTO nbi_asset_data (entity_id, asset_id, asset_key, asset_value, asset_value_type, asset_type) '
+                            f'VALUES ("{PILOT_ID}", "{insight_id}", "insightText", "com.bidgely.cloud.core.lib.paper.nbi.{insight_id}.insightText", "STRING_RESOURCE", "PAPER_NBI");\n'
+                        )
+                        print(f"adding insight sql statement for {insight_id}")
+                        processed_insight_ids.add(insight_id)
+                    else:
+                        print(f"Skipping duplicate insight ID: {insight_id}")
+
+                    # Generate and write SH file content
+                    sh_statements = [
+                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.title -d \'[{{ "locale": "en_US","text": "{nbi_title}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
+                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.shortText -d \'[{{ "locale": "en_US","text": "{nbi_short_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
+                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.longText -d \'[{{ "locale": "en_US","text": "{nbi_long_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
+                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{insight_id}.insightText -d \'[{{ "locale": "en_US","text": "{insight_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`'
+                    ]
+
+                    sh_file.write("\n".join(sh_statements) + "\n")
+
+                    print(f"Processed: {nbi_id}, {insight_id}, {action_id}")
+
+            if not processed:
+                print("No matching records found for the given IDs.")
+                return False
+
+        return True  # Successfully processed at least one record
+
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        return False
 
 
 def get_latest_bill_cycle(uuid, BaseURL, ACCESS_TOKEN, measurementType):
@@ -309,11 +409,14 @@ def get_itemization_data(uuid, BaseURL, ACCESS_TOKEN, pilot_id, bc_start_prev, b
 
 def assign_rank(interaction, INTERACTION_FILE_FINAL):
     global RANK_COUNTER
-    RANK_COUNTER = RANK_COUNTER + 1
 
-    interaction["rank"] = RANK_COUNTER
-    INTERACTION_FILE_FINAL["interactions"].append(interaction)
-    print(f"Added interaction with app {interaction.get("applianceId")} in with fuel and {interaction.get("nbiType")}")
+    status  = process_nbi_data(interaction.get("id"), interaction.get("insight").get("id"), interaction.get("action").get("id"), 10046)
+
+    if status:
+        RANK_COUNTER = RANK_COUNTER + 1
+        interaction["rank"] = RANK_COUNTER
+        INTERACTION_FILE_FINAL["interactions"].append(interaction)
+        print(f"Added interaction with app {interaction.get("applianceId")} in with fuel and {interaction.get("nbiType")}")
 
 
 def getEndPoint(uuid, BaseURL, ACCESS_TOKEN, fuels):

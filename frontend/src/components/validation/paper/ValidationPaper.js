@@ -70,7 +70,7 @@ const ValidationPaper = () => {
       setRowErrors((prev) => ({ ...prev, [userIndex]: "" })); // Clear error message
 
       // Create a Blob with the JSON data
-      const blob = new Blob([JSON.stringify(responseData, null, 2)], {
+      const blob = new Blob([JSON.stringify(responseData.data, null, 2)], {
         type: "application/json",
       });
 
@@ -374,6 +374,35 @@ const ValidationPaper = () => {
 
         {
           username: "0cfc41d3-365c-4da9-ad7b-b29ce0f16261",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "84cc1330-95a8-4e59-9e91-2a8f4f7b56ed",
           sections: {
             HEADER: {
               failure: [],
