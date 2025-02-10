@@ -1,10 +1,11 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, send_file
 import os
 import json
 import logging
 from collections import OrderedDict
 import pandas as pd
 from requests.auth import HTTPBasicAuth
+import zipfile
 
 interaction_route = Blueprint('interaction_route', __name__)
 logging.basicConfig(level=logging.INFO)
@@ -16,8 +17,9 @@ MASTER_FILE_PATH_EE_NBI = "app/resources/master_nbi_data.json"
 RANK_COUNTER = 0
 
 EXCEL_FILE = "app/resources/nbi_content_sheet_filtered.xlsx"
-SQL_FILE = "app/resources/DB_final.sql"
-SH_FILE = "app/resources/String_final.sh"
+# SQL_FILE = "app/resources/DB_final.sql"
+# SH_FILE = "app/resources/String_final.sh"
+# ZIP_FILE = "app/resources/interactions_bundle.zip"
 
 
 @interaction_route.route('/prep-interactions', methods=['POST'])
@@ -81,7 +83,7 @@ def update_interactions():
                     INTERACTION_FILE_FINAL["nbi_delivery_helper_dict"]["billing_info"][
                         "last_gas_billing_cycle_info"]["last_billing_end"] = bc_end_time
 
-                prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set)
+                prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set, uuid)
                 #prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3, unique_nbi_set, unique_action_Set)
                 #prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3,unique_nbi_set, unique_action_Set)
 
@@ -92,13 +94,35 @@ def update_interactions():
         if not INTERACTION_FILE_FINAL["interactions"]:  # Check if interactions list is empty
             return jsonify({"error": "No interactions found", "success": False}), 200  # Still returning 200
 
-        return jsonify({"data": INTERACTION_FILE_FINAL, "success": True}), 200  # Success response
+            # Save the JSON interaction data
+        INTERACTION_OUTPUT_PATH = f"app/resources/{uuid}_interaction.json"
+        SQL_OUTPUT_PATH = f"app/resources/{uuid}_sql.sql"
+        SH_OUTPUT_PATH = f"app/resources/{uuid}_sh.sh"
 
+        with open(INTERACTION_OUTPUT_PATH, "w") as json_file:
+            json.dump(INTERACTION_FILE_FINAL, json_file, indent=2)
+
+        # Ensure `.sql` and `.sh` files exist
+        if not os.path.exists(SQL_OUTPUT_PATH) or not os.path.exists(SH_OUTPUT_PATH):
+            return jsonify({"error": "SQL or SH file not found.", "success": False}), 400
+
+        # Create a ZIP file containing JSON, SQL, and SH files
+        ZIP_FILE = f"app/resources/interactions_bundle.zip"
+
+        with zipfile.ZipFile(ZIP_FILE, 'w') as zipf:
+            zipf.write(INTERACTION_OUTPUT_PATH, os.path.basename(INTERACTION_OUTPUT_PATH))
+            zipf.write(SQL_OUTPUT_PATH, os.path.basename(SQL_OUTPUT_PATH))
+            zipf.write(SH_OUTPUT_PATH, os.path.basename(SH_OUTPUT_PATH))
+
+        print("ZIP file created successfully:", ZIP_FILE)
+
+        # Return the ZIP file for download
+        return send_file(ZIP_FILE, as_attachment=True, download_name=f"{uuid}_interactions_bundle.zip")
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set):
+def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set, uuid):
     with open(MASTER_FILE_PATH_EE_NBI, 'r') as f:
         master_ee_nbi_data = json.load(f)
 
@@ -117,14 +141,14 @@ def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FIN
         if ("Summer" in interaction.get("nbiType") or "Winter" in interaction.get("nbiType") or "Program" in interaction.get("nbiType")) and (
                 interaction.get("fuelType") == fuelType):
             #print("Found summer or Winter")
-            assign_rank(interaction, INTERACTION_FILE_FINAL)
+            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
             unique_nbi_set.add(interaction.get("id"))
             unique_action_Set.add(interaction.get("action").get("id"))
 
         else:
             if (int(interaction.get("applianceId")) in topAppliance and interaction.get("fuelType") == fuelType):
                 #print(f"Found Non summer or Winter with top appliance {topAppliance} and fuel {fuelType}")
-                assign_rank(interaction, INTERACTION_FILE_FINAL)
+                assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
                 unique_nbi_set.add(interaction.get("id"))
                 unique_action_Set.add(interaction.get("action").get("id"))
 
@@ -186,7 +210,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def process_nbi_data(provided_nbi_ids, provided_insight_ids, provided_action_ids, PILOT_ID):
+def process_nbi_data(provided_nbi_ids, provided_insight_ids, provided_action_ids, PILOT_ID, uuid):
     try:
         if not os.path.exists(EXCEL_FILE):
             print(f"Error: File '{EXCEL_FILE}' not found.")
@@ -210,7 +234,11 @@ def process_nbi_data(provided_nbi_ids, provided_insight_ids, provided_action_ids
             return False
 
         # Open output files in append mode
-        with open(SQL_FILE, "a") as sql_file, open(SH_FILE, "a") as sh_file:
+
+        SQL_OUTPUT_PATH = f"app/resources/{uuid}_sql.sql"
+        SH_OUTPUT_PATH = f"app/resources/{uuid}_sh.sh"
+
+        with open(SQL_OUTPUT_PATH, "a") as sql_file, open(SH_OUTPUT_PATH, "a") as sh_file:
             processed = False  # Flag to track if any records are processed
 
             for _, row in df.iterrows():
@@ -407,10 +435,10 @@ def get_itemization_data(uuid, BaseURL, ACCESS_TOKEN, pilot_id, bc_start_prev, b
         return None
 
 
-def assign_rank(interaction, INTERACTION_FILE_FINAL):
+def assign_rank(interaction, INTERACTION_FILE_FINAL, uuid):
     global RANK_COUNTER
 
-    status  = process_nbi_data(interaction.get("id"), interaction.get("insight").get("id"), interaction.get("action").get("id"), 10046)
+    status  = process_nbi_data(interaction.get("id"), interaction.get("insight").get("id"), interaction.get("action").get("id"), 10046, uuid)
 
     if status:
         RANK_COUNTER = RANK_COUNTER + 1

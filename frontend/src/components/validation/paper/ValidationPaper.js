@@ -70,27 +70,32 @@ const ValidationPaper = () => {
       setRowErrors((prev) => ({ ...prev, [userIndex]: "" })); // Clear error message
 
       // Create a Blob with the JSON data
-      const blob = new Blob([JSON.stringify(responseData.data, null, 2)], {
-        type: "application/json",
-      });
+      const blob = await response.blob();
 
-      // Create a temporary link element
+      // Create a temporary link for the ZIP file
+      const zipUrl = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = user.username + "_interaction.json";
+      link.href = zipUrl;
+      link.download = user.username + "_interactions_bundle.zip";
 
-      // Append the link to the DOM and trigger the download
+      // Trigger the download
       document.body.appendChild(link);
       link.click();
 
-      // Clean up the DOM
+      // Cleanup
       document.body.removeChild(link);
+      URL.revokeObjectURL(zipUrl);
+
+      setRowSuccess((prev) => ({
+        ...prev,
+        [userIndex]: "Successfully downloaded interactions bundle!",
+      }));
+      setRowErrors((prev) => ({ ...prev, [userIndex]: "" }));
     } catch (err) {
-      setError("Error while fetching interaction " + err.message);
+      setError("Error while fetching interaction: " + err.message);
       throw err;
     }
   };
-
   const handleValidate = async () => {
     try {
       const combinedData = new FormData();
