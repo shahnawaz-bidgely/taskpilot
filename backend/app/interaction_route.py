@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 MASTER_FILE_PATH_PROGRAM_NBI = "app/resources/master_program_nbi.json"
 MASTER_FILE_PATH_TEST = "app/resources/test.json"
-MASTER_FILE_PATH_EE_NBI = "app/resources/master_nbi_data.json"
+MASTER_FILE_PATH_MASTER_NBI = "app/resources/master_nbi_data.json"
 RANK_COUNTER = 0
 
 EXCEL_FILE = "app/resources/nbi_content_sheet_filtered.xlsx"
@@ -25,7 +25,7 @@ EXCEL_FILE = "app/resources/nbi_content_sheet_filtered.xlsx"
 @interaction_route.route('/prep-interactions', methods=['POST'])
 def update_interactions():
     fuels = request.form.get('fuelType')
-    # reportName = request.form.get('reportName')
+    reportName = request.form.get('reportName')
     endpoint_url = "https://" + request.form.get('endpoint')
     uuid = request.form.get('uuid')
     fuels = fuels.split(",")
@@ -35,14 +35,25 @@ def update_interactions():
     ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
     PILOT_ID = 10046
 
-    print(f"User Data - {fuels},{uuid}, {endpoint_url}, {ACCESS_TOKEN}")
+    print(f"User Data - {fuels},{uuid}, {endpoint_url}, {ACCESS_TOKEN} {reportName}")
+
+    season_report_name = ""
+    is_season_report = False
+
+    if("WINTER" in reportName) :
+        season_report_name = "Winter"
+        is_season_report = True
+    elif ("SUMMER" in reportName):
+        season_report_name = "Summer"
+        is_season_report = True
+    else:
+        season_report = "Non Seasonal"
+        is_season_report = False
+
 
     try:
 
-        if not os.path.exists(MASTER_FILE_PATH_PROGRAM_NBI):
-            return jsonify({"error": "Master Program file not found at the specified path."}), 400
-
-        if not os.path.exists(MASTER_FILE_PATH_EE_NBI):
+        if not os.path.exists(MASTER_FILE_PATH_MASTER_NBI):
             return jsonify({"error": "Master EE file not found at the specified path."}), 400
 
         INTERACTION_FILE_FINAL = {
@@ -83,7 +94,7 @@ def update_interactions():
                     INTERACTION_FILE_FINAL["nbi_delivery_helper_dict"]["billing_info"][
                         "last_gas_billing_cycle_info"]["last_billing_end"] = bc_end_time
 
-                prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set, uuid)
+                prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set, uuid, season_report_name, is_season_report)
                 #prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3, unique_nbi_set, unique_action_Set)
                 #prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3,unique_nbi_set, unique_action_Set)
 
@@ -116,14 +127,13 @@ def update_interactions():
 
         print("ZIP file created successfully:", ZIP_FILE)
 
-        # Return the ZIP file for download
-        return send_file(ZIP_FILE, as_attachment=True, download_name=f"{uuid}_interactions_bundle.zip")
+        return send_file(ZIP_FILE, as_attachment=True, download_name="interactions_bundle.zip")
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set, uuid):
-    with open(MASTER_FILE_PATH_EE_NBI, 'r') as f:
+def prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set, uuid, season_report_name, is_season_report):
+    with open(MASTER_FILE_PATH_MASTER_NBI, 'r') as f:
         master_ee_nbi_data = json.load(f)
 
     print(f"Processing app based actionable Reco NBI data")
@@ -131,26 +141,38 @@ def prepare_generic_app_based_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FIN
     # data = remove_duplicates_by_action_id(master_ee_nbi_data)
 
     for interaction in master_ee_nbi_data:
-        print(f"processing for appliance {interaction.get("applianceId")}")
-        #print(interaction)
+        print(f"processing for appliance {interaction.get('applianceId')}")
 
-        if interaction.get("id") in unique_nbi_set or interaction.get("action").get("id") in unique_action_Set:
-            print(f"Skipping interaction with id {interaction.get('id')} and action id {interaction.get('action').get('id')}")
+        action = interaction.get("action")
+
+        if interaction.get("id") in unique_nbi_set or (action and action.get("id") in unique_action_Set):
+            print(
+                f"Skipping interaction with id {interaction.get('id')} and action id {action.get('id') if action else 'None'}")
             continue
 
-        if ("Summer" in interaction.get("nbiType") or "Winter" in interaction.get("nbiType") or "Program" in interaction.get("nbiType")) and (
-                interaction.get("fuelType") == fuelType):
-            #print("Found summer or Winter")
+        # If it is a seasonal report, check for seasonal conditions
+        if is_season_report and season_report_name in interaction.get("nbiType") and interaction.get(
+                "fuelType") == fuelType:
             assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
             unique_nbi_set.add(interaction.get("id"))
-            unique_action_Set.add(interaction.get("action").get("id"))
+            if action:
+                unique_action_Set.add(action.get("id"))
 
-        else:
-            if (int(interaction.get("applianceId")) in topAppliance and interaction.get("fuelType") == fuelType):
-                #print(f"Found Non summer or Winter with top appliance {topAppliance} and fuel {fuelType}")
-                assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
-                unique_nbi_set.add(interaction.get("id"))
-                unique_action_Set.add(interaction.get("action").get("id"))
+        # If it is not a seasonal report, check for "Program" type interactions
+        elif not is_season_report and interaction.get("nbiType") == "Program" and interaction.get(
+                "fuelType") == fuelType:
+            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
+            unique_nbi_set.add(interaction.get("id"))
+            if action:
+                unique_action_Set.add(action.get("id"))
+
+        # Common condition for both cases: Top appliance check
+        elif int(interaction.get("applianceId")) in topAppliance and interaction.get("fuelType") == fuelType:
+            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
+            unique_nbi_set.add(interaction.get("id"))
+            if action:
+                unique_action_Set.add(action.get("id"))
+
 
 def prepare_eenbi_data(MASTER_FILE_PATH, INTERACTION_FILE_FINAL, fuelType, topAppliance, unique_nbi_set, unique_action_Set):
     with open(MASTER_FILE_PATH, 'r') as f:

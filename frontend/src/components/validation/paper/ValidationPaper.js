@@ -76,7 +76,7 @@ const ValidationPaper = () => {
       const zipUrl = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = zipUrl;
-      link.download = user.username + "_interactions_bundle.zip";
+      link.download = "interactions_bundle.zip";
 
       // Trigger the download
       document.body.appendChild(link);
