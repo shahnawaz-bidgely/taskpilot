@@ -94,7 +94,7 @@ def update_interactions():
                     INTERACTION_FILE_FINAL["nbi_delivery_helper_dict"]["billing_info"][
                         "last_gas_billing_cycle_info"]["last_billing_end"] = bc_end_time
 
-                prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set, uuid, season_report_name, is_season_report)
+                prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE_FINAL, fuel, topAppliance, unique_nbi_set, unique_action_Set, uuid, season_report_name, is_season_report, PILOT_ID)
                 #prepare_eenbi_data(MASTER_FILE_PATH_EE_NBI, INTERACTION_FILE_FINAL, fuel, 3, unique_nbi_set, unique_action_Set)
                 #prepare_program_data(MASTER_FILE_PATH_PROGRAM_NBI,INTERACTION_FILE_FINAL, fuel, 3,unique_nbi_set, unique_action_Set)
 
@@ -132,7 +132,7 @@ def update_interactions():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-def prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set, uuid, season_report_name, is_season_report):
+def prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE_FINAL, fuelType, topAppliance,  unique_nbi_set, unique_action_Set, uuid, season_report_name, is_season_report, PILOT_ID):
     with open(MASTER_FILE_PATH_MASTER_NBI, 'r') as f:
         master_ee_nbi_data = json.load(f)
 
@@ -153,7 +153,7 @@ def prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE
         # If it is a seasonal report, check for seasonal conditions
         if is_season_report and season_report_name in interaction.get("nbiType") and interaction.get(
                 "fuelType") == fuelType:
-            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
+            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid, PILOT_ID)
             unique_nbi_set.add(interaction.get("id"))
             if action:
                 unique_action_Set.add(action.get("id"))
@@ -161,14 +161,14 @@ def prepare_generic_app_based_data(MASTER_FILE_PATH_MASTER_NBI, INTERACTION_FILE
         # If it is not a seasonal report, check for "Program" type interactions
         elif not is_season_report and interaction.get("nbiType") == "Program" and interaction.get(
                 "fuelType") == fuelType:
-            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
+            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid, PILOT_ID)
             unique_nbi_set.add(interaction.get("id"))
             if action:
                 unique_action_Set.add(action.get("id"))
 
         # Common condition for both cases: Top appliance check
         elif int(interaction.get("applianceId")) in topAppliance and interaction.get("fuelType") == fuelType:
-            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid)
+            assign_rank(interaction, INTERACTION_FILE_FINAL, uuid, PILOT_ID)
             unique_nbi_set.add(interaction.get("id"))
             if action:
                 unique_action_Set.add(action.get("id"))
@@ -308,10 +308,10 @@ def process_nbi_data(provided_nbi_ids, provided_insight_ids, provided_action_ids
 
                     # Generate and write SH file content
                     sh_statements = [
-                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.title -d \'[{{ "locale": "en_US","text": "{nbi_title}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
-                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.shortText -d \'[{{ "locale": "en_US","text": "{nbi_short_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
-                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.longText -d \'[{{ "locale": "en_US","text": "{nbi_long_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
-                        f'`curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/10037/resource/com.bidgely.cloud.core.lib.paper.nbi.{insight_id}.insightText -d \'[{{ "locale": "en_US","text": "{insight_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`'
+                        f' echo `curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/{PILOT_ID}/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.title -d \'[{{ "locale": "en_US","text": "{nbi_title}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
+                        f' echo `curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/{PILOT_ID}/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.shortText -d \'[{{ "locale": "en_US","text": "{nbi_short_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
+                        f' echo `curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/{PILOT_ID}/resource/com.bidgely.cloud.core.lib.paper.nbi.{nbi_id}.longText -d \'[{{ "locale": "en_US","text": "{nbi_long_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`',
+                        f' echo `curl -X PUT -H "Authorization: Bearer $2" -H "Content-Type: application/json" $1/2.1/stringResources/{PILOT_ID}/resource/com.bidgely.cloud.core.lib.paper.nbi.{insight_id}.insightText -d \'[{{ "locale": "en_US","text": "{insight_text}","tags": "her_ui,LP_COMPONENT_HER"}}]\'`'
                     ]
 
                     sh_file.write("\n".join(sh_statements) + "\n")
@@ -457,10 +457,10 @@ def get_itemization_data(uuid, BaseURL, ACCESS_TOKEN, pilot_id, bc_start_prev, b
         return None
 
 
-def assign_rank(interaction, INTERACTION_FILE_FINAL, uuid):
+def assign_rank(interaction, INTERACTION_FILE_FINAL, uuid, PILOT_ID):
     global RANK_COUNTER
 
-    status  = process_nbi_data(interaction.get("id"), interaction.get("insight").get("id"), interaction.get("action").get("id"), 10046, uuid)
+    status  = process_nbi_data(interaction.get("id"), interaction.get("insight").get("id"), interaction.get("action").get("id"), PILOT_ID, uuid)
 
     if status:
         RANK_COUNTER = RANK_COUNTER + 1
