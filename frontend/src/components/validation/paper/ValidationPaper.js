@@ -435,6 +435,64 @@ const ValidationPaper = () => {
             },
           },
         },
+        {
+          username: "b327dfa8-5a75-4903-b5db-917a8f0bd98e",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "1e4b9e3f-92a0-4464-a2af-5e6814d219e5",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
       ];
 
       setValidation(validations);
