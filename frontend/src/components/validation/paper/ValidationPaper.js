@@ -5,9 +5,14 @@ import "./ValidationPaper.css";
 const ValidationPaper = () => {
   const { uploadedFile, fileContent } = useContext(FileContext);
   const [error, setError] = useState("");
+  const [rowErrors, setRowErrors] = useState({}); // Store errors per row
+  const [rowSuccess, setRowSuccess] = useState({}); // Store success per row
+
+  const [success, setSuccess] = useState("");
   const [messageStyle, setMessageStyle] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [validations, setValidation] = useState([]);
   const [formData, setFormData] = useState({
     fuelType: "",
     reportName: "",
@@ -27,6 +32,70 @@ const ValidationPaper = () => {
     });
   };
 
+  const getInteractions = async (user, userIndex) => {
+    try {
+      console.log("Row data:", user.username);
+      console.log("Form data:", formData.endpointUrl);
+
+      const combinedData = new FormData();
+
+      combinedData.append("fuelType", formData.fuelType);
+      combinedData.append("reportName", formData.reportName);
+      combinedData.append("endpoint", formData.endpointUrl);
+      combinedData.append("uuid", user.username);
+
+      // alert(user.username + " " + formData.reportName);
+
+      const response = await fetch("http://127.0.0.1:5000/prep-interactions", {
+        method: "POST",
+        body: combinedData,
+      });
+
+      const responseData = await response.json();
+      console.log("Response Data:", responseData);
+
+      if (!responseData.success) {
+        setRowErrors((prev) => ({
+          ...prev,
+          [userIndex]: responseData.error || "No interactions available.",
+        }));
+        setRowSuccess((prev) => ({ ...prev, [userIndex]: "" })); // Clear success message
+        return;
+      }
+
+      setRowSuccess((prev) => ({
+        ...prev,
+        [userIndex]: "Successfully fetched interactions!",
+      }));
+      setRowErrors((prev) => ({ ...prev, [userIndex]: "" })); // Clear error message
+
+      // Create a Blob with the JSON data
+      const blob = await response.blob();
+
+      // Create a temporary link for the ZIP file
+      const zipUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = zipUrl;
+      link.download = "interactions_bundle.zip";
+
+      // Trigger the download
+      document.body.appendChild(link);
+      link.click();
+
+      // Cleanup
+      document.body.removeChild(link);
+      URL.revokeObjectURL(zipUrl);
+
+      setRowSuccess((prev) => ({
+        ...prev,
+        [userIndex]: "Successfully downloaded interactions bundle!",
+      }));
+      setRowErrors((prev) => ({ ...prev, [userIndex]: "" }));
+    } catch (err) {
+      setError("Error while fetching interaction: " + err.message);
+      throw err;
+    }
+  };
   const handleValidate = async () => {
     try {
       const combinedData = new FormData();
@@ -36,121 +105,418 @@ const ValidationPaper = () => {
       combinedData.append("reportName", formData.reportName);
       combinedData.append("endpoint", formData.endpointUrl);
 
-      const response = await fetch(
-        "http://127.0.0.1:5000/her-sections-validations",
+      const validations = [
         {
-          method: "POST",
-          body: combinedData,
-        }
-      );
+          username: "751e298e-7e54-4bb5-a4f2-17bfd0931e61",
+          sections: {
+            HEADER: {
+              failure: [
+                "Username does not exist",
+                "Utility address does not exist",
+              ],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "377da01e-86a5-487e-ac36-81e1a322f50b",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: {
+                failure1: "test failure",
+                failure2: "test failure2",
+              },
+            },
+            QR_CODE: {
+              failure: {
+                "QR Code": "QR code is missing",
+              },
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "e33c8eb6-ea4d-440c-8a75-09fc9c0b7526",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "bbcba563-3925-4793-b2c1-2f80cd5da4f1",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "6ae28ec3-3b8d-4355-9073-50a2e7e9c558",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "e39ed9c7-a0e0-4919-afaf-b614381a8b8e",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "64c5e694-05b6-4a87-a6a6-af3d646cfffd",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "6d0116bc-62ec-4176-9e54-cfd58beb8629",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
 
-      console.log(response);
+        {
+          username: "9f3f62b7-323e-47af-85de-d7a9b9623936",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch data of HER validation");
-      }
+        {
+          username: "0cfc41d3-365c-4da9-ad7b-b29ce0f16261",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "84cc1330-95a8-4e59-9e91-2a8f4f7b56ed",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "b327dfa8-5a75-4903-b5db-917a8f0bd98e",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+        {
+          username: "1e4b9e3f-92a0-4464-a2af-5e6814d219e5",
+          sections: {
+            HEADER: {
+              failure: [],
+            },
+            SHC_GRAPH_AND_WIDGET: {
+              failure: [],
+            },
+            ITEMIZATION_SHC: {
+              failure: [],
+            },
+            ITEMIZATION: {
+              failure: [],
+            },
+            PROGRAM_NBI: {
+              failure: [],
+            },
+            EE_NBI: {
+              failure: [],
+            },
+            QR_CODE: {
+              failure: [],
+            },
+            FOOTER: {
+              failure: [],
+            },
+          },
+        },
+      ];
+
+      setValidation(validations);
+
+      // const response = await fetch(
+      //   "http://127.0.0.1:5000/her-sections-validations",
+      //   {
+      //     method: "POST",
+      //     body: combinedData,
+      //   }
+      // );
+
+      // console.log(response);
+
+      // if (!response.ok) {
+      //   throw new Error("Failed to fetch data of HER validation");
+      // }
     } catch (err) {
-      setError("Error connecting to Redshift or executing query: " + err.message);
+      setError(
+        "Error connecting to Redshift or executing query: " + err.message
+      );
       throw err;
     }
   };
-
-  const validations = [
-    {
-      username: "8ddb5a00-5ebf-42b1-89ad-b76ea731b7fc",
-      sections: {
-        HEADER: {
-          failure: ["Username does not exist",
-            "Utility address does not exist"]
-
-        },
-        SHC_GRAPH_AND_WIDGET: {
-          failure: []
-        },
-        ITEMIZATION_SHC: {
-          failure: []
-        },
-        ITEMIZATION: {
-          failure: []
-        },
-        PROGRAM_NBI: {
-          failure: []
-        },
-        EE_NBI: {
-          failure: []
-        },
-        QR_CODE: {
-          failure: []
-        },
-        FOOTER: {
-          failure: [],
-        },
-      },
-    },
-    {
-      username: "caf51017-c6b9-4ab8-b218-291a2a923c05",
-      sections: {
-        HEADER: {
-          failure: []
-        },
-        SHC_GRAPH_AND_WIDGET: {
-          failure: []
-        },
-        ITEMIZATION_SHC: {
-          failure: []
-        },
-        ITEMIZATION: {
-          failure: []
-        },
-        PROGRAM_NBI: {
-          failure: []
-        },
-        EE_NBI: {
-          failure: {
-            "failure1" : "test failure",
-            "failure2" : "test failure2"
-          }
-        },
-        QR_CODE: {
-          failure: {
-            "QR Code" : "QR code is missing"
-          }
-        },
-        FOOTER: {
-          failure: [],
-        },
-      },
-    },
-    {
-      username: "df79f2b6-3c1d-442e-b65c-1f526b40117d",
-      sections: {
-        HEADER: {
-          failure: []
-        },
-        SHC_GRAPH_AND_WIDGET: {
-          failure: []
-        },
-        ITEMIZATION_SHC: {
-          failure: []
-        },
-        ITEMIZATION: {
-          failure: []
-        },
-        PROGRAM_NBI: {
-          failure: []
-        },
-        EE_NBI: {
-          failure: []
-        },
-        QR_CODE: {
-          failure: []
-        },
-        FOOTER: {
-          failure: [],
-        },
-      },
-    },
-  ];
 
   const [expandedUser, setExpandedUser] = useState(null);
 
@@ -174,7 +540,6 @@ const ValidationPaper = () => {
   return (
     <div className="validation-paper">
       <div className="form-container">
-        {/* Form Fields */}
         <div className="form-group">
           <select
             id="fuelType"
@@ -188,7 +553,7 @@ const ValidationPaper = () => {
             </option>
             <option value="ELECTRIC">ELECTRIC</option>
             <option value="GAS">GAS</option>
-            <option value="ELECTRIC, GAS">ELECTRIC, GAS (for DF HER)</option>
+            <option value="ELECTRIC,GAS">ELECTRIC, GAS (for DF HER)</option>
           </select>
           <label htmlFor="fuelType">Fuel Type*</label>
         </div>
@@ -240,6 +605,7 @@ const ValidationPaper = () => {
               <th>Passed</th>
               <th>Failed</th>
               <th>Data Quality</th>
+              <th>Mock Interaction</th>
             </tr>
           </thead>
           <tbody>
@@ -261,6 +627,28 @@ const ValidationPaper = () => {
                         <span className="data-quality success">&#10004;</span>
                       ) : (
                         <span className="data-quality failure">&#10008;</span>
+                      )}
+                    </td>
+                    <td>
+                      <button
+                        className="preview-button"
+                        onClick={(e) => {
+                          e.stopPropagation(); // Prevent row expansion
+                          getInteractions(user, userIndex); // Pass userIndex
+                        }}
+                      >
+                        Mock the Interactions
+                        <i className="icon-preview" /> View
+                      </button>
+                      {rowErrors[userIndex] && (
+                        <p style={{ color: "red", marginLeft: "10px" }}>
+                          {rowErrors[userIndex]}
+                        </p>
+                      )}
+                      {rowSuccess[userIndex] && (
+                        <p style={{ color: "green", marginLeft: "10px" }}>
+                          {rowSuccess[userIndex]}
+                        </p>
                       )}
                     </td>
                   </tr>

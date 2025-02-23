@@ -1,6 +1,8 @@
 from flask import Flask
-from .route import bp as route_bp  # Import the hello blueprint
-from .her_route import bp as her_route_bp
+from .route import analysis_route as analysis_route  # Import the hello blueprint
+from .her_route import her_route as her_route
+from .chat_boat_route import chatbot_route as chat_boat
+from .interaction_route import interaction_route as interaction_route
 import os
 from flask_cors import CORS
 
@@ -16,7 +18,9 @@ def create_app():
         os.makedirs(app.config['UPLOAD_FOLDER'])
 
     # Register the blueprint
-    app.register_blueprint(route_bp)
-    app.register_blueprint(her_route_bp)
+    app.register_blueprint(analysis_route)
+    app.register_blueprint(her_route)
+    app.register_blueprint(chat_boat)
+    app.register_blueprint(interaction_route)
 
     return app

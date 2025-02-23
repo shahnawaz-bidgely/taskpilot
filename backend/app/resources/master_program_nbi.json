@@ -1,0 +1,140 @@
+[
+	{
+      "id": "I_AC_25_AVIS_A_G_E_003",
+      "score": 0.149,
+      "rank": 1,
+      "hash": "78fa67690c8fb2358be32eb842e0e0632cbc943c240bc1ca073ad08f0a8253f73f6aea67dc0e0cb5aedff6db7ed15cb10a280be8720539a1489cf25dca37e345",
+      "nbiType": "Program",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "AVIS_A_G_E_003",
+        "score": 0.39
+      }
+    },
+    {
+      "id": "I_AC_25_AVIS_A_G_E_002",
+      "score": 0.134,
+      "rank": 2,
+      "hash": "89eb98652f41bbcbd99437151f30b53bbd0bba38fd5ea041966da72ad22e06346ab0a2450c8e1a850d274ac7242db3c0d4158999589877b72b5de3bb6409210e",
+      "nbiType": "SummerProgram",
+      "nbiFamily": "EE",
+      "applianceId": "4",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_AC_25",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "AVIS_A_G_E_002",
+        "score": 0.39
+      }
+    },
+    {
+      "id": "I_SH_08_AVIS_A_G_E_007",
+      "score": 0.216,
+      "rank": 3,
+      "hash": "67d955cf7d5e3bee7f11c996a8a1aca421ebab01467df9bd4a334a572e9fa5226dadbffc95249a9597e8a931a96bb742576c4717d10c89cf0630a0fd55b98ff6",
+      "nbiType": "WinterProgram",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "ELECTRIC",
+      "insight": {
+        "id": "I_SH_08",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "AVIS_A_G_E_007",
+        "score": 0.39
+      }
+    },
+    {
+      "id": "I_TO_111_AVIS_A_G_E_009",
+      "score": 0.114,
+      "rank": 10,
+      "hash": "9cd8cc5177eca3479d46d09764dcfd737e2de8cce88115f994e1acfdd6ce9e842951cbf7e94d0a09dd03edaa1e35b5fc1a0ecb8a44bc7135dd66729c50955295",
+      "nbiType": "Program",
+      "nbiFamily": "EE",
+      "applianceId": "17",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_TO_111",
+        "score": 0.04,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "AVIS_A_G_E_009",
+        "score": 0.39
+      }
+    },
+    {
+      "id": "I_SH_70_AVIS_A_G_E_010",
+      "score": 0.104,
+      "rank": 11,
+      "hash": "a1b797d8f133ba1343993cd187a8955d1e3b11d4d56d3a0345eaaa9dadf1fb5e30a46656ab39a36e15020b6b28c812ab9d043e64da5a389b2fbb5cfeda07800a",
+      "nbiType": "SummerProgram",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_70",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "AVIS_A_G_E_010",
+        "score": 0.39
+      }
+    },
+    {
+      "id": "I_SH_70_AVIS_A_G_E_011",
+      "score": 0.119,
+      "rank": 12,
+      "hash": "281b471459ed20ba4fa98c0afd647e7eb54e3e6e26d7c0e868cf1ebaf8a36b2693ab6dc871eef4f07d1af4dd743f73ea4b5e695e1d4fb39f19da346ff6d50704",
+      "nbiType": "WinterProgram",
+      "nbiFamily": "EE",
+      "applianceId": "3",
+      "fuelType": "GAS",
+      "insight": {
+        "id": "I_SH_70",
+        "score": 0.1,
+        "values": {
+          "Value": "",
+          "UoM": "",
+          "date": ""
+        }
+      },
+      "action": {
+        "id": "AVIS_A_G_E_011",
+        "score": 0.39
+      }
+    }
+]

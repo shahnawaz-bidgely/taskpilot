@@ -1,0 +1,53 @@
+# Node.js dependencies
+node_modules/
+node_modules/.cache/
+node_modules/.cache/*
+node_modules/.cache/**/*
+
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build and cache directories
+dist/
+build/
+.cache/
+.next/
+out/
+.vscode/
+.idea/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Webpack & Babel cache
+webpack.cache/
+*.pack
+*.cache
+.babelrc
+.cache/
+webpack.cache/
+**/*.pack
+.pyc
+*.pyc
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+*.log
+*.swp
+*.swo
+*.swn
+
+

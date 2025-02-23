@@ -11,7 +11,7 @@ from datetime import datetime
 from tempfile import NamedTemporaryFile
 
 
-bp = Blueprint('analysis_email', __name__)
+analysis_route = Blueprint('analysis_email', __name__)
 
 
 UPLOAD_FOLDER = 'uploads'
@@ -22,14 +22,14 @@ ACCESS_TOKEN = "56b02db5-b83c-4c5c-b75d-3b6eaee03438"
 
 OUTPUT_FOLDER = 'outputs'
 
-@bp.route('/hello', methods=['GET'])
+@analysis_route.route('/hello', methods=['GET'])
 def hello_world():
     print("hello called")
     return jsonify({"message": "Hello, World!"})
 
 
 
-@bp.route('/analyze-users', methods=['POST'])
+@analysis_route.route('/analyze-users', methods=['POST'])
 def analyse_user():
     print("API called")
     file = request.files.get('file')
@@ -66,6 +66,8 @@ def analyse_user():
                         'ratePlanId': data['payload']['homeAccounts']['rate']['ratePlanId'],
                         'notificationUserType': data['payload']['notificationUserType'],
                         'hasSolar': data['payload']['homeAccounts']['hasSolar']
+                        # 'neighbourhoodId': data['payload']['homeAccounts']['neighbourhoodId']
+
                     })
                 else:
                     print(f"Failed to fetch data for UUID: {uuid}, Status Code: {response.status_code}")
@@ -93,7 +95,7 @@ def analyse_user():
         return jsonify({'message': 'Error processing file', 'error': str(e)}), 500
 
 
-@bp.route('/analyze-users-redshift', methods=['POST'])
+@analysis_route.route('/analyze-users-redshift', methods=['POST'])
 def analyse_user_from_redshift():
     file = request.files.get('file')
     if not file:
@@ -165,7 +167,7 @@ def analyse_user_from_redshift():
         return jsonify({'message': 'Error fetching data from Redshift', 'error': str(e)}), 500
 
 
-@bp.route('/analyze-cluster-redshift', methods=['POST'])
+@analysis_route.route('/analyze-cluster-redshift', methods=['POST'])
 def analyse_cluster_from_redshift():
     file = request.files.get('file')
     if not file:
@@ -241,7 +243,7 @@ def analyse_cluster_from_redshift():
 
 ########### Email Module Analysis ########################
 
-@bp.route('/analyze-email-preview', methods=['POST'])
+@analysis_route.route('/analyze-email-preview', methods=['POST'])
 def analyse_email_preview():
     file = request.files.get('file')
     if not file:
@@ -252,7 +254,7 @@ def analyse_email_preview():
     file_content = request.form.get('fileContent')
     trigger_time = request.form.get('triggerTime')
     event_name = request.form.get('eventName')
-    endpoint = request.form.get('endpoint')
+    endpoint = "https://" + request.form.get('endpoint')
 
     # Logging or validating other inputs (optional)
     # print(f"File content: {file_content}")
@@ -350,10 +352,10 @@ def analyse_email_preview():
 
 
 
-@bp.route('/generate-email-view', methods=['GET'])
+@analysis_route.route('/generate-email-view', methods=['GET'])
 def generate_html():
     # Extract parameters from the query string
-    endpoint = request.args.get('endpoint')
+    endpoint = "https://naapi.bidgely.com"
     NotificationID = request.args.get('NotificationID')
 
     if not endpoint or not NotificationID:

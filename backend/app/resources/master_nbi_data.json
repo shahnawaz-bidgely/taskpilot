@@ -1,0 +1,5223 @@
+[
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_001",
+        "score": 0.338,
+        "rank": 2,
+        "hash": "292981cfd240eb57b655efb5913f37c0c7211eac8f2f79745c6fade87bdfcbf8",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.267,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-001",
+            "score": 0.147
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_005",
+        "score": 0.404,
+        "rank": 7,
+        "hash": "6e357eb802bd1c57e9fd2f433c11eb2fe346f791e9af88b6fb799285c0f7264e",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.481,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-002",
+            "score": 0.177
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_009",
+        "score": 0.498,
+        "rank": 5,
+        "hash": "8ce5e6a59b6d3d138564d9ec07c03673895e79dc1577064a00f48950092f8744",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.383,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-003",
+            "score": 0.35
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_013",
+        "score": 0.405,
+        "rank": 3,
+        "hash": "90b693cd57342d1a59a90ffb0e5b3347a16e5f0aafed061b249832a846972a38",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.401,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-004",
+            "score": 0.499
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_017",
+        "score": 0.134,
+        "rank": 7,
+        "hash": "f180cc0f91417e2aa7e425461dc4f8d8878b00f896d07e3aeed8830bf79a57c2",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.273,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-005",
+            "score": 0.139
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_021",
+        "score": 0.433,
+        "rank": 7,
+        "hash": "6f5085bc5194c1c1b719e83923f6c3e2a54c9d97cc5cbea5206a293a066efc66",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.342,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-006",
+            "score": 0.264
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_025",
+        "score": 0.489,
+        "rank": 9,
+        "hash": "594631c75a7c56bb0e48083f8847dfcc1ee306ac5a8e33c338a59dafc086913d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.172,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-007",
+            "score": 0.122
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_029",
+        "score": 0.127,
+        "rank": 6,
+        "hash": "f0c38fff9f9036f230e105f4e62be5e06dbee877133fcc6521d3f70d2586b62c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.338,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-008",
+            "score": 0.246
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_033",
+        "score": 0.107,
+        "rank": 10,
+        "hash": "643df8e558b3f2432236c273c03bc5ce8e638c6e882a3e7e70b73e827b285c3c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.352,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-009",
+            "score": 0.25
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_037",
+        "score": 0.426,
+        "rank": 9,
+        "hash": "3ce97a69193c52fcd6179539eafe651dfb573887398a1fdbc29ce825c7dedcae",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.335,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-010",
+            "score": 0.281
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_041",
+        "score": 0.463,
+        "rank": 1,
+        "hash": "c943c15cf9f8a57c6957c4a16b59b0e72967eb23c33b1374de3ca6b081b70166",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.33,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-011",
+            "score": 0.16
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_045",
+        "score": 0.487,
+        "rank": 2,
+        "hash": "5065ce406dd6c32b6dc8235a8420184cfc2f2a8102191dd3bb445594fd4bc06f",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.469,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-012",
+            "score": 0.446
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_053",
+        "score": 0.254,
+        "rank": 6,
+        "hash": "b3d36ed78905dde85460bd2792804ad8e669fa746eb677efc1e3c15f60c973d0",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.33,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-013",
+            "score": 0.186
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_061",
+        "score": 0.326,
+        "rank": 1,
+        "hash": "11d332c4a28f65f974a1cdf4fd05c23a15eca0164395283dce1b66b9d195da92",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.471,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-014",
+            "score": 0.415
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_065",
+        "score": 0.137,
+        "rank": 9,
+        "hash": "3403a5f753bfacbabeb1557fb85bbd4b20d283113cc6f409918944dfcfcf5947",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.465,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AC-015",
+            "score": 0.3
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AO_001",
+        "score": 0.29,
+        "rank": 3,
+        "hash": "ed1261076e77ce4bb22b9f80bab14775aa42aa5e8ec0c5917a0206487f372618",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "8",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AO_003",
+            "score": 0.123,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AO-001",
+            "score": 0.315
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AO_009",
+        "score": 0.391,
+        "rank": 5,
+        "hash": "55eb7d47deafdfc3f8c5272c019ad8f851775337f2dee91877bb736faebf8b65",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "8",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AO_003",
+            "score": 0.25,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AO-002",
+            "score": 0.435
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AO_013",
+        "score": 0.45,
+        "rank": 6,
+        "hash": "5c0bad5edf6f576f54bbb79c2574833cbd5f17c7e4988a3613cbc78175317851",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "8",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AO_003",
+            "score": 0.365,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AO-003",
+            "score": 0.307
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AO_021",
+        "score": 0.173,
+        "rank": 1,
+        "hash": "17d718299132c2dd2fd7feb65ce46a308e96498f795d8cbe2321f84c50e5ff72",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "8",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AO_003",
+            "score": 0.344,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-AO-005",
+            "score": 0.114
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_CK_001",
+        "score": 0.23,
+        "rank": 10,
+        "hash": "22a70eb70a963ebd081563d81625844396e3bb7efb1403a654cfe268e606fcca",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.365,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-CK-001",
+            "score": 0.377
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_CK_005",
+        "score": 0.337,
+        "rank": 1,
+        "hash": "8b6e5c8bcf8e57fa0ad232b0244d805a2a9a58ba58b6e2757c1bcd5c1cb7928b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.103,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-CK-002",
+            "score": 0.15
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_CK_009",
+        "score": 0.326,
+        "rank": 6,
+        "hash": "2cfe6a4afc79f3f64f83bbcf256c9a7fc626c0d92836a0ca1c7be2cb3cf6dcb6",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.213,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-CK-003",
+            "score": 0.283
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_CK_013",
+        "score": 0.221,
+        "rank": 7,
+        "hash": "ecb17c365294fb361359932d28e4290122059d3144075fce0d3d8f1cd3cceebc",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.119,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-CK-004",
+            "score": 0.256
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_CK_017",
+        "score": 0.11,
+        "rank": 10,
+        "hash": "eded69df100d58671130c6fdee19514e64e38207dad0a3cfd38682401d4f7eb8",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.226,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-CK-005",
+            "score": 0.415
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_CK_021",
+        "score": 0.252,
+        "rank": 4,
+        "hash": "5147f9097dbe74aaa28b82e260c7fc89dffeca67460853e4b0f9065d7c621c00",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.347,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-CK-006",
+            "score": 0.259
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_CK_025",
+        "score": 0.432,
+        "rank": 3,
+        "hash": "c15bc8098eca73a9f273addcc838adcf14ee5b9c48d22f5aa830fa86c917cc2c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.352,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-CK-007",
+            "score": 0.129
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EC_001",
+        "score": 0.233,
+        "rank": 6,
+        "hash": "e05d9b6dd11bffee7bd33922c3f518fe55db1213d979852f0359b89c8c56d3d6",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "66",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.242,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EC-001",
+            "score": 0.49
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EC_005",
+        "score": 0.196,
+        "rank": 2,
+        "hash": "a1752af19c1d35fbdfc1d3758fcbd51493706316b5ba09026072a7060d285c0b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "66",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.495,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EC-002",
+            "score": 0.416
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EC_009",
+        "score": 0.46,
+        "rank": 3,
+        "hash": "9feea06245608746ddb8b11b77959693126ce8124a2fba41f1739ce8f1e7b047",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "66",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.139,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EC-003",
+            "score": 0.363
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EC_013",
+        "score": 0.169,
+        "rank": 4,
+        "hash": "2553bc7f7ec2fdddb5d4e703ee3b12b71c7304cbf6b3052b610557d16e8789f8",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "66",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.151,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EC-004",
+            "score": 0.149
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EC_017",
+        "score": 0.442,
+        "rank": 10,
+        "hash": "e2150cbf712a4f54f20aa14d21f529c612e8f3f6d7a8e1dfc5d1618bbf8a4e5e",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "66",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.384,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EC-005",
+            "score": 0.142
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EV_001",
+        "score": 0.264,
+        "rank": 9,
+        "hash": "190519ab4851ee741ade1e5276c119afbb3b1490d64f8e93c9c3e7878d2b96cf",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "18",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_EV_001",
+            "score": 0.316,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EV-001",
+            "score": 0.125
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EV_005",
+        "score": 0.265,
+        "rank": 1,
+        "hash": "ca15a98d9eb18bcaaffc14943505ec20b96a5528936045cd7b00e37e56d31b54",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "18",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_EV_001",
+            "score": 0.34,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EV-002",
+            "score": 0.146
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EV_009",
+        "score": 0.496,
+        "rank": 1,
+        "hash": "f1049ede49ce27e8df07ae505e64997ad4f3d55506c6802b7a39ea56e8b1ccf0",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "18",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_EV_001",
+            "score": 0.467,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EV-003",
+            "score": 0.248
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EV_013",
+        "score": 0.39,
+        "rank": 4,
+        "hash": "8fdc1d97d67796c296fc0675267815fb88890d4d29f0b06d690457c4109c30b3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "18",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_EV_001",
+            "score": 0.488,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EV-004",
+            "score": 0.114
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_EV_017",
+        "score": 0.124,
+        "rank": 5,
+        "hash": "e2ff34ab2708f3da9835e98990e4fd3e678d59f3c02c317198284fbc0e2eaf4a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "18",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_EV_001",
+            "score": 0.33,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-EV-005",
+            "score": 0.276
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_001",
+        "score": 0.18,
+        "rank": 1,
+        "hash": "1f10a80dcf24bff314efa6dca7656771e9e8584d64fdc6217958dc8eeda9a528",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.408,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-001",
+            "score": 0.106
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_005",
+        "score": 0.419,
+        "rank": 1,
+        "hash": "e991e790085122a2b7621366f8a7ef1a95a194905232a0473bb0fe11baf22f94",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.294,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-002",
+            "score": 0.32
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_009",
+        "score": 0.166,
+        "rank": 3,
+        "hash": "d8aa6bf7369412eec5e2ffad008b44bc1251c26d2b336b741a1df8bcd1efe017",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.49,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-003",
+            "score": 0.329
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_013",
+        "score": 0.397,
+        "rank": 1,
+        "hash": "6d74a02ace0501ace47b889d1ba0768d16d6dbc88e016e81d4c37dd23d35546d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.225,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-004",
+            "score": 0.461
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_021",
+        "score": 0.438,
+        "rank": 5,
+        "hash": "38fd4d7c0d520e0774609bb50060411ccff8c634d27363f4929d9102a70bdf5c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.457,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-005",
+            "score": 0.321
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_025",
+        "score": 0.279,
+        "rank": 9,
+        "hash": "8810596c5b5db0246a9f9599c33cac28865b9b2c7f1ac630b281fb1a1438d7ab",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.268,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-006",
+            "score": 0.312
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_029",
+        "score": 0.499,
+        "rank": 9,
+        "hash": "d60b24b6e95e1212c53efad0158b338e21c10ec3908b2d26bbd23261354cf80d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.152,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-007",
+            "score": 0.332
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_033",
+        "score": 0.262,
+        "rank": 1,
+        "hash": "173a9ffaaa621e67258700c398dcb91b47b5a35aa927bf4568e3530e695f65a7",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.348,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-008",
+            "score": 0.322
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_037",
+        "score": 0.396,
+        "rank": 8,
+        "hash": "d9c0e4c953643dfba62558cc427e4dd7f998ad9a404f0b02ddbd6b365d432c6f",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.106,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-009",
+            "score": 0.319
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_041",
+        "score": 0.229,
+        "rank": 6,
+        "hash": "e16bef5741fefbf88f8a03f615af134006afeba567686f0adce737a889c4ea13",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.387,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-010",
+            "score": 0.16
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_045",
+        "score": 0.36,
+        "rank": 8,
+        "hash": "fd2645205aedf9423d36b0b7a1da56affb1c2d390a280d25cbd5e7ad9c732f8d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.408,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-011",
+            "score": 0.496
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_049",
+        "score": 0.358,
+        "rank": 10,
+        "hash": "08eb66c1b6b03b0bb30fb8ed378751b50e2c71b33e5bfb4be10f03f70a83586b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.477,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-012",
+            "score": 0.188
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LD_053",
+        "score": 0.285,
+        "rank": 2,
+        "hash": "5d3424e9b1ea5b87029ed34813a0a604bac4574bf24a1f682bf3077e3746ec5b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.479,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LD-013",
+            "score": 0.155
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_001",
+        "score": 0.259,
+        "rank": 6,
+        "hash": "488e0f8bd93554926a747a1dbf4799e78b94f563bedc565094ce783775740f44",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.153,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LT-001",
+            "score": 0.196
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_005",
+        "score": 0.127,
+        "rank": 3,
+        "hash": "0f8e6b10aacf3f39f34bb9faeea8c2d7e4472c917ebcec72da75f7f7ad1e0300",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.308,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LT-002",
+            "score": 0.33
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_009",
+        "score": 0.114,
+        "rank": 8,
+        "hash": "f69f303a93734f49e82e24176ae4c0570b72c55ed44570cdfc60e84db9f509bd",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.415,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LT-003",
+            "score": 0.24
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_013",
+        "score": 0.122,
+        "rank": 6,
+        "hash": "a3c7083fbe4e904aa39924c50c10c92f3f7cda49bf071824517edfface76831a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.335,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LT-004",
+            "score": 0.461
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_021",
+        "score": 0.16,
+        "rank": 4,
+        "hash": "6a7240c0a0d4ec00022ec08164000d985bbda28531ad7c861fb767cd2324129d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.444,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LT-005",
+            "score": 0.483
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_025",
+        "score": 0.409,
+        "rank": 4,
+        "hash": "f383c9b3ff487151d34c790cc08438d8a176196e00ff5893de5c812708af9186",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.336,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LT-006",
+            "score": 0.281
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_029",
+        "score": 0.257,
+        "rank": 2,
+        "hash": "def90dad8cb290de9638e49d994a3528d45cf42f52fd5dc50324f8dba998c0c1",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.403,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-LT-007",
+            "score": 0.357
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_PS_001",
+        "score": 0.487,
+        "rank": 5,
+        "hash": "09f186096bf5056de6ba4c47def5bc45ab2a3afb66f1edbd0101be5a4e1a02be",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_002",
+            "score": 0.196,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-PS-001",
+            "score": 0.333
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_PS_005",
+        "score": 0.431,
+        "rank": 9,
+        "hash": "437d3f63f6938257e9c9d3581374f68f3d7f0f2536330b6370d2b332a6f06a28",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_002",
+            "score": 0.432,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-PS-002",
+            "score": 0.322
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_PS_009",
+        "score": 0.182,
+        "rank": 1,
+        "hash": "5c0f25bb57b13ddaad1567330aadf021890212fe5918e6cfa1f5d5d94f6aee45",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_002",
+            "score": 0.351,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-PS-003",
+            "score": 0.238
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_PS_013",
+        "score": 0.169,
+        "rank": 8,
+        "hash": "7aad338d41d12bae312777206133e7dca7a2eb12522c49e5c84bb476bb95d840",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_002",
+            "score": 0.344,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-PS-004",
+            "score": 0.355
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_PS_017",
+        "score": 0.363,
+        "rank": 7,
+        "hash": "3a593b3c872de9a5c491a4eb3bf4d476f7432fe656c46021619084008fb96864",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_002",
+            "score": 0.471,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-PS-005",
+            "score": 0.242
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_PS_021",
+        "score": 0.491,
+        "rank": 6,
+        "hash": "95e948db8dac053a93c79237cf32d2aef7c70668d1115bc7823ab4180bf65ff1",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_002",
+            "score": 0.248,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-PS-006",
+            "score": 0.17
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_001",
+        "score": 0.269,
+        "rank": 10,
+        "hash": "b90a0bb9fadd012427e7008a1de583540d560d650dab3c8af565009c86027a3b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.182,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-001",
+            "score": 0.117
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_005",
+        "score": 0.111,
+        "rank": 10,
+        "hash": "86b4a33882cd82a5b8dca3669668d0b2a786db4a572902daf15971eccf74903b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.19,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-002",
+            "score": 0.197
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_009",
+        "score": 0.238,
+        "rank": 7,
+        "hash": "0568451701cb6dd66b5c93ca8502c1e469d60b285abf5395aac117be7d198366",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.47,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-003",
+            "score": 0.427
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_013",
+        "score": 0.461,
+        "rank": 10,
+        "hash": "d3655ce0fce25d8a6997917b79b4410def3ffcbc751fb4985d7add61376e80d0",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.234,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-004",
+            "score": 0.422
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_017",
+        "score": 0.153,
+        "rank": 10,
+        "hash": "29db87ddb11f741a5cf5b6d0372aa9a173ac48d13fb654b635c8f2f871746173",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.256,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-005",
+            "score": 0.146
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_021",
+        "score": 0.299,
+        "rank": 4,
+        "hash": "c1cd7ada008724bb98ca9ae9dc574d79e619137ec9b068597eb66b27790feed7",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.257,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-006",
+            "score": 0.39
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_025",
+        "score": 0.309,
+        "rank": 2,
+        "hash": "311f208db1de2be12fdda94f440ef41f7dcac59e28124d154764d9d9b1cce7dc",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.179,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-007",
+            "score": 0.26
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_029",
+        "score": 0.39,
+        "rank": 7,
+        "hash": "1b584086195f2022f73d3a8b1808f5afee1100e1274b0707c34ca1190693f6f3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.461,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-008",
+            "score": 0.461
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_033",
+        "score": 0.269,
+        "rank": 6,
+        "hash": "89c13e94666ef41a947b17939ea28f4e8a01489cf7f8c336423fa31fc5636ff2",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.136,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-009",
+            "score": 0.149
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_037",
+        "score": 0.427,
+        "rank": 1,
+        "hash": "1a8ae91c56a63878126f6dbe9bbebb083c06c72049bf8eb931fd4613c3cfc5f6",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_BLL_E_TE_001",
+            "score": 0.298,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-RF-010",
+            "score": 0.138
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_001",
+        "score": 0.289,
+        "rank": 6,
+        "hash": "83629ac404d261fd95912fb1d3001f676e5a475c4a2a51239181fc84d726f664",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.434,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-001",
+            "score": 0.281
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_006",
+        "score": 0.341,
+        "rank": 2,
+        "hash": "16e1081b96256c48df9d37b8802312571e4f14919e4bab5174d81e4c07996221",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.148,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-002",
+            "score": 0.275
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_016",
+        "score": 0.305,
+        "rank": 9,
+        "hash": "f911c8b6eebfd312a0adfa9ffc9d00b1ff99d1022db611da9769c57b4405ed6f",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.398,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-003",
+            "score": 0.197
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_026",
+        "score": 0.187,
+        "rank": 8,
+        "hash": "68650cea3e0dc53adeb7535b6b685e6eba36afd50c6652965f63c89a137e1ff8",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.355,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-005",
+            "score": 0.147
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_031",
+        "score": 0.213,
+        "rank": 4,
+        "hash": "5569245f1d99aef1e9218a1bfb6dbd73a83499696a7f909d0e1471521545725e",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.456,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-006",
+            "score": 0.126
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_036",
+        "score": 0.342,
+        "rank": 6,
+        "hash": "a3f82a4b04f72406ca1af9fec3b0f4f19fd5a425c24ae2350c2678757ee13f3d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.28,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-007",
+            "score": 0.494
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_041",
+        "score": 0.45,
+        "rank": 2,
+        "hash": "a9d9e5fbff6ca60cd1ff62d54f76b706b498fe4668a491efe6ce419865b4be10",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.484,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-008",
+            "score": 0.464
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_046",
+        "score": 0.264,
+        "rank": 5,
+        "hash": "19378f44797190b1efab89313a101a5682107f4bea14e5099cbe8dec6956ed35",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.174,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-009",
+            "score": 0.387
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_051",
+        "score": 0.483,
+        "rank": 3,
+        "hash": "77f80ae3003d083f198e7fa922f1d3d095315ef68058b22703fd82293156e411",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.482,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-010",
+            "score": 0.419
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_056",
+        "score": 0.35,
+        "rank": 4,
+        "hash": "cc4cedf010b82e2219a62bbbf6823cd18a524ab77e11d76edc7682f49356de78",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.43,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-011",
+            "score": 0.247
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_061",
+        "score": 0.189,
+        "rank": 10,
+        "hash": "1d9699e84898338b4b8b22c729e9c3efba5112c2f658d0f552883fd724777c7a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.302,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-SH-012",
+            "score": 0.144
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_001",
+        "score": 0.2,
+        "rank": 5,
+        "hash": "94ee842ecb4b5f7b534ff8b6618fd1ff225f2a6cd6dd691f3cbbe87d1373effd",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.424,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-WH-001",
+            "score": 0.447
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_005",
+        "score": 0.126,
+        "rank": 2,
+        "hash": "11c21b8068055ba228e884db4b9985315cd01f07c5af29cb6c3f22bca43b9013",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.129,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-WH-002",
+            "score": 0.238
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_009",
+        "score": 0.101,
+        "rank": 5,
+        "hash": "4efd2c913d65fe2ab5322aa10e72d78943a2272c0973887c842ca3a0bae6bd22",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.403,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-WH-003",
+            "score": 0.421
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_013",
+        "score": 0.467,
+        "rank": 10,
+        "hash": "167f3ffec788327e7f87988727d55d8fb8fefc49f7e46792338819dd27066d87",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.487,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-WH-004",
+            "score": 0.108
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_017",
+        "score": 0.374,
+        "rank": 5,
+        "hash": "795e65acec4163d7d89cdaeefb12d0fb335dbb50db3d7e0130fc08993bf79582",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.427,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-WH-005",
+            "score": 0.17
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_021",
+        "score": 0.229,
+        "rank": 8,
+        "hash": "9e97dbd1b90c078480539d4db3ee4407f2b40812cef75b48da31915ce679f030",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.478,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-WH-006",
+            "score": 0.283
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_025",
+        "score": 0.223,
+        "rank": 2,
+        "hash": "43615b57427b8dbd5d28193de30198c43ae9b8930703976c0dae87f7003a6003",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.188,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-WH-007",
+            "score": 0.333
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AO_025",
+        "score": 0.293,
+        "rank": 7,
+        "hash": "1032f3d0a7fe60924d1fdc9f6a593eee61dbe1e2f4d7da3b44711fd03dc3fe8c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "8",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AO_002",
+            "score": 0.302,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_AO_001",
+            "score": 0.129
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AO_026",
+        "score": 0.435,
+        "rank": 5,
+        "hash": "d4cf01fd2b8213043c673c4cb4550eaaeb25c49fdbebdb48311149f849cbd846",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "8",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AO_002",
+            "score": 0.352,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_AO_002",
+            "score": 0.454
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_086",
+        "score": 0.429,
+        "rank": 10,
+        "hash": "b81c0931ff1c9c7b8f5c97223362c9700ac46ae24af7e540a9e98fece616501c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.363,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_HV_001",
+            "score": 0.25
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_087",
+        "score": 0.226,
+        "rank": 7,
+        "hash": "4952956b8e5151489552a51879832e0d403d2b4f04774317779e495e351d5cd3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "15",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.187,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_HV_002",
+            "score": 0.383
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_AC_085",
+        "score": 0.207,
+        "rank": 9,
+        "hash": "a2a4baddcb7a08cafcecd78765c677ceb61498782c50fa4be3beb2e2320285ab",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_AC_001",
+            "score": 0.411,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_T_E_AC_002",
+            "score": 0.326
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_037",
+        "score": 0.254,
+        "rank": 9,
+        "hash": "34159dd70b694c6f7202bafc6fbbc7a996eefda6cf0044510a5e4b7eb504d661",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.434,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_T_E_LT_002",
+            "score": 0.404
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_038",
+        "score": 0.402,
+        "rank": 1,
+        "hash": "13e98ea6d739f580a4e3721684090c022d1429c056b57ced33bd7d159f4dfcde",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.179,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_LT_001",
+            "score": 0.337
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_039",
+        "score": 0.324,
+        "rank": 3,
+        "hash": "4300da22301b9f66ac27cf5ef162f7d4afb9ceb20b10c8bdb151fcbe69d0c1ea",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.147,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_LT_002",
+            "score": 0.332
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_040",
+        "score": 0.141,
+        "rank": 5,
+        "hash": "6f455440948f81dbdc9663a9f25c41e81f8c4dbf09969fb306761302d7a55d83",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_LT_001",
+            "score": 0.13,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_LT_003",
+            "score": 0.47
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_088",
+        "score": 0.419,
+        "rank": 6,
+        "hash": "10f9881364ca88f9a109af9518f90bb0c70f404685bc8379e250ce76fa117f55",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_002",
+            "score": 0.324,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_T_E_SH_001",
+            "score": 0.488
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_042",
+        "score": 0.335,
+        "rank": 7,
+        "hash": "9d834df7b6cf59a2351e35ef56fe79a2ffbc298e79314c5403911ed2b9333d54",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_LT_001",
+            "score": 0.451,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_LT_005",
+            "score": 0.342
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_043",
+        "score": 0.493,
+        "rank": 8,
+        "hash": "6398ed7c125fe54fe1a1e0963f2393d9274579e772aba18eee17300f3f0ee5ef",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_LT_001",
+            "score": 0.301,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_LT_006",
+            "score": 0.433
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_LT_044",
+        "score": 0.154,
+        "rank": 1,
+        "hash": "87f98057a6f12bd37ec75edf6fba5eaf3c8237f14b8846fd888e6196e86a5b93",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "71",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_LT_001",
+            "score": 0.351,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_LT_007",
+            "score": 0.445
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_RF_051",
+        "score": 0.372,
+        "rank": 4,
+        "hash": "11db1ea93c97f99d152ef35ae0171bcf1ce8f8d3103704b1eafaf67f683993d4",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "9",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_RF_002",
+            "score": 0.113,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_RF_001",
+            "score": 0.13
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_089",
+        "score": 0.284,
+        "rank": 7,
+        "hash": "012424208c64c8a755938933f045341e6e143507988ecfcce2a5012b4e811f42",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_SH_001",
+            "score": 0.115,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_SH_001",
+            "score": 0.49
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_SH_090",
+        "score": 0.412,
+        "rank": 1,
+        "hash": "1d6459daad764676eaa17a255ea18081b1ebf8ab66bb909aa6e8822ecf7e2ac2",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_SH_002",
+            "score": 0.103,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_SH_002",
+            "score": 0.352
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_029",
+        "score": 0.284,
+        "rank": 8,
+        "hash": "e4fb9de1c37a4b3a5c2136b8b05c2f159737db8cb1b8699658dd09873f7c691c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_WH_001",
+            "score": 0.469,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_WH_001",
+            "score": 0.285
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_WH_030",
+        "score": 0.149,
+        "rank": 6,
+        "hash": "3a100646ac47ea95cf5918d94025ca88ca535090dc8495224a9d6060f5320c6a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_WH_002",
+            "score": 0.304,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_WH_002",
+            "score": 0.457
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_PS_025",
+        "score": 0.276,
+        "rank": 4,
+        "hash": "fa83ad71061eebded0657ceeca0889b79688909aac235b35844dfa17982dfd7a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_001",
+            "score": 0.428,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_A_E_PP_001",
+            "score": 0.129
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_XX_002",
+        "score": 0.382,
+        "rank": 8,
+        "hash": "faad3a36058ae067284cdde603af2063a8cb12d3d6f4e8d547abb704419b3f4e",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_X_XX_002",
+            "score": 0.399,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_S_Y_TE_036",
+            "score": 0.312
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_XX_003",
+        "score": 0.461,
+        "rank": 3,
+        "hash": "e17e807da6e1bf0e11c770cce4f79c40d43ebc2a8f67f4377245cf2727261f0a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_X_XX_003",
+            "score": 0.273,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_S_Y_TE_037",
+            "score": 0.362
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_XX_004",
+        "score": 0.332,
+        "rank": 5,
+        "hash": "762edb01174f456759bfe5becb328d32822c6439349a26db23aa461cb5ef8327",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_X_XX_004",
+            "score": 0.226,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_S_Y_TE_038",
+            "score": 0.418
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_E_XX_005",
+        "score": 0.216,
+        "rank": 6,
+        "hash": "c97913fbdcd221dbadbfaca6055ca3d4832bd7a0d1e39f96171674c26b3fc641",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_X_XX_005",
+            "score": 0.306,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_S_Y_TE_039",
+            "score": 0.144
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_N_E_SH_195",
+        "score": 0.455,
+        "rank": 7,
+        "hash": "5ad3f284e531d55ecce82b96cada5a67952fc28917c51a1d9f778d7b1116fae6",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_E_SH_003",
+            "score": 0.349,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-039",
+            "score": 0.445
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_N_E_SH_196",
+        "score": 0.296,
+        "rank": 2,
+        "hash": "d61c2d53440624d0c898d971ef0cc2331219ff5c1bc86ce590c1bff15f783f90",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_E_TE_005",
+            "score": 0.106,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-038",
+            "score": 0.191
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_N_E_SH_197",
+        "score": 0.123,
+        "rank": 7,
+        "hash": "b38196bec22d5f6fcfe06e09601565ab7ce5f97a0c6bcbcbd6c5fbe144b55784",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_E_TE_005",
+            "score": 0.108,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-030",
+            "score": 0.218
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_001",
+        "score": 0.398,
+        "rank": 2,
+        "hash": "68f7f0d45b19a8c59383013702cc78892ad92c5ba7865c506cc237404c84aa7e",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_TE_001",
+            "score": 0.359,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_001",
+            "score": 0.404
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_004",
+        "score": 0.327,
+        "rank": 5,
+        "hash": "b5cad7041344f0514f21489df5569ad363181187aec7aac05be1e4bf9bf9b9b9",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_TE_001",
+            "score": 0.144,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_002",
+            "score": 0.264
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_006",
+        "score": 0.245,
+        "rank": 4,
+        "hash": "e19027bd08ec87f0f4dd90513f49f412f0feacf73e0d91fad1cf07410f6bcb0b",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_TE_001",
+            "score": 0.128,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_003",
+            "score": 0.443
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_010",
+        "score": 0.151,
+        "rank": 8,
+        "hash": "19d6d0f26cd5baee6516a014c9c6964aca5c5e80e27c0b4a32491892694d8217",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_TE_003",
+            "score": 0.407,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_004",
+            "score": 0.117
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_014",
+        "score": 0.403,
+        "rank": 3,
+        "hash": "09c52faa89ede2c7247d50a80f6a9c81044ae10c1a80a6d6bec83672541f2649",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_TE_003",
+            "score": 0.373,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_005",
+            "score": 0.392
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_016",
+        "score": 0.195,
+        "rank": 2,
+        "hash": "908746d945ba7b75e0b314e41fc15c2ada141ec209468cfe6f3238e8e33a98e9",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_TE_001",
+            "score": 0.276,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_006",
+            "score": 0.165
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_SH_001",
+        "score": 0.226,
+        "rank": 7,
+        "hash": "e9c056912a7e93fb4f5a6cf4d0741dd3ab122202e2091ca414a5c8c0e6695dea",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_SH_001",
+            "score": 0.391,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_SH_001",
+            "score": 0.22
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_018",
+        "score": 0.272,
+        "rank": 9,
+        "hash": "54cfb9b3958d8a739a11d63614572666880330ab3e0d84bd1dd9f950bca10fc7",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_TE_001",
+            "score": 0.291,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_007",
+            "score": 0.492
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_020",
+        "score": 0.432,
+        "rank": 9,
+        "hash": "c8b489d11fe768155b6fe6a7f8cfc29d0d1d3108651b753124817a0dd8a823f6",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_E_TE_005",
+            "score": 0.224,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_008",
+            "score": 0.415
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_TE_026",
+        "score": 0.373,
+        "rank": 9,
+        "hash": "fcd445906039e0c27efdee298cf4c962d2610139c234b8370d1b2ed1f2d68df1",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_TE_001",
+            "score": 0.428,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_TE_009",
+            "score": 0.12
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_PP_001",
+        "score": 0.465,
+        "rank": 1,
+        "hash": "52bdaf430f34719a72c57211f0201fde0939305a3cfbd758fe4da051bed9c100",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "2",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SHC_E_PP_001",
+            "score": 0.307,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_PP_001",
+            "score": 0.304
+        }
+    },
+    {
+        "id": "MOCK_PSEG_NBI_EE_G_E_WH_001",
+        "score": 0.279,
+        "rank": 1,
+        "hash": "d821db2f80c0b5754d15df6e2a2d9adc05185e668c56d8bfdabe4ef2d631015c",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SLF_E_WH_001",
+            "score": 0.303,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_PSEG_A_G_E_WH_001",
+            "score": 0.172
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_087",
+        "score": 0.415,
+        "rank": 3,
+        "hash": "d7ccd032ee7b0f3480b6d87b05585e93e4cc7c10c2c160ebadccd91a4e3109a3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.365,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-002",
+            "score": 0.121
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_088",
+        "score": 0.192,
+        "rank": 7,
+        "hash": "4b415d345d8d560880bc8e5320f3ca2bde7391ec42765142244a1c032cdd5d01",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.131,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-003",
+            "score": 0.335
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_089",
+        "score": 0.177,
+        "rank": 7,
+        "hash": "fbe9002be858d0ef32e0e12039fc49edf0b71451fdddb782ea397149e21983e3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.155,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-004",
+            "score": 0.256
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_091",
+        "score": 0.482,
+        "rank": 10,
+        "hash": "94ff8658436382cbabfc2337efa1df0854a40bbab2337884c801b8faa5cc1167",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.338,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-006",
+            "score": 0.26
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_094",
+        "score": 0.197,
+        "rank": 3,
+        "hash": "229f0228eb5c327a3fc646f3cff9a5612ef3cbf4eb14f6f1f2f475fcffd46eda",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.126,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-009",
+            "score": 0.496
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_096",
+        "score": 0.174,
+        "rank": 3,
+        "hash": "6960ce87516bdf192366e0d88850c0657a201327271fcca622cae9f0fd94d93b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.243,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-011",
+            "score": 0.493
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_097",
+        "score": 0.157,
+        "rank": 8,
+        "hash": "b7e86abc9b4c8d7ccdb65f3e121e36c68f7f6e4d40d18f985d1c79cdef92d3ff",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.411,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-012",
+            "score": 0.455
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_099",
+        "score": 0.45,
+        "rank": 10,
+        "hash": "6eb3dacc7be9e836c036100101dc4eb2d73dc47e3c903010b7e66edef3873004",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.206,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-014",
+            "score": 0.484
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_101",
+        "score": 0.28,
+        "rank": 6,
+        "hash": "00e3cda4f61c58aadc5a552699720adb97216e0fbe4a145b691ac8f466e338a6",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.277,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-016",
+            "score": 0.485
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_CK_102",
+        "score": 0.351,
+        "rank": 6,
+        "hash": "2d4fa79add0d7b30751a6097fdfe38f989371c7afc43168884e806414d26cf89",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "5",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_CK_002",
+            "score": 0.119,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-CK-017",
+            "score": 0.161
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_001",
+        "score": 0.445,
+        "rank": 10,
+        "hash": "d48aff072f18a1bd7808698a66e237e28af2a162bf6be7291a5fc3ec93f8a965",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.3,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-001",
+            "score": 0.447
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_002",
+        "score": 0.357,
+        "rank": 8,
+        "hash": "e2a46ef14335061f2381d72caff6f47638a0d1745ff12ea30e8c0257cb180c07",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.104,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-002",
+            "score": 0.382
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_003",
+        "score": 0.426,
+        "rank": 7,
+        "hash": "971a179cbec73090be03e41621b59d8727e69e983df0cb6f79dc68b423c12bd8",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.142,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-003",
+            "score": 0.361
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_004",
+        "score": 0.415,
+        "rank": 3,
+        "hash": "13316c1951956d2a32660bff05377d402ac2e8593acd5ba4c0300da8123ea762",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.443,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-004",
+            "score": 0.421
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_005",
+        "score": 0.392,
+        "rank": 4,
+        "hash": "00e35588a11bd90ee849c9fdf0aa3bb39e74caf4696a0af7e2808d84e8904a00",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.348,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-005",
+            "score": 0.332
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_006",
+        "score": 0.333,
+        "rank": 4,
+        "hash": "8214a4f140d2bce08b64d4cd21e70f7e1a33a9a5d5f187b557b1155501a506c0",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.203,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-006",
+            "score": 0.165
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_007",
+        "score": 0.193,
+        "rank": 4,
+        "hash": "fdd77c17dd5c950d642f1c4f54435e2809b73aae73144ba5da40e4b4ce41c60a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.398,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-007",
+            "score": 0.307
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_008",
+        "score": 0.451,
+        "rank": 8,
+        "hash": "685fd30272a19a919f60800c299de5dd1f7d057212187391b3a04c6069363621",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.132,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-008",
+            "score": 0.423
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_009",
+        "score": 0.211,
+        "rank": 5,
+        "hash": "d233aea3d7b810cfe2226a01ce9683e2857175436f9833faf8ac05d3c269e31b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.36,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-009",
+            "score": 0.497
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_010",
+        "score": 0.354,
+        "rank": 10,
+        "hash": "e6b4f175aab4624de5de5e81a712b7de2f3845fbd46f97f0b1f70b900ada7e7d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.104,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-010",
+            "score": 0.419
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_011",
+        "score": 0.413,
+        "rank": 7,
+        "hash": "753eb17361077a44058c7895675b5e622141c546b2bda9ce91cb8b3e560383f9",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.218,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-011",
+            "score": 0.188
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_012",
+        "score": 0.453,
+        "rank": 2,
+        "hash": "07320f52db6c1566b7ce1a99b9cd6c7e287557be8ff1814126456fc8f39179b2",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.371,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-012",
+            "score": 0.328
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_013",
+        "score": 0.392,
+        "rank": 8,
+        "hash": "3bc33361b539e697203ea921734839b4be5c206c491e74448cd10cf4dc0bc235",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.243,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-013",
+            "score": 0.336
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_014",
+        "score": 0.48,
+        "rank": 2,
+        "hash": "1eb8065f01e15384d3684509be63757ce0c2aea591978e61137b158645d115f3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.404,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-014",
+            "score": 0.319
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_LD_015",
+        "score": 0.193,
+        "rank": 4,
+        "hash": "6220fd6f3146164a5984f6d108df3a92b349632ac5d435b88b62f93df2b6cb27",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "59",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_TE_001",
+            "score": 0.405,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-LD-015",
+            "score": 0.29
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_019",
+        "score": 0.383,
+        "rank": 3,
+        "hash": "768ff425805fd8621e86815d53b29d5b4e10d811d132522328465d31b33f848b",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_SH_003",
+            "score": 0.216,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-002",
+            "score": 0.289
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_213",
+        "score": 0.269,
+        "rank": 2,
+        "hash": "1709ff68744e8575dd88c4fb8bc8ec7b83acbf81c72da78a1ada77709c5af212",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.209,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-001",
+            "score": 0.369
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_215",
+        "score": 0.335,
+        "rank": 6,
+        "hash": "fcc43f1ede2da86ea0303859e56bbc9e4b0708243a04cbead2a85b11dbd8184e",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.357,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-003",
+            "score": 0.3
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_216",
+        "score": 0.347,
+        "rank": 3,
+        "hash": "fc4bcc66c07a0e383d71f269a66de8ab445de37866e013cce297c694f899d25c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.105,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-004",
+            "score": 0.106
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_217",
+        "score": 0.273,
+        "rank": 3,
+        "hash": "419446484106227bedcc1e816746b3f2cf16587e10c8219b037e6add61ab0a26",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.185,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-005",
+            "score": 0.412
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_218",
+        "score": 0.374,
+        "rank": 9,
+        "hash": "1e15166180cc3fdb1828248bdf6ad15317362fbda7e3c5e91b6abc323bd1450d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.299,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-006",
+            "score": 0.265
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_220",
+        "score": 0.141,
+        "rank": 1,
+        "hash": "89d6e54f2b8d02805f753d889b490d8f087a7f97879a2de8a816001c2f599df1",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.397,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-008",
+            "score": 0.223
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_221",
+        "score": 0.411,
+        "rank": 3,
+        "hash": "17f3b9303429eb320287af9c7cc3b4431e4cbe9db8f4163f1243f081fe14848c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.196,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-009",
+            "score": 0.278
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_222",
+        "score": 0.176,
+        "rank": 3,
+        "hash": "c292577c7b9bc3f859253e071393775a7aac25f748307360fb346596ea588353",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.313,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-010",
+            "score": 0.153
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_224",
+        "score": 0.348,
+        "rank": 1,
+        "hash": "1f53e6b16af03935ffadf1e98087fbfda503af8b425a855119b4d9cfae159214",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.236,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-012",
+            "score": 0.189
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_225",
+        "score": 0.305,
+        "rank": 1,
+        "hash": "076c01da0d5a29e7f7e96ca9d82779f6deab8252c80a8f9bc5a2df5dc8147e57",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.274,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-013",
+            "score": 0.24
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_226",
+        "score": 0.434,
+        "rank": 6,
+        "hash": "d9d258d6984814ed9732303935acf09df67e04526a271a0e4e95493f79e39be3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.418,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-014",
+            "score": 0.359
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_227",
+        "score": 0.31,
+        "rank": 2,
+        "hash": "bf0ff1690a4c8ab3b96e9ee8367e5c1d7d75abba78c49f99203084024a1a8d8d",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.288,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-015",
+            "score": 0.121
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_228",
+        "score": 0.257,
+        "rank": 2,
+        "hash": "89afc17dab56f96f7ae30d39ad5b3428d886066b688718bc80d52d51d5aa5929",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.302,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-016",
+            "score": 0.216
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_229",
+        "score": 0.15,
+        "rank": 5,
+        "hash": "d2462727528796c07339d0f16617ea0524224da5e65226632ec755511974c95a",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.392,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-017",
+            "score": 0.461
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_230",
+        "score": 0.335,
+        "rank": 9,
+        "hash": "ed641f92039f8c9ecabfc56fc001e5c9933b0fcc486efecee9dd1fdb670232ea",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.145,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-018",
+            "score": 0.108
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_231",
+        "score": 0.131,
+        "rank": 2,
+        "hash": "44cd7e5b3bacd2a196e91dec412b3a53feb74ae5d9d3fd9e44c23d3cdbced9f0",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.422,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-019",
+            "score": 0.467
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_232",
+        "score": 0.202,
+        "rank": 9,
+        "hash": "dc756222311db7d2ff486fd5d6b144f7edc4d455d878f0be996d8d1ca3707c56",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.11,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-020",
+            "score": 0.329
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_233",
+        "score": 0.26,
+        "rank": 10,
+        "hash": "b4a038cc8b07395046e2e4d1277ba0b9b37f0a737031bd040598d021706f2059",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.148,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-021",
+            "score": 0.321
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_234",
+        "score": 0.169,
+        "rank": 1,
+        "hash": "1ac919e411e21eef9b1ad3b1c2f9db6e3276d73830805712918b469a96b964b1",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.205,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-022",
+            "score": 0.187
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_235",
+        "score": 0.174,
+        "rank": 5,
+        "hash": "95151614245ae7bda54feca7fc01c750261c9242315e2961f1d29367baf073aa",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.177,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-023",
+            "score": 0.398
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_237",
+        "score": 0.153,
+        "rank": 1,
+        "hash": "7cb91560a7bd1d82fb12bc1bc8ca2ab819effe854aa202989e9c6185f6a66aed",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.246,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-025",
+            "score": 0.481
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_238",
+        "score": 0.237,
+        "rank": 3,
+        "hash": "0c7800f60cd9f6d8ee986e1c0943d3f14e0df48a30eb113b6e174db894faccc6",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.462,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-026",
+            "score": 0.44
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_239",
+        "score": 0.395,
+        "rank": 1,
+        "hash": "b1f119dc412129fd879838bd2a3c974cc550f5da69d08714ec923aedb8e97d70",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.258,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-027",
+            "score": 0.176
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_240",
+        "score": 0.465,
+        "rank": 8,
+        "hash": "d223f78259eecac1b2423484b8712706a358032ad2a832d1576f1b60010e8497",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.197,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-028",
+            "score": 0.145
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_241",
+        "score": 0.491,
+        "rank": 6,
+        "hash": "edb01a21849bd62ab0b613c1cd7e2dd33c881a79a76a40a7ce414339661ef052",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.151,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-029",
+            "score": 0.462
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_243",
+        "score": 0.17,
+        "rank": 3,
+        "hash": "6d4fc6f2d117557c22019ea0848bd6abf8b5a3f073fb5e6b91a511d0fdd4d054",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.193,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-031",
+            "score": 0.383
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_244",
+        "score": 0.141,
+        "rank": 3,
+        "hash": "3617b64c6d972c901f874ead5eebbebf0e054942135cd09873ec4c579d365c9f",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.484,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-032",
+            "score": 0.459
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_245",
+        "score": 0.282,
+        "rank": 6,
+        "hash": "eb16b263090dcc51f0ba86117890fad670ebca71dddf66763ecaffb7cb6adf05",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.368,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-033",
+            "score": 0.414
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_246",
+        "score": 0.166,
+        "rank": 4,
+        "hash": "8a73d67499222d7661380ee50849be059236c2882b35d1ce6e1aa22765f4836e",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.384,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-034",
+            "score": 0.261
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_247",
+        "score": 0.234,
+        "rank": 2,
+        "hash": "74be0ddbdcb160bb74fd9074e934d80983ba7e66642825a58653a13f7cf8cc2c",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.14,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-035",
+            "score": 0.469
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_248",
+        "score": 0.441,
+        "rank": 5,
+        "hash": "8ae84aba04ca9ca3d952a15b10d1140744dd84e6a97b3438e4bd4f71e0869fe3",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.323,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-036",
+            "score": 0.37
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_SH_249",
+        "score": 0.407,
+        "rank": 5,
+        "hash": "6c215fe450e03984c2c594b0c5004aefd042b868a8ec7be52a911be1e98cf909",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_001",
+            "score": 0.482,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-SH-037",
+            "score": 0.144
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_094",
+        "score": 0.345,
+        "rank": 6,
+        "hash": "ad436df9f2128cc9018fb0ddee73f702174836f1b0f7706451b0a4be2f74de93",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.253,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-001",
+            "score": 0.494
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_095",
+        "score": 0.217,
+        "rank": 10,
+        "hash": "9a98754e37a141f3d63d1d93efc9e9572ecf76bba3a9aa746fe92708370b9a37",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.362,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-002",
+            "score": 0.47
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_096",
+        "score": 0.345,
+        "rank": 3,
+        "hash": "72a36c5379b32b9ec67a0478a6914bdd26b92532322761bb8659315df3022cfd",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.199,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-003",
+            "score": 0.467
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_097",
+        "score": 0.112,
+        "rank": 10,
+        "hash": "61a8b863d2694b1268e94d39b47ecaf58df8065244b0e82559b57c1d249ba883",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.346,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-004",
+            "score": 0.308
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_098",
+        "score": 0.108,
+        "rank": 1,
+        "hash": "7c4353f261262469d5679ea327b039557e4c10e832bcd738c1df08f4f29cf235",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.209,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-005",
+            "score": 0.312
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_099",
+        "score": 0.284,
+        "rank": 9,
+        "hash": "de95d8050c8e6663439d55f85d9e1d894fd23593b31de10c6d592f60682c588f",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.167,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-006",
+            "score": 0.33
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_100",
+        "score": 0.386,
+        "rank": 8,
+        "hash": "ebb66e224204d08ef28509b090cf5f38366154fe87175e6dd0eb9094a40e0538",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.236,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-007",
+            "score": 0.209
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_101",
+        "score": 0.23,
+        "rank": 10,
+        "hash": "1b46727f9fb1ec33843a94fe5e3a3e47679146cf79056793350a2d5518aa0070",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.463,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-008",
+            "score": 0.182
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_103",
+        "score": 0.24,
+        "rank": 9,
+        "hash": "ca3d4ec41b0b864f7249f9fbe666408036f07e3ddabc817e67a6e08c779c6e17",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.291,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-010",
+            "score": 0.322
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_104",
+        "score": 0.351,
+        "rank": 7,
+        "hash": "937cd856cfcb4254256163f703416f0f51f7e615de570e182c7352f2ddcdacc6",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.305,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-011",
+            "score": 0.168
+        }
+    },
+    {
+        "id": "MOCK_NBI_EE_A_G_WH_105",
+        "score": 0.481,
+        "rank": 10,
+        "hash": "e3864087a30555585ed04115cdfd007781773f38512f18a420c8bee4b2e90aac",
+        "nbiType": "Actionable Reco tip",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_WH_001",
+            "score": 0.395,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-WH-012",
+            "score": 0.222
+        }
+    },
+    {
+        "id": "MOCK_NWN_NBI_PRG_G_G_SH_01",
+        "score": 0.201,
+        "rank": 5,
+        "hash": "532fc2f5259947124e071c809e62be6c07d32752622feeb0b1ab8b0bf198fbe3",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_SH_002",
+            "score": 0.406,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_G_G_SH_0001",
+            "score": 0.387
+        }
+    },
+    {
+        "id": "MOCK_NWN_NBI_PRG_G_G_WH_001",
+        "score": 0.366,
+        "rank": 9,
+        "hash": "24fb4c26deadf8804f8172a3fa7b86b7a5d88bd9de4d1acfbbb1e7327755da68",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "7",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SLF_G_WH_002",
+            "score": 0.496,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_G_G_WH_0001",
+            "score": 0.134
+        }
+    },
+    {
+        "id": "MOCK_NWN_NBI_PRG_G_G_TO_001",
+        "score": 0.114,
+        "rank": 4,
+        "hash": "8e54a820153ab016b1a5caf679532ca6fec155df002085bc8bbddeeb05ecc797",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_001",
+            "score": 0.123,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_G_G_TO_0001",
+            "score": 0.347
+        }
+    },
+    {
+        "id": "MOCK_NWN_NBI_PRG_G_G_TO_003",
+        "score": 0.225,
+        "rank": 8,
+        "hash": "53b6888fdd6f39123c3840bb11c2680ca4a2afae8a7275d601ce62b3d6a097c9",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_001",
+            "score": 0.358,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_G_G_TO_0002",
+            "score": 0.204
+        }
+    },
+    {
+        "id": "MOCK_NWN_NBI_PRG_G_G_TO_005",
+        "score": 0.228,
+        "rank": 1,
+        "hash": "7d9d696ab793e0bc1796285164ac0eb6950828c8ee5fc025539820accbbece4d",
+        "nbiType": "Program",
+        "nbiFamily": "EE",
+        "applianceId": "17",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_001",
+            "score": 0.183,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_A_G_G_TO_0003",
+            "score": 0.294
+        }
+    },
+    {
+        "id": "MOCK_I_AC_01_T-E-S-AC-001",
+        "score": 0.104,
+        "rank": 8,
+        "hash": "ea2d23ef8aeed2b575880d76e6a79af033c46d623a925128cc40f5b863c63158",
+        "nbiType": "SummerSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_AC_01",
+            "score": 0.312,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-S-AC-001",
+            "score": 0.404
+        }
+    },
+    {
+        "id": "MOCK_I_AC_01_T-E-S-AC-002",
+        "score": 0.154,
+        "rank": 4,
+        "hash": "a283a7314f0bd6f52bbce1de6dd2e90f850ec62ee205594627d6636619ad9844",
+        "nbiType": "SummerSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_AC_01",
+            "score": 0.401,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-S-AC-002",
+            "score": 0.425
+        }
+    },
+    {
+        "id": "MOCK_I_AC_01_T-E-S-AC-003",
+        "score": 0.445,
+        "rank": 8,
+        "hash": "708049479d494fa0636608fb67210478f649250ab8957c486a63b01aabb0e37b",
+        "nbiType": "SummerSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_AC_01",
+            "score": 0.456,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-S-AC-003",
+            "score": 0.128
+        }
+    },
+    {
+        "id": "MOCK_I_AC_01_T-G-S-AC-001",
+        "score": 0.322,
+        "rank": 2,
+        "hash": "669d6fc979ec82ab4175634df85832f3363364588c5035b215b4f2862c7f034f",
+        "nbiType": "SummerSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_AC_01",
+            "score": 0.45,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-S-AC-001",
+            "score": 0.158
+        }
+    },
+    {
+        "id": "MOCK_I_AC_01_T-G-S-AC-002",
+        "score": 0.233,
+        "rank": 7,
+        "hash": "5ba19ca6c68319f25225fac37ce28d502efc4804bc89f9c9f83c478e0b0a862e",
+        "nbiType": "SummerSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_AC_01",
+            "score": 0.434,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-S-AC-002",
+            "score": 0.159
+        }
+    },
+    {
+        "id": "MOCK_I_AC_01_T-G-S-AC-003",
+        "score": 0.467,
+        "rank": 4,
+        "hash": "d45b863cc608cb1309f2db3133c5ba86462f3cb2e8159c7477e698e047cc499c",
+        "nbiType": "SummerSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_AC_01",
+            "score": 0.265,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-S-AC-003",
+            "score": 0.457
+        }
+    },
+    {
+        "id": "MOCK_I_AC_01_T-G-S-AC-004",
+        "score": 0.367,
+        "rank": 3,
+        "hash": "298df5f6b751b0ad188d2ce6987f53277b15ec3bb52ea0f9cecfeedd1bf7b346",
+        "nbiType": "SummerSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_AC_01",
+            "score": 0.163,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-S-AC-004",
+            "score": 0.444
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-S-SH-001",
+        "score": 0.428,
+        "rank": 1,
+        "hash": "c4a784ea61ac8025b6d0c8c08ae4c6a44aa8bd6b2bec13375208c596084b9d45",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SH_01",
+            "score": 0.171,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-S-SH-001",
+            "score": 0.429
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-S-SH-002",
+        "score": 0.136,
+        "rank": 9,
+        "hash": "ac4f44a2e6a50da2988729f9a3639ec87c1903151504749eba5b8923beb9c792",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SH_01",
+            "score": 0.414,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-S-SH-002",
+            "score": 0.373
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-S-SH-004",
+        "score": 0.488,
+        "rank": 5,
+        "hash": "e71284e1b4e6a5367dd2cc26a4472ec8e94344677644ec23ea5711814c9be917",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_SH_01",
+            "score": 0.234,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-S-SH-004",
+            "score": 0.252
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-G-S-AC-015",
+        "score": 0.132,
+        "rank": 2,
+        "hash": "4090619b49f8c4d7a2d8bac6d1c3c508d1d6b35857eea66c5ffc33630c3f5c3d",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SH_01",
+            "score": 0.412,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-S-AC-015",
+            "score": 0.158
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-G-S-AC-016",
+        "score": 0.241,
+        "rank": 10,
+        "hash": "33280f8c0d5d1f5ab5ea70dd4d115e64e58fd90d4c535b90aa5f76b13e7d4b3c",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SH_01",
+            "score": 0.182,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-S-AC-016",
+            "score": 0.31
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-G-S-AC-018",
+        "score": 0.496,
+        "rank": 2,
+        "hash": "d3f4be64c680bc97c068089ac47a89965be774aac594db92f2518ca66cf984ab",
+        "nbiType": "WinterSeasonal",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_SH_01",
+            "score": 0.202,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-G-S-AC-018",
+            "score": 0.434
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-K-SH-001",
+        "score": 0.477,
+        "rank": 7,
+        "hash": "cf4a81a489f9f169b0235e0c4a82c586a8c069126992c36a965eaebf706f4068",
+        "nbiType": "WinterProgram",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_SH_003",
+            "score": 0.347,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-K-SH-001",
+            "score": 0.316
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-K-SH-002",
+        "score": 0.413,
+        "rank": 5,
+        "hash": "37242bf7a89ccefc24d1b8a81a1a65bd77df8024f5c0332a00e59145200d70dd",
+        "nbiType": "WinterProgram",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_SH_003",
+            "score": 0.211,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-K-SH-002",
+            "score": 0.436
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-K-SH-003",
+        "score": 0.199,
+        "rank": 9,
+        "hash": "bff42f6edb24a6362051640d2e374306062e261cc9a65f6f4658d3a5376111d7",
+        "nbiType": "WinterProgram",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_SH_003",
+            "score": 0.182,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-K-SH-004",
+            "score": 0.368
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-K-AC-001",
+        "score": 0.236,
+        "rank": 7,
+        "hash": "1c70dcbaa8ec16b6892a35f3844686561637c3e51c3e7ce6e185d9efd8a3aace",
+        "nbiType": "SummerProgram",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_002",
+            "score": 0.422,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-K-AC-001",
+            "score": 0.385
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-K-AC-002",
+        "score": 0.324,
+        "rank": 6,
+        "hash": "3ddab949ebe231167a8fe30c0d2fbbddd923e458f9323ae6af2d19edef29405f",
+        "nbiType": "SummerProgram",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_002",
+            "score": 0.426,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-K-AC-002",
+            "score": 0.187
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-K-AC-003",
+        "score": 0.133,
+        "rank": 9,
+        "hash": "b98db236ec1a11e8788dded679100ac6b6e08b59117fd9c982e807f4a2d59bf9",
+        "nbiType": "SummerProgram",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "GAS",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_002",
+            "score": 0.463,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-K-AC-003",
+            "score": 0.415
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-N-SH-001",
+        "score": 0.492,
+        "rank": 9,
+        "hash": "b606d916d40cf20ccf99e360e7a2671fb8f9c759bffbe39625a9b70776bf8ae8",
+        "nbiType": "WinterProgram",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_G_SH_003",
+            "score": 0.382,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-N-SH-001",
+            "score": 0.418
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-N-SH-002",
+        "score": 0.309,
+        "rank": 4,
+        "hash": "3a45230e2756d6f574377d083f4670e6a1b4ffda88849022f2aad409d492b13f",
+        "nbiType": "WinterProgram",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_G_SH_003",
+            "score": 0.317,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-N-SH-002",
+            "score": 0.285
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-N-SH-003",
+        "score": 0.277,
+        "rank": 4,
+        "hash": "a5ca1ef36feb9fbce00b1a3d1caac513e21c2f7a0f7df9534d83689f4f73b2b3",
+        "nbiType": "WinterProgram",
+        "nbiFamily": "EE",
+        "applianceId": "3",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_G_SH_003",
+            "score": 0.305,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-N-SH-003",
+            "score": 0.361
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-N-AC-001",
+        "score": 0.196,
+        "rank": 7,
+        "hash": "ea081114c7789365541385aa8691291d30c08455daff04fb411aa30309c67bfd",
+        "nbiType": "SummerProgram",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_002",
+            "score": 0.498,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-N-AC-001",
+            "score": 0.348
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-N-AC-002",
+        "score": 0.223,
+        "rank": 3,
+        "hash": "362cd56fed6eefc82e35691f53ff2deb8f9ecfad21bd806bf082c32357b16c1f",
+        "nbiType": "SummerProgram",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_002",
+            "score": 0.433,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-N-AC-002",
+            "score": 0.422
+        }
+    },
+    {
+        "id": "MOCK_I_SH_01_T-E-N-AC-003",
+        "score": 0.405,
+        "rank": 8,
+        "hash": "b79513dd0486a9b205773c7b78af28099b3a1e11ba848bc4fd75b16a25c91bcd",
+        "nbiType": "SummerProgram",
+        "nbiFamily": "EE",
+        "applianceId": "4",
+        "fuelType": "ELECTRIC",
+        "insight": {
+            "id": "MOCK_I_EDU_G_YY_002",
+            "score": 0.173,
+            "values": {
+                "Value": "",
+                "UoM": "",
+                "date": ""
+            }
+        },
+        "action": {
+            "id": "MOCK_T-E-N-AC-003",
+            "score": 0.316
+        }
+    }
+]
