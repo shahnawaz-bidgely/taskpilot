@@ -86,7 +86,7 @@ def validate_footer(uuid, headers, endpoint, fuelType, reportName):
                 text = item.get("text")
 
                 if label is None or text is None:
-                    reason = f"{item_type} section is missing label or text"
+                    reason = f"Missing content in {item_type}"
                     failure_reasons.append(reason)
 
             return failure_reasons
@@ -101,9 +101,47 @@ def validate_shc_graph_widget(user, header):
     return []
 
 
-def validate_itemization_shc(user, header):
-    return []
+def validate_itemization_shc(user, headers, endpoint, fuelType, reportName):
+    itemization_api = f"{endpoint}/v2.0/pdf-report/users/{user}/her-itemization"
 
+    params = {
+        "measurement-type": fuelType,
+        "locale": "en_US",
+        "with-shc": "false"
+    }
+
+    print(f"Calling itemization API: {itemization_api} with params: {params}")
+
+    try:
+        response = requests.get(itemization_api, headers=headers, params=params)
+
+        print(f"Itemization Response Status Code: {response.status_code}")
+        print(f"Itemization Response Data: {response.text}")
+
+        if response.status_code != 200:
+            return [f"Itemization API call failed with status {response.status_code}"]
+
+        itemization_data = response.json()
+        failure_reasons = []
+
+        payload = itemization_data.get("payload", {})
+        itemization = payload.get("itemization", {})
+
+        top_appliances = itemization.get("topAppliances", [])
+        nbi_actions = itemization.get("nbiActions", [])
+
+        if not top_appliances:
+            failure_reasons.append("Top appliances list is empty or missing.")
+
+        if not nbi_actions or len(nbi_actions) < 2:
+            failure_reasons.append("Less than 2 NBI actions found.")
+
+        return failure_reasons
+
+    except requests.exceptions.RequestException as e:
+        print(f"Itemization API call failed: {e}")
+        return [{"error": str(e)}]
+    
 
 @bp.route('/her-sections-validations', methods=['POST'])
 def her_validation_report():
