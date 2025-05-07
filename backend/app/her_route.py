@@ -58,14 +58,90 @@ def validate_header(uuid, headers, endpoint, fuelType, reportName):
         print(f"API call failed: {e}")
         return {"error": str(e)}
 
+def validate_footer(uuid, headers, endpoint, fuelType, reportName):
+    footer_api = f"{endpoint}/v2.0/pdf-report/users/{uuid}/footer"
+
+    # Query parameters
+    params = {
+        "measurement-type": fuelType,
+        "locale": "en_US",
+        "report-type": reportName
+    }
+
+    print(f"Making API call to: {footer_api} with params: {params}")
+
+    try:
+        response = requests.get(footer_api, headers=headers, params=params)
+
+        print(f"Response Status Code: {response.status_code}")
+        print(f"Response Data: {response.text}")
+
+        if response.status_code == 200:
+            footer_data = response.json()
+            failure_reasons = []
+
+            for item in footer_data.get("payload", []):
+                item_type = item.get("type", "Unknown")
+                label = item.get("label")
+                text = item.get("text")
+
+                if label is None or text is None:
+                    reason = f"Missing content in {item_type}"
+                    failure_reasons.append(reason)
+
+            return failure_reasons
+        else:
+            return [f"Footer API call failed with status {response.status_code}"]
+
+    except requests.exceptions.RequestException as e:
+        print(f"API call to footer failed: {e}")
+        return [{"error": str(e)}]
 
 def validate_shc_graph_widget(user, header):
     return []
 
 
-def validate_itemization_shc(user, header):
-    return []
+def validate_itemization_shc(user, headers, endpoint, fuelType, reportName):
+    itemization_api = f"{endpoint}/v2.0/pdf-report/users/{user}/her-itemization"
 
+    params = {
+        "measurement-type": fuelType,
+        "locale": "en_US",
+        "with-shc": "false"
+    }
+
+    print(f"Calling itemization API: {itemization_api} with params: {params}")
+
+    try:
+        response = requests.get(itemization_api, headers=headers, params=params)
+
+        print(f"Itemization Response Status Code: {response.status_code}")
+        print(f"Itemization Response Data: {response.text}")
+
+        if response.status_code != 200:
+            return [f"Itemization API call failed with status {response.status_code}"]
+
+        itemization_data = response.json()
+        failure_reasons = []
+
+        payload = itemization_data.get("payload", {})
+        itemization = payload.get("itemization", {})
+
+        top_appliances = itemization.get("topAppliances", [])
+        nbi_actions = itemization.get("nbiActions", [])
+
+        if not top_appliances:
+            failure_reasons.append("Top appliances list is empty or missing.")
+
+        if not nbi_actions or len(nbi_actions) < 2:
+            failure_reasons.append("Less than 2 NBI actions found.")
+
+        return failure_reasons
+
+    except requests.exceptions.RequestException as e:
+        print(f"Itemization API call failed: {e}")
+        return [{"error": str(e)}]
+    
 
 @bp.route('/her-sections-validations', methods=['POST'])
 def her_validation_report():
@@ -121,6 +197,14 @@ def her_validation_report():
             except Exception as e:
                 print(f"Error in validate_itemization_shc for user {user}: {e}")
                 itemization_shc_failure_reasons = [{"error": str(e)}]
+            
+            try:
+                footer_failure_reasons = validate_footer(user, headers, endpoint, fuelType, reportName)
+                print(f"Footer failure reasons for user {user}: {footer_failure_reasons}")
+            except Exception as e:
+                print(f"Error in validate_footer for user {user}: {e}")
+                footer_failure_reasons = [{"error": str(e)}]
+
 
             validation_list.append({
                 'uuid': user,
@@ -136,6 +220,10 @@ def her_validation_report():
                     "itemization_shc": {
                         "status": "success" if not itemization_shc_failure_reasons else "failure",
                         "reasons": itemization_shc_failure_reasons
+                    },
+                    "footer": {
+                        "status": "success" if not footer_failure_reasons else "failure",
+                        "reasons": footer_failure_reasons
                     }
                 }
             })
